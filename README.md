@@ -1,4 +1,4 @@
-# Agentic Research Workflows
+# Galileo: Agentic Research Workflows
 
 Reusable AI-assisted workflows for drafting and simulated peer review of research papers, theses, dissertations, and reports. English instructions; output in the language you choose.
 

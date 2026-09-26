@@ -1,4 +1,4 @@
-# Guida italiana
+# Galileo: Agentic Research Workflows — Guida italiana
 
 Questo pacchetto è generico: tesi, dottorati, articoli e rapporti scientifici di discipline e paesi diversi. Le istruzioni principali sono in inglese, ma puoi chiedere l'output in italiano o un'altra lingua.
 

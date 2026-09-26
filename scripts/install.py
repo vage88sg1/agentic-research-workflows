@@ -47,6 +47,7 @@ def install(destination, dry_run=False, root=ROOT, profile='full'):
                 shutil.copy2(license_path, target / 'BUNDLE_LICENSE.txt')
                 (target / 'bundle-provenance.json').write_text(json.dumps({
                     'package': 'agentic-research-workflows',
+                    'display_name': 'Galileo: Agentic Research Workflows',
                     'source_type': 'original' if source.parent.name == 'skills' else 'vendored',
                     'upstream_repository': source_info.get('repository'),
                     'upstream_commit': source_info.get('commit'),
