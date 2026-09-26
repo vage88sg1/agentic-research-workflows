@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research drafting"
+  short_description: "Evidence-based drafting with progressive intake"
+  default_prompt: "Use $research-drafting to start or resume my scientific writing workflow."

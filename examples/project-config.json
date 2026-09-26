@@ -1,0 +1,23 @@
+{
+  "language": "en",
+  "document_type": "research_article",
+  "discipline": null,
+  "study_design": null,
+  "target_venue": null,
+  "output_directory": "research_workspace",
+  "cost_profile": "balanced",
+  "provider_model_mapping": {
+    "economical": null,
+    "balanced": null,
+    "frontier": null
+  },
+  "max_active_agents": 4,
+  "reviewer_count": 3,
+  "max_review_rounds": 3,
+  "stop_after_no_progress_rounds": 2,
+  "budget": {
+    "currency": null,
+    "max_amount": null
+  },
+  "processing_boundary": "to_be_documented"
+}

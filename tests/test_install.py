@@ -1,0 +1,77 @@
+import importlib.util
+import tempfile
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+spec = importlib.util.spec_from_file_location('installer', ROOT / 'scripts/install.py')
+installer = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(installer)
+
+
+class InstallationTests(unittest.TestCase):
+    def test_dry_run_has_no_writes(self):
+        with tempfile.TemporaryDirectory() as folder:
+            dest = Path(folder) / 'not-created'
+            result = installer.install(dest, dry_run=True)
+            self.assertEqual(len(result['skills']), 9)
+            self.assertFalse(dest.exists())
+
+    def test_install_is_self_contained_and_retains_notices(self):
+        with tempfile.TemporaryDirectory() as folder:
+            result = installer.install(Path(folder) / 'skills')
+            self.assertEqual(len(result['installed']), 9)
+            dest = Path(result['destination'])
+            for name in result['installed']:
+                self.assertTrue((dest / name / 'SKILL.md').is_file())
+                self.assertTrue((dest / name / 'BUNDLE_LICENSE.txt').is_file())
+                self.assertTrue((dest / name / 'bundle-provenance.json').is_file())
+            for name in ('research-drafting', 'research-review'):
+                self.assertTrue((dest / name / 'references/agent-contracts.md').is_file())
+
+    def test_collision_preserves_existing_files_and_installs_nothing(self):
+        with tempfile.TemporaryDirectory() as folder:
+            dest = Path(folder) / 'skills'
+            existing = dest / 'scientific-writing'
+            existing.mkdir(parents=True)
+            (existing / 'keep.txt').write_text('original')
+            with self.assertRaises(FileExistsError):
+                installer.install(dest)
+            self.assertEqual((existing / 'keep.txt').read_text(), 'original')
+            self.assertEqual([p.name for p in dest.iterdir()], ['scientific-writing'])
+
+    def test_tampered_vendor_is_rejected_before_writes(self):
+        import shutil
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder) / 'package'
+            shutil.copytree(ROOT / 'vendor', root / 'vendor')
+            (root / 'vendor/scientific-writing/SKILL.md').write_text('tampered')
+            dest = Path(folder) / 'skills'
+            with self.assertRaisesRegex(ValueError, 'hash mismatch'):
+                installer.install(dest, root=root)
+            self.assertFalse(dest.exists())
+
+    def test_copy_failure_rolls_back_only_new_skills(self):
+        from unittest.mock import patch
+        original = installer.shutil.copytree
+        with tempfile.TemporaryDirectory() as folder:
+            dest = Path(folder) / 'skills'
+            dest.mkdir()
+            (dest / 'unrelated.txt').write_text('keep')
+
+            def fail_one_copy(source, target, *args, **kwargs):
+                if Path(target).resolve() == (dest / 'research-review').resolve():
+                    Path(target).mkdir()
+                    (Path(target) / 'partial.txt').write_text('partial')
+                    raise OSError('simulated copy failure')
+                return original(source, target, *args, **kwargs)
+
+            with patch.object(installer.shutil, 'copytree', side_effect=fail_one_copy):
+                with self.assertRaisesRegex(OSError, 'simulated copy failure'):
+                    installer.install(dest)
+            self.assertEqual([p.name for p in dest.iterdir()], ['unrelated.txt'])
+            self.assertEqual((dest / 'unrelated.txt').read_text(), 'keep')
+
+
+if __name__ == '__main__':
+    unittest.main()

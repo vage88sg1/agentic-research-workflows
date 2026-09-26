@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+"""Validate original entry points, local links and vendor provenance offline."""
+import hashlib
+import json
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def validate():
+    errors = []
+    provenance = json.loads((ROOT / 'vendor/provenance.json').read_text())
+    for relative, expected in provenance['files'].items():
+        path = ROOT / 'vendor' / relative
+        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+            errors.append(f'Vendor hash mismatch: {relative}')
+    for path in ROOT.rglob('*.md'):
+        if 'vendor' in path.relative_to(ROOT).parts:
+            continue  # Upstream links may intentionally refer to optional, unbundled skills.
+        for link in re.findall(r'\]\(([^)]+)\)', path.read_text()):
+            if '://' in link or link.startswith('#'):
+                continue
+            target = link.split('#')[0]
+            if target and not (path.parent / target).exists():
+                errors.append(f'Broken local link in {path.relative_to(ROOT)}: {link}')
+    for name in ('research-drafting', 'research-review'):
+        path = ROOT / 'skills' / name / 'SKILL.md'
+        text = path.read_text()
+        if not text.startswith('---\n') or f'name: {name}\n' not in text:
+            errors.append(f'Invalid skill frontmatter: {name}')
+        if not re.search(r'^description: .+', text, re.M):
+            errors.append(f'Missing description: {name}')
+        ui = (path.parent / 'agents/openai.yaml').read_text()
+        if '$' + name not in ui:
+            errors.append(f'Missing skill reference in UI prompt: {name}')
+    return errors
+
+
+if __name__ == '__main__':
+    issues = validate()
+    for issue in issues:
+        print(issue)
+    print('Package validation passed.' if not issues else 'Package validation failed.')
+    raise SystemExit(bool(issues))

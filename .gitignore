@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+research_workspace/
+outputs/
+data/
+.agents/
+*.zip
+.env
+.env.*
