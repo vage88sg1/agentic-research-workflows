@@ -29,3 +29,7 @@ Compilation success is required before declaring a PDF built. Check undefined re
 ## Handoff
 
 Return selected editable source, requested PDF if actually generated, bibliography/assets and concise build/QA status. Record build input hashes, actual tool/version and output version. Substantive content changes return to scientific review; simulated publication artifacts retain their simulation label. Do not create both formats unless requested or required.
+
+## Saved state and continuation
+
+When starting, resuming or handing off a run, follow [saved state and handoff](references/run-state.md). Save the current phase, artifact versions, actual checks, open issues and next action in the run directory.

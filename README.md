@@ -319,7 +319,7 @@ $research-drafting Resume from research_workspace/workflow_state.json.
 Reuse the recorded answers and completed checks. Identify the next unresolved task.
 ```
 
-Use the corresponding entry point for a saved review, typesetting or presentation run and provide its actual state location. Do not assume the assistant remembers a previous session. State records should identify inputs/versions, phase, actual tools/models, review round, unresolved issues and the next action.
+Use the corresponding entry point for a saved review, typesetting or presentation run and provide its actual state location. Do not assume the assistant remembers a previous session. Use the [starter state](examples/workflow-state.json) and [issue-ledger columns](examples/issues.csv) when creating a run; these are templates, not completed research records. State records should identify inputs/versions, phase, actual tools/models, review round, unresolved issues and the next action.
 
 When changing language, format, venue or analysis scope, explain the change and ask the coordinator to identify affected outputs. Preserve originals and prior versions. Changes to scientific results require renewed checking of dependent text, tables, figures and slides.
 
@@ -384,6 +384,6 @@ python3 scripts/check_literature_mcp.py
 
 These checks cover packaging, links, provenance, installer behavior and MCP configuration/protocol fixtures. They do not certify scientific correctness or end-to-end host execution. The [synthetic evaluation protocol](examples/SYNTHETIC_EVALUATION.md) describes behavioral checks that have not been run as full multi-agent research trials.
 
-[Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Evidence integrity](skills/research-drafting/references/skill-integration.md)
+[Final review and remaining validation](docs/RELEASE_REVIEW.md#final-package-review-2026-09-27) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Evidence integrity](skills/research-drafting/references/skill-integration.md)
 
 Original workflow code and documentation: [MIT](LICENSE). Bundled third-party content retains its own MIT notices; referenced MCP adapters have separate licenses. No affiliation with journals, universities, OpenAI, Zotero or the source providers is implied.

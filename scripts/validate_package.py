@@ -11,9 +11,12 @@ ROOT = Path(__file__).resolve().parents[1]
 def validate():
     errors = []
     provenance = json.loads((ROOT / 'vendor/provenance.json').read_text())
+    inventory = {p.relative_to(ROOT / 'vendor').as_posix() for p in (ROOT / 'vendor').rglob('*') if p.is_file() or p.is_symlink()}
+    if inventory != set(provenance['files']) | {'provenance.json'}:
+        errors.append('Vendor inventory differs from provenance')
     for relative, expected in provenance['files'].items():
         path = ROOT / 'vendor' / relative
-        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+        if path.is_symlink() or not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != expected:
             errors.append(f'Vendor hash mismatch: {relative}')
     for path in ROOT.rglob('*.md'):
         if 'vendor' in path.relative_to(ROOT).parts:

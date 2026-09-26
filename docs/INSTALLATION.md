@@ -27,3 +27,5 @@ For users of the first published version: this release adds files and changes th
 ## Optional literature MCP module
 
 MCP examples are kept outside skill installation. Configure selected servers separately using the [literature integration guide](LITERATURE_INTEGRATIONS.md). The installer does not copy or merge client settings, install server runtimes or enable services.
+
+The installer rejects vendor files absent from its provenance inventory, including generated caches; use a clean source checkout. Each installed skill records SHA-256 hashes of its payload and retained license in `bundle-provenance.json` (the manifest excludes itself). This detects later file changes; it is not a signature or authenticity guarantee.

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "run_id": "example-drafting-run",
+  "workflow": "research-drafting",
+  "phase": "intake",
+  "status": "awaiting_input",
+  "updated_at": null,
+  "language": "en",
+  "project_config": "project-config.json",
+  "inputs": [],
+  "outputs": [],
+  "execution": {
+    "models": [],
+    "tools": [],
+    "role_contexts": "not_started",
+    "measured_cost": null
+  },
+  "round": 0,
+  "max_rounds": null,
+  "no_progress_rounds": 0,
+  "open_issues": [],
+  "pending_user_input": [
+    "Research question and available materials"
+  ],
+  "completed_checks": [],
+  "next_action": "Resolve intake questions before dependent analysis or factual drafting."
+}

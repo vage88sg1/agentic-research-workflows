@@ -13,6 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 def install(destination, dry_run=False, root=ROOT, profile='full'):
     destination = Path(destination).expanduser().resolve()
     provenance = json.loads((root / 'vendor/provenance.json').read_text())
+    inventory = {p.relative_to(root / 'vendor').as_posix() for p in (root / 'vendor').rglob('*') if p.is_file() or p.is_symlink()}
+    if inventory != set(provenance['files']) | {'provenance.json'}:
+        raise ValueError('Vendor inventory differs from provenance; restore a clean vendor directory')
     for relative, expected in provenance['files'].items():
         path = root / 'vendor' / relative
         if path.is_symlink() or not path.is_file():
@@ -26,6 +29,8 @@ def install(destination, dry_run=False, root=ROOT, profile='full'):
     sources = [root / ('skills' if name in bundle['original_skills'] else 'vendor') / name
                for name in selected]
     for source in sources:
+        if source.is_symlink():
+            raise ValueError(f'Symlinked skill directory: {source.name}')
         if not (source / 'SKILL.md').is_file():
             raise ValueError(f'Missing skill: {source.name}')
         if any(p.is_symlink() for p in source.rglob('*')):
@@ -51,6 +56,8 @@ def install(destination, dry_run=False, root=ROOT, profile='full'):
                     'source_type': 'original' if source.parent.name == 'skills' else 'vendored',
                     'upstream_repository': source_info.get('repository'),
                     'upstream_commit': source_info.get('commit'),
+                    'installed_files_sha256': {p.relative_to(target).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                                               for p in sorted(target.rglob('*')) if p.is_file()},
                 }, indent=2) + '\n')
             for source in sources:
                 target = destination / source.name

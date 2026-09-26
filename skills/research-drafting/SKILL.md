@@ -47,3 +47,7 @@ After the scientific draft is checked, use the installed research-typesetting sk
 ## Outputs
 
 Save project configuration, study summary, source/claim records, bibliography, measurement records, analysis code/output where available, draft, issues and state. Report missing inputs, checks performed, limits and next action. Offer research-review as a separate invocation rather than starting simulated editorial review unasked.
+
+## Saved state and continuation
+
+When starting, resuming or handing off a run, follow [saved state and handoff](references/run-state.md). Save the current phase, artifact versions, actual checks, open issues and next action in the run directory.

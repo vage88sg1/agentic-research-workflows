@@ -47,3 +47,7 @@ Simulated acceptance requires resolution of validity-blocking/major issues and s
 For selected DOCX or LaTeX production use research-typesetting when installed, with real build/render verification and conditional LaTeX guidance. Optional copyediting/proofs occur after simulated acceptance; substantive changes return to the editor. All dossier, decisions and production artifacts carry SIMULATION — NOT SUBMITTED — NOT PUBLISHED. Do not invent DOI, indexing, journal logo, signatures or real acceptance. Never upload to a journal or contact others through this workflow.
 
 Deliver reviewer reports, decision rationale, issue ledger, response, clean revision/change comparison, actual check log, limits and run state. Rejection remains a valid final simulation outcome.
+
+## Saved state and continuation
+
+When starting, resuming or handing off a run, follow [saved state and handoff](references/run-state.md). Save the current phase, artifact versions, actual checks, open issues and next action in the run directory.

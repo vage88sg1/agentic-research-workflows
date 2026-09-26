@@ -1,6 +1,6 @@
 # Evidence integrity and bundled skill integration
 
-Read the relevant installed SKILL.md before use, then only references needed for the task. The installer places the seven bundled skills as siblings of the entry points. Resolve them through the host's skill catalog or sibling directory; do not assume original repository paths. The workflow remains usable as plain instructions, with unavailable capabilities declared.
+Read the relevant installed SKILL.md before use, then only references needed for the task. The installer places the support skills selected by the installation profile as siblings of the entry points. Resolve them through the host's skill catalog or sibling directory; do not assume original repository paths. The workflow remains usable as plain instructions, with unavailable capabilities declared.
 
 | Skill | Concrete integration |
 |---|---|

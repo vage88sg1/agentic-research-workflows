@@ -29,3 +29,29 @@ Added independent MCP configuration examples for PubMed/Europe PMC, OpenAlex, Cr
 Codex entries remain disabled and optional, with retrieval-tool allowlists; JSON client fragments require host-specific permission setup. Startup indexing risk in Zotero is documented and the probe refuses an existing semantic startup config. Drafting/review instructions include source routing, budget tracking and query/access records. The connection diagnostic only initializes and lists tools.
 
 Twelve tests passed under bundled Python 3.11+, along with offline catalog, package provenance/link and whitespace checks. The system Python lacked tomllib, so the complete suite was rerun with the bundled runtime. MCP protocol tests use local fake servers, including paginated tool discovery, missing tools, malformed output, server error and timeout. No live server connection, upstream API search, full-text access or client permission enforcement is claimed.
+
+## Final package review (2026-09-27)
+
+Reviewed the installer, profile inventory, workflow entry points and references, README instructions/diagrams, MCP examples/diagnostic and validation coverage.
+
+### Findings corrected
+
+- **Untracked vendor payloads:** checking listed hashes alone allowed extra files to be copied. Installation and package validation now reject a vendor inventory that differs from provenance. A regression test adds an unexpected executable file and confirms rejection before destination writes.
+- **Installed artifact traceability:** installed manifests identified upstream revisions but did not hash the installed payload. They now include SHA-256 values for copied files and retained license, excluding the manifest itself. This records file identity, not cryptographic authorship/authenticity.
+- **Resume and handoff ambiguity:** all four workflows now ship a self-contained saved-state contract. Review and presentation runs must preserve drafting state, record actual checks and invalidate dependent checks after input changes. Starter state and issue-ledger templates are available in examples.
+- **Stale support-skill wording:** references now describe profile-selected support skills rather than assuming a fixed seven-skill installation.
+
+### Checks completed
+
+Fourteen automated tests passed, including the two new installation regressions; vendor provenance, local links, MCP configuration, whitespace and the four original skill structural checks passed. Full tests used bundled Python with tomllib; the skill structural validator used the system Python with PyYAML. No dependency installation was needed.
+
+### Remaining validation work
+
+| Priority | Remaining check | Evidence needed before claiming completion |
+|---|---|---|
+| Before calling the workflows operationally validated | Run the synthetic protocol through drafting and simulated review in a supported host | Saved artifacts, actual agent/context/model records, expected issues detected, correction verification and stop behavior |
+| Before claiming verified format production | Produce and inspect DOCX/PDF, LaTeX/PDF and PPTX/PDF samples | Real builds, rendered pages/slides, editability and cross-format checks |
+| Before claiming working literature access | Connect each selected adapter and perform a small public search/identifier lookup | Runtime/version, actual response status, client allowlist check and access limitations; Zotero requires separate startup inspection |
+| Before recommending a cost-optimal mapping | Compare economy/balanced/quality on the same synthetic task | Defects caught/missed, actual usage/cost where available and time; model names alone are insufficient |
+
+The package is suitable for documented experimental use. Packaging checks are not evidence of end-to-end scientific performance. Remaining items are explicit validation gaps, not features to silently mark as complete. Real journal submission remains outside the project's intended scope.

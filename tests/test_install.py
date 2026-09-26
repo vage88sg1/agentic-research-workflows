@@ -70,6 +70,30 @@ class InstallationTests(unittest.TestCase):
             self.assertIn('scientific-slides', slides['installed'])
             self.assertNotIn('academic-writing-latex', slides['installed'])
 
+    def test_extra_vendor_file_is_rejected_before_writes(self):
+        import shutil
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder) / 'package'
+            shutil.copytree(ROOT / 'vendor', root / 'vendor')
+            (root / 'vendor/scientific-writing/untracked.py').write_text('print("unexpected")')
+            dest = Path(folder) / 'skills'
+            with self.assertRaisesRegex(ValueError, 'inventory differs'):
+                installer.install(dest, root=root)
+            self.assertFalse(dest.exists())
+
+    def test_installed_hashes_cover_payload_and_license(self):
+        import hashlib
+        import json
+        with tempfile.TemporaryDirectory() as folder:
+            result = installer.install(Path(folder) / 'skills', profile='core')
+            for name in result['installed']:
+                target = Path(result['destination']) / name
+                record = json.loads((target / 'bundle-provenance.json').read_text())
+                actual = {p.relative_to(target).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                          for p in target.rglob('*') if p.is_file() and p.name != 'bundle-provenance.json'}
+                self.assertEqual(record['installed_files_sha256'], actual)
+                self.assertIn('BUNDLE_LICENSE.txt', actual)
+
     def test_copy_failure_rolls_back_only_new_skills(self):
         from unittest.mock import patch
         original = installer.shutil.copytree

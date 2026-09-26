@@ -39,3 +39,7 @@ Loop writer/designer corrections → distinct scientific and visual checks → c
 ## Delivery
 
 Deliver requested PPTX/PDF if generated, editable source/build assets as appropriate, notes and timing plan if requested. Preserve references, attribution and figure licenses. Record state with sources/version, actual models/tools, review round, build outputs and pending issues. If conversion or compilation is unavailable, deliver supported source only and mark missing PDF/PPTX explicitly. No external sharing or journal submission.
+
+## Saved state and continuation
+
+When starting, resuming or handing off a run, follow [saved state and handoff](references/run-state.md). Save the current phase, artifact versions, actual checks, open issues and next action in the run directory.
