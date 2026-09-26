@@ -44,6 +44,6 @@ Default cap: three complete rounds; stop after two rounds without substantive pr
 
 Simulated acceptance requires resolution of validity-blocking/major issues and sufficient evidenced consistency; distinguish AI checks from human verification still pending. Actual submission readiness requires responsible human approval and genuine declarations.
 
-Optional copyediting/proofs occur after simulated acceptance; substantive changes return to the editor. All dossier, decisions and production artifacts carry SIMULATION — NOT SUBMITTED — NOT PUBLISHED. Do not invent DOI, indexing, journal logo, signatures or real acceptance. Never upload to a journal or contact others through this workflow.
+For selected DOCX or LaTeX production use research-typesetting when installed, with real build/render verification and conditional LaTeX guidance. Optional copyediting/proofs occur after simulated acceptance; substantive changes return to the editor. All dossier, decisions and production artifacts carry SIMULATION — NOT SUBMITTED — NOT PUBLISHED. Do not invent DOI, indexing, journal logo, signatures or real acceptance. Never upload to a journal or contact others through this workflow.
 
 Deliver reviewer reports, decision rationale, issue ledger, response, clean revision/change comparison, actual check log, limits and run state. Rejection remains a valid final simulation outcome.

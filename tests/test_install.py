@@ -14,13 +14,13 @@ class InstallationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             dest = Path(folder) / 'not-created'
             result = installer.install(dest, dry_run=True)
-            self.assertEqual(len(result['skills']), 9)
+            self.assertEqual(len(result['skills']), 13)
             self.assertFalse(dest.exists())
 
     def test_install_is_self_contained_and_retains_notices(self):
         with tempfile.TemporaryDirectory() as folder:
             result = installer.install(Path(folder) / 'skills')
-            self.assertEqual(len(result['installed']), 9)
+            self.assertEqual(len(result['installed']), 13)
             dest = Path(result['destination'])
             for name in result['installed']:
                 self.assertTrue((dest / name / 'SKILL.md').is_file())
@@ -50,6 +50,25 @@ class InstallationTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'hash mismatch'):
                 installer.install(dest, root=root)
             self.assertFalse(dest.exists())
+
+    def test_conditional_profiles_and_distinct_license_provenance(self):
+        import json
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            docx = installer.install(root / 'docx', profile='docx')
+            self.assertNotIn('academic-writing-latex', docx['installed'])
+            self.assertNotIn('scientific-slides', docx['installed'])
+            latex = installer.install(root / 'latex', profile='latex')
+            self.assertIn('academic-writing-latex', latex['installed'])
+            self.assertNotIn('scientific-slides', latex['installed'])
+            skill = root / 'latex/academic-writing-latex'
+            self.assertEqual((skill / 'LICENSE').read_bytes(), (skill / 'BUNDLE_LICENSE.txt').read_bytes())
+            record = json.loads((skill / 'bundle-provenance.json').read_text())
+            self.assertEqual(record['upstream_repository'], 'https://github.com/HS0n4/academic-writing-latex-skills')
+            slides = installer.install(root / 'slides', profile='slides')
+            self.assertIn('research-presentations', slides['installed'])
+            self.assertIn('scientific-slides', slides['installed'])
+            self.assertNotIn('academic-writing-latex', slides['installed'])
 
     def test_copy_failure_rolls_back_only_new_skills(self):
         from unittest.mock import patch

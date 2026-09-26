@@ -19,5 +19,20 @@
     "currency": null,
     "max_amount": null
   },
-  "processing_boundary": "to_be_documented"
+  "processing_boundary": "to_be_documented",
+  "manuscript_format": null,
+  "manuscript_pdf_requested": true,
+  "presentation": {
+    "talk_type": null,
+    "duration_minutes": null,
+    "qa_minutes": null,
+    "slide_count": null,
+    "aspect_ratio": "16:9",
+    "output_formats": [
+      "pptx",
+      "pdf"
+    ],
+    "pdf_only_source": null,
+    "speaker_notes": true
+  }
 }

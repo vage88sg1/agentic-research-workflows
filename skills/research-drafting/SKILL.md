@@ -12,7 +12,7 @@ Read [agent contracts](references/agent-contracts.md) and [skill integration](re
 
 Inspect only relevant authorized inputs. Locate the user's selected output directory and saved `workflow_state.json`; otherwise propose `research_workspace/`. Never silently overwrite inputs or an existing run. Record effective tools/models and missing information. Resume from state rather than repeating completed work.
 
-Ask up to three focused questions at a time, starting with research question, document type, stage and available materials. Then resolve design, analysis unit, sample, groups/overlap, repeated measurements, instruments/versions/manuals, outcomes, covariates and missingness as relevant. Resolve writing language, institutional/venue requirements, existing protocol/analysis plan and processing boundary. Reuse documented answers; do not ask every possible question when irrelevant.
+Ask up to three focused questions at a time, starting with research question, document type, stage and available materials. Then resolve design, analysis unit, sample, groups/overlap, repeated measurements, instruments/versions/manuals, outcomes, covariates and missingness as relevant. Resolve writing language, manuscript format (DOCX or LaTeX), requested PDF, institutional/venue requirements, existing protocol/analysis plan and processing boundary. Reuse documented answers; do not ask every possible question when irrelevant.
 
 Continue independent outlining or public-source searches while awaiting answers. Block only dependent scoring, analysis or factual drafting. Distinguish unavailable results from incomplete prose; never make up a plausible study. A plan written after results were examined is not a preregistration.
 
@@ -39,6 +39,10 @@ Apply scientific-writing: evidence-linked outline first, then venue/design-appro
 Reconcile repeated numbers, units, populations, time points, methods, results, tables and figures. Select reporting guidance from the actual design and verify official/current documents. Coverage checks do not certify methodological validity or compliance. Use bundled CLIs only after reading their schema/help and verifying dependencies; record actual execution and limitations.
 
 Run internal source/consistency and methodological checks with distinct verification where possible. Correct affected records before prose and regenerate dependent outputs. Preserve author decisions and unresolved issues. No automatic human approval, real submission-ready certification, external disclosure or submission.
+
+## Conditional format production
+
+After the scientific draft is checked, use the installed research-typesetting skill for the selected manuscript format, or compatible host tools with explicit limitations. Load academic-writing-latex only for LaTeX. Do not activate a compiler or generate both authoring formats unasked. Preserve verified content and inspect the final rendered artifact.
 
 ## Outputs
 

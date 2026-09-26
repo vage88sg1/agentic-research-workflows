@@ -25,3 +25,9 @@ Local bundled tools are optional, not silently executed. Preserve raw data, run 
 Outputs typically include project-config.json, workflow_state.json, study.md, source/claim records, bibliography, dictionary/scoring records, analysis/, results/, manuscript/, issues.csv and simulated_review/. Adapt names to existing projects. Respect upstream schemas if invoking their validators. State records identify phase, inputs/hashes, actual models, round, issues, pending human decisions and next action. Never overwrite original materials silently.
 
 Attribution: retain third-party notices. If the bundled collection materially contributes to an academic output, follow its attribution guidance after verifying the current primary bibliographic record and applicable venue style. Do not insert an unverified citation automatically.
+
+## Optional authoring and presentation routes
+
+Ask or read `manuscript_format` (docx or latex). Use research-typesetting if installed for selected-format production; if unavailable, apply compatible host tools and declare missing capabilities. Load academic-writing-latex only for LaTeX, with user language, style and engine overriding its engineering/IEEE defaults. Review scientific content before formatting and inspect the final rendered artifact afterwards. Do not generate both formats unasked.
+
+Scientific talks are a separate research-presentations workflow, optionally reusing verified manuscript/results. Its PPTX/PDF export is conditional on actual tools. Scientific-slides guidance does not authorize image-generation services, author defaults or image-only replacements of editable slides.

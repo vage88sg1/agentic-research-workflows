@@ -1,0 +1,74 @@
+{
+  "original_skills": [
+    "research-drafting",
+    "research-review",
+    "research-typesetting",
+    "research-presentations"
+  ],
+  "profiles": {
+    "core": [
+      "research-drafting",
+      "research-review",
+      "scientific-writing",
+      "citation-management",
+      "scientific-critical-thinking",
+      "statistical-analysis",
+      "literature-review",
+      "scientific-visualization",
+      "peer-review"
+    ],
+    "docx": [
+      "research-drafting",
+      "research-review",
+      "research-typesetting",
+      "scientific-writing",
+      "citation-management",
+      "scientific-critical-thinking",
+      "statistical-analysis",
+      "literature-review",
+      "scientific-visualization",
+      "peer-review"
+    ],
+    "latex": [
+      "research-drafting",
+      "research-review",
+      "research-typesetting",
+      "scientific-writing",
+      "citation-management",
+      "scientific-critical-thinking",
+      "statistical-analysis",
+      "literature-review",
+      "scientific-visualization",
+      "peer-review",
+      "academic-writing-latex"
+    ],
+    "slides": [
+      "research-drafting",
+      "research-review",
+      "research-presentations",
+      "scientific-writing",
+      "citation-management",
+      "scientific-critical-thinking",
+      "statistical-analysis",
+      "literature-review",
+      "scientific-visualization",
+      "peer-review",
+      "scientific-slides"
+    ],
+    "full": [
+      "research-drafting",
+      "research-review",
+      "research-typesetting",
+      "research-presentations",
+      "scientific-writing",
+      "citation-management",
+      "scientific-critical-thinking",
+      "statistical-analysis",
+      "literature-review",
+      "scientific-visualization",
+      "peer-review",
+      "academic-writing-latex",
+      "scientific-slides"
+    ]
+  }
+}

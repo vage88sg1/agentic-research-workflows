@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline, non-overwriting installation of the two workflows and seven skills."""
+"""Offline, non-overwriting installation of a selected workflow/skill profile."""
 import argparse
 import hashlib
 import json
@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def install(destination, dry_run=False, root=ROOT):
+def install(destination, dry_run=False, root=ROOT, profile='full'):
     destination = Path(destination).expanduser().resolve()
     provenance = json.loads((root / 'vendor/provenance.json').read_text())
     for relative, expected in provenance['files'].items():
@@ -19,8 +19,12 @@ def install(destination, dry_run=False, root=ROOT):
             raise ValueError(f'Missing or symlinked vendor file: {relative}')
         if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
             raise ValueError(f'Vendor hash mismatch: {relative}')
-    sources = [root / 'skills/research-drafting', root / 'skills/research-review']
-    sources += [root / 'vendor' / name for name in provenance['skills']]
+    bundle = json.loads((root / 'bundle.json').read_text())
+    if profile not in bundle['profiles']:
+        raise ValueError(f'Unknown profile: {profile}')
+    selected = bundle['profiles'][profile]
+    sources = [root / ('skills' if name in bundle['original_skills'] else 'vendor') / name
+               for name in selected]
     for source in sources:
         if not (source / 'SKILL.md').is_file():
             raise ValueError(f'Missing skill: {source.name}')
@@ -29,7 +33,7 @@ def install(destination, dry_run=False, root=ROOT):
         if (destination / source.name).exists() or (destination / source.name).is_symlink():
             raise FileExistsError(f'Refusing existing destination: {destination / source.name}')
     if dry_run:
-        return {'dry_run': True, 'destination': str(destination), 'skills': [s.name for s in sources]}
+        return {'dry_run': True, 'profile': profile, 'destination': str(destination), 'skills': [s.name for s in sources]}
     destination.mkdir(parents=True, exist_ok=True)
     created = []
     try:
@@ -38,12 +42,14 @@ def install(destination, dry_run=False, root=ROOT):
             for source in sources:
                 target = staging / source.name
                 shutil.copytree(source, target)
-                shutil.copy2(root / ('LICENSE' if source.parent.name == 'skills' else 'vendor/LICENSE.md'), target / 'BUNDLE_LICENSE.txt')
+                source_info = provenance['skill_sources'].get(source.name, {})
+                license_path = root / 'LICENSE' if source.parent.name == 'skills' else root / 'vendor' / source_info['license_file']
+                shutil.copy2(license_path, target / 'BUNDLE_LICENSE.txt')
                 (target / 'bundle-provenance.json').write_text(json.dumps({
                     'package': 'agentic-research-workflows',
                     'source_type': 'original' if source.parent.name == 'skills' else 'vendored',
-                    'upstream_repository': provenance['repository'] if source.parent.name == 'vendor' else None,
-                    'upstream_commit': provenance['commit'] if source.parent.name == 'vendor' else None,
+                    'upstream_repository': source_info.get('repository'),
+                    'upstream_commit': source_info.get('commit'),
                 }, indent=2) + '\n')
             for source in sources:
                 target = destination / source.name
@@ -61,16 +67,17 @@ def install(destination, dry_run=False, root=ROOT):
         for target in reversed(created):
             shutil.rmtree(target)
         raise
-    return {'dry_run': False, 'destination': str(destination), 'installed': [p.name for p in created]}
+    return {'dry_run': False, 'profile': profile, 'destination': str(destination), 'installed': [p.name for p in created]}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dest', required=True, help='The skill directory supported by your host')
     parser.add_argument('--dry-run', action='store_true', help='Validate and show plan without writing')
+    parser.add_argument('--profile', choices=('core', 'docx', 'latex', 'slides', 'full'), default='full')
     args = parser.parse_args()
     try:
-        print(json.dumps(install(args.dest, args.dry_run), indent=2))
+        print(json.dumps(install(args.dest, args.dry_run, profile=args.profile), indent=2))
     except (OSError, ValueError) as error:
         parser.exit(1, f'Installation stopped: {error}\n')
 

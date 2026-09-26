@@ -9,11 +9,15 @@
     "statistical-analysis",
     "literature-review",
     "scientific-visualization",
-    "peer-review"
+    "peer-review",
+    "academic-writing-latex",
+    "scientific-slides"
   ],
   "modifications": "None. Exact copies of selected upstream directories. Integration overrides are in original workflow references.",
   "files": {
     "LICENSE.md": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "academic-writing-latex/LICENSE": "d1463a76142a2444d41ec52a0561bd7af861e8dbef4c630aa4ea74f37e3682f2",
+    "academic-writing-latex/SKILL.md": "257ace0c719051cf2ce3eca57078a2b8a0c616cd8f68e3c5d6d0239223306ad0",
     "citation-management/SKILL.md": "24b73d1d84e34900c7c1556af4d7e6462cc846bcf6c5071112a77545ce258f73",
     "citation-management/assets/bibtex_template.bib": "bf03cc646e6bc6aaba85d632b8e25b26c2830419892f3c17a7d844805d3a721e",
     "citation-management/assets/citation_checklist.md": "305ff79e25b2654f1a5dc2163c03e7ab14e6c9578b1ea0f2d30f97195578d2c6",
@@ -79,6 +83,30 @@
     "scientific-critical-thinking/references/logical_fallacies.md": "7911abe82bc05c8f513591e9b00572f21e5a631783cc00cd9dbf644b5eae28ce",
     "scientific-critical-thinking/references/scientific_method.md": "09e709bdc7919a2b21825175aff5e0f9c26117a02ec654bfdb347fc8fa7ad0b7",
     "scientific-critical-thinking/references/statistical_pitfalls.md": "c525ed590c36eef9dfca95c9c8bc2ab3e228e9247aa476a2c2ddcf07ffc62172",
+    "scientific-slides/SKILL.md": "9c5c4f7e991140f997c03833313a3045a57c36298e290df5832a98cea34f66a8",
+    "scientific-slides/assets/beamer_template_conference.tex": "e4049409c316a50c73da7c87c2818a7a2d62878d0bcebef316abe95d86ab132c",
+    "scientific-slides/assets/beamer_template_defense.tex": "ce44a4933a70a9267514eb1950bfd64b6c18299c7a96cf5955b78778ce9a7d3e",
+    "scientific-slides/assets/beamer_template_seminar.tex": "94f19ea1919edb822c57c699e1611f87e00650caab7aee53edcf94d776ab5cf7",
+    "scientific-slides/assets/powerpoint_design_guide.md": "91de949952b5ba67181196eadd7eea4fc7dc69301b256c41d28a74752bfdda35",
+    "scientific-slides/assets/timing_guidelines.md": "0e85b73c1997000ed0c0efa0807536d3d9cf024bf043068d6564d44351e0ba83",
+    "scientific-slides/references/beamer_guide.md": "cb8a3c500ab9a3841c0e8559ad5894a4dad80fa3193589f28f5ca91e46d1c97b",
+    "scientific-slides/references/common_pitfalls.md": "1624aa65d42d52469a06727e6a68c5ba66cce311020f107659de7ca80654888b",
+    "scientific-slides/references/data_visualization_slides.md": "c79d5d9552d2f132dd3be1beb230c5c0da4f3f27f1ac04f7f6e571204bbab9ba",
+    "scientific-slides/references/presentation_structure.md": "deafc171b8951a43c9a8ae081158cab72fdb8dc4abc1334257ad594f454665f2",
+    "scientific-slides/references/presentation_workflow.md": "64e4e6f2b7483df1c7e629139df5dac605636ae3229f64d093f9a11aee5e4127",
+    "scientific-slides/references/prompt_writing.md": "a933302ac7afd1bb1b8f76d7f4c3f445a415029611c13b1af1a22535e0adcb4a",
+    "scientific-slides/references/script_reference.md": "b2bbd551f298e20910699bb1f98d552e10babcc8dfa1988c4cd71c7896a42d92",
+    "scientific-slides/references/slide_capabilities.md": "519aba316aa1f98905f1d964fbaefb982de419ae26ddf3e9894a9069ebee5be6",
+    "scientific-slides/references/slide_design_principles.md": "ee2d8f1b3ae0a849ee49e3e4d334c64ee3a1a79aee5ca28dbf43bbec822d98fa",
+    "scientific-slides/references/talk_types_guide.md": "60f374e4e8d361e36a4c738c1e9e56b80470927e28f59e5c9f715343d7da6f6d",
+    "scientific-slides/references/visual_review_workflow.md": "6d636d52fd3c6db84008fca1b96a39905539a12f28256337d6534a575c0b4632",
+    "scientific-slides/scripts/generate_schematic.py": "5cec9c14d164c9ea9ccf6425f2010c40f1b077dd0c9e30395564cdc793c334b2",
+    "scientific-slides/scripts/generate_schematic_ai.py": "af055204033d446cd8e4501de0a0d0aaa952bad7c365e559f2e3a80698704ce9",
+    "scientific-slides/scripts/generate_slide_image.py": "d85733018dfd71cc82c2f6472fe4ee06d66e970d135aeb72345fa35ea99224dd",
+    "scientific-slides/scripts/generate_slide_image_ai.py": "c5e4724641e0e11980034110974727699277e0a9240a4231d7179193f7c3579d",
+    "scientific-slides/scripts/pdf_to_images.py": "b572150da57890311e5dc55ed19f751c7b0f1f998cbda1e6392070f783dbd261",
+    "scientific-slides/scripts/slides_to_pdf.py": "265da6e1d722f6efb3dfd8a4acef260a54b3774a56471e73b31d771ad8a8420d",
+    "scientific-slides/scripts/validate_presentation.py": "b30aacfd6fcbfb11ea8783577dc4b969786ac7dc56f1ab6f0ca0c1ce37b7b9b1",
     "scientific-visualization/SKILL.md": "f7c7f9a2350ea02db2db55cd28921a54c74b089f6762f1b0b63a13b8f6eeec33",
     "scientific-visualization/assets/color_palettes.py": "173d95887be654867db3602430ade84f6362ae80477c5373de0b44ce40375f57",
     "scientific-visualization/assets/nature.mplstyle": "1c0c6bcb4d6add27247f43541d8e588aa562f21c4c88c7eaa673a2eac63dfb35",
@@ -135,5 +163,61 @@
     "statistical-analysis/references/reporting_standards.md": "6854623fb5e8080e7d02b6c713ee44cb4a4cf03757d97840764118af54137a88",
     "statistical-analysis/references/test_selection_guide.md": "64f5d93f87d83431b767a24d6b32c0ed82f2cbd32b1bd07476b49b5ac6a858a5",
     "statistical-analysis/scripts/assumption_checks.py": "3fabf359ab0128bbfc498dadb53a4782431cde473c0a6681ea7298a605757018"
+  },
+  "skill_sources": {
+    "scientific-writing": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "49c6e97775eaa18ba791bebe23162a70ae601c18",
+      "license_file": "LICENSE.md",
+      "retrieved_date": "2026-09-26"
+    },
+    "citation-management": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "49c6e97775eaa18ba791bebe23162a70ae601c18",
+      "license_file": "LICENSE.md",
+      "retrieved_date": "2026-09-26"
+    },
+    "scientific-critical-thinking": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "49c6e97775eaa18ba791bebe23162a70ae601c18",
+      "license_file": "LICENSE.md",
+      "retrieved_date": "2026-09-26"
+    },
+    "statistical-analysis": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "49c6e97775eaa18ba791bebe23162a70ae601c18",
+      "license_file": "LICENSE.md",
+      "retrieved_date": "2026-09-26"
+    },
+    "literature-review": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "49c6e97775eaa18ba791bebe23162a70ae601c18",
+      "license_file": "LICENSE.md",
+      "retrieved_date": "2026-09-26"
+    },
+    "scientific-visualization": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "49c6e97775eaa18ba791bebe23162a70ae601c18",
+      "license_file": "LICENSE.md",
+      "retrieved_date": "2026-09-26"
+    },
+    "peer-review": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "49c6e97775eaa18ba791bebe23162a70ae601c18",
+      "license_file": "LICENSE.md",
+      "retrieved_date": "2026-09-26"
+    },
+    "academic-writing-latex": {
+      "repository": "https://github.com/HS0n4/academic-writing-latex-skills",
+      "commit": "d981a7c3057f1387f980b12a64d213fab5f2db6e",
+      "license_file": "academic-writing-latex/LICENSE",
+      "retrieved_date": "2026-09-27"
+    },
+    "scientific-slides": {
+      "repository": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "commit": "49c6e97775eaa18ba791bebe23162a70ae601c18",
+      "license_file": "LICENSE.md",
+      "retrieved_date": "2026-09-27"
+    }
   }
 }

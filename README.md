@@ -2,7 +2,7 @@
 
 Reusable AI-assisted workflows for drafting and simulated peer review of research papers, theses, dissertations, and reports. English instructions; output in the language you choose.
 
-Two entry points coordinate specialist roles, evidence records, reproducible analyses, and bounded revision loops. Seven upstream scientific skills are bundled at a pinned revision. No patient data, manuscript, institutional template, or personal project history is included.
+Four entry points coordinate drafting, review, DOCX/LaTeX typesetting and scientific presentations, with evidence records and bounded revision loops. Nine upstream skills are bundled at pinned revisions. No patient data, manuscript, institutional template, or personal project history is included.
 
 **This is an instruction package, not an autonomous execution engine.** Parallel agents, model routing, tools, and slash menus depend on your host. The package does not send submissions, run paid APIs, certify research quality, or replace responsible human authors and reviewers.
 
@@ -17,9 +17,20 @@ python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills 
 python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills
 ```
 
-The installer copies nine skill directories, preserves licenses and records hashes/provenance. It refuses existing destinations and does not install libraries, start services, change host settings, or make network calls. Use an absolute path if unsure about the current directory. Do not commit generated research artifacts just because the skills are installed in a repository.
+By default the installer copies thirteen skill directories (four original workflows and nine upstream skills), preserves licenses and records hashes/provenance. It refuses existing destinations and does not install libraries, start services, change host settings, or make network calls. Use an absolute path if unsure about the current directory. Do not commit generated research artifacts just because the skills are installed in a repository.
 
 For a user-level or another client's location, pass its documented skill directory to `--dest`. See [installation and host compatibility](docs/INSTALLATION.md). Installing files does not guarantee your client discovers them; refresh its skill list or start a new session.
+
+## Optional installation profiles
+
+Pass `--profile core`, `docx`, `latex`, `slides` or `full` (default). Profiles install only relevant entry points and guidance, without compilers, Office software or model services. Installing a skill does not activate it for every task.
+
+```bash
+python3 scripts/install.py --dest /path/to/project/.agents/skills --profile latex --dry-run
+python3 scripts/install.py --dest /path/to/project/.agents/skills --profile slides --dry-run
+```
+
+Use one profile per fresh destination. Existing skill names still block installation; there is no silent update/merge. See [formats, slides and dependencies](docs/FORMATS_AND_SLIDES.md).
 
 ## Use
 
@@ -32,6 +43,20 @@ $research-drafting Help me draft a research paper. Ask for missing study informa
 ```text
 $research-review Review manuscript.md using three independent simulated reviewers, an editor, and a bounded revision loop. Write in Spanish.
 ```
+
+For selected-format manuscript production, use **Research typesetting** in the slash menu, or:
+
+```text
+$research-typesetting Format my thesis in LaTeX and compile a PDF using the selected template.
+```
+
+For a research talk, use **Research presentations**, or:
+
+```text
+$research-presentations Create a 12-minute scientific talk from the verified manuscript, in editable PPTX and PDF, with speaker notes.
+```
+
+Choose DOCX or LaTeX during drafting intake. Only the selected authoring route is applied: LaTeX guidance is not activated for DOCX. A standalone typesetting invocation is also available after drafting/review. Slides reuse verified evidence but have their own storyboard, scientific/visual checks and bounded correction loop.
 
 Resume with the same entry point and “Resume from the saved state.” Do not assume arbitrary aliases such as `/research-review` exist: select the actual menu entry your host provides.
 
@@ -57,7 +82,7 @@ The loop ends at the configured round limit, lack of progress, a blocking inform
 
 ## Configure
 
-The first intake creates a project configuration; [example settings](examples/project-config.json) show the supported concepts. Set language, document type, design, target venue, output directory, cost profile, optional budget, review count, and maximum rounds. Default: three simulated reviewers and three rounds, adaptable to scope and host capacity.
+The first intake creates a project configuration; [example settings](examples/project-config.json) show the supported concepts. Set language, manuscript format (docx/latex), requested PDF, presentation formats/timing, document type, design, target venue, output directory, cost profile, optional budget, review count, and maximum rounds. Default: three simulated reviewers and three rounds, adaptable to scope and host capacity.
 
 [Agent contracts and cost profiles](skills/research-drafting/references/agent-contracts.md) assign outputs, independence boundaries and escalation rules. Model names are optional examples, not dependencies or evidence of domain competence. No fixed price claims are embedded.
 
@@ -65,9 +90,9 @@ The first intake creates a project configuration; [example settings](examples/pr
 
 ## Included scientific skills
 
-`scientific-writing`, `citation-management`, `scientific-critical-thinking`, `statistical-analysis`, `literature-review`, `scientific-visualization`, `peer-review`.
+`scientific-writing`, `citation-management`, `scientific-critical-thinking`, `statistical-analysis`, `literature-review`, `scientific-visualization`, `peer-review`, `scientific-slides`, `academic-writing-latex`.
 
-These are third-party skills from K-Dense, not OpenAI-maintained skills. Their source, license, revision, file hashes and local modifications are recorded in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `vendor/provenance.json`. Bundled instructions and code must be inspected before use; their services and optional dependencies are not activated by this package.
+Eight are third-party skills from K-Dense; academic-writing-latex comes from HS0n4. These are not OpenAI-maintained skills. Their source, license, revision, file hashes and local modifications are recorded in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `vendor/provenance.json`. Bundled instructions and code must be inspected before use; their services and optional dependencies are not activated by this package.
 
 ## Validation and contributing
 

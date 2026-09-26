@@ -8,3 +8,6 @@ Use invented, explicitly synthetic materials in a disposable workspace. Never re
 4. Revisions: change the denominator or scoring input and check dependent prose/tables/figures are invalidated. The author must not self-close unresolved scientific issues.
 5. Stop: withhold an essential source across rounds. Expect saved unresolved state and no automatic acceptance or fabricated evidence at the round cap.
 6. Cost: compare economy/balanced/quality on the same fixture and acceptance criteria. Record actual tool/model/settings, observed cost if available, defects caught/missed and false positives. Do not infer an optimal profile from model names.
+
+7. Format routing: request a DOCX thesis and confirm no LaTeX guidance/compiler is activated. Request LaTeX in a non-English language/non-IEEE style and confirm user/template rules prevail. With no compiler, expect source and PDF NOT BUILT.
+8. Slides: use synthetic verified result fixtures and request PPTX plus PDF. Confirm editable text/data evidence, same-final-version export, actual rendered review, citations and uncertainty. Without rendering, expect pending visual QA, not a presentation-ready claim. Check Beamer overlays against the agreed frame/page count.

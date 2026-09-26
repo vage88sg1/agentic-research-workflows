@@ -24,7 +24,12 @@ def validate():
             target = link.split('#')[0]
             if target and not (path.parent / target).exists():
                 errors.append(f'Broken local link in {path.relative_to(ROOT)}: {link}')
-    for name in ('research-drafting', 'research-review'):
+    bundle = json.loads((ROOT / 'bundle.json').read_text())
+    available = set(bundle['original_skills']) | set(provenance['skills'])
+    for profile, names in bundle['profiles'].items():
+        if len(names) != len(set(names)) or not set(names) <= available:
+            errors.append(f'Invalid profile: {profile}')
+    for name in bundle['original_skills']:
         path = ROOT / 'skills' / name / 'SKILL.md'
         text = path.read_text()
         if not text.startswith('---\n') or f'name: {name}\n' not in text:

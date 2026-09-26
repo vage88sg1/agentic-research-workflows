@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research typesetting"
+  short_description: "Conditional DOCX or LaTeX formatting and PDF QA"
+  default_prompt: "Use $research-typesetting to format my manuscript in the selected DOCX or LaTeX format."
