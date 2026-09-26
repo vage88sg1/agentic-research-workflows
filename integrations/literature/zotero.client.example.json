@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "galileo_zotero": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/peterdresslar/zotero-mcp.git@cf6ca92a5610add9ba886532fe619bc854e6e7b9",
+        "zotero-mcp",
+        "serve",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "ZOTERO_LOCAL": "true"
+      }
+    }
+  }
+}

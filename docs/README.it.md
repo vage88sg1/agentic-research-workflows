@@ -13,3 +13,7 @@ Il profilo balanced usa modelli intermedi per la maggior parte del lavoro, econo
 Questo pacchetto non contiene dati personali o materiali di una tesi specifica. L'utente resta responsabile delle decisioni scientifiche e delle autorizzazioni effettive.
 
 Scegli DOCX o LaTeX durante la stesura; la guida LaTeX si attiva solo per quel formato. Research typesetting gestisce impaginazione, compilazione/export e controllo visivo. Research presentations crea un piano delle slide, PPTX modificabile e PDF della stessa versione con revisione scientifica, visuale e della durata. Il solo PDF può anche usare Beamer; non promette una conversione automatica in PowerPoint modificabile.
+
+## MCP opzionali per la letteratura
+
+Il pacchetto include configurazioni per PubMed/Europe PMC, OpenAlex, Crossref e un adattatore Zotero sperimentale. In Codex sono inizialmente disattivati; negli altri client i frammenti JSON sono da importare singolarmente con i permessi appropriati. L'installer delle skill non li attiva. La [guida MCP](LITERATURE_INTEGRATIONS.md) spiega requisiti, credenziali opzionali, registro delle ricerche, limiti di costo e controlli di connessione. Per Zotero va controllata anche la configurazione di avvio, che può attivare indicizzazione o embeddings.

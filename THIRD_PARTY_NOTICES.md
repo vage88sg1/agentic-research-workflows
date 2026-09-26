@@ -26,3 +26,7 @@ The bundled collection includes scholarly attribution guidance. When citing its 
 The original workflow routes override field/language/citation defaults and automatic external generation as documented, without modifying upstream files. The additional guidance does not supply a compiler. The bundled scientific-slides tools include optional third-party generative API calls: no such route is started by installation or the default presentation workflow.
 
 Restricted-license PPTX/DOCX skills are not redistributed. Original typesetting/presentation instructions use host-available licensed tools or publicly documented libraries, without copying those restricted instructions or code into this repository.
+
+## Referenced optional MCP adapters
+
+Configuration examples reference cyanheads/pubmed-mcp-server, cyanheads/openalex-mcp-server and cyanheads/crossref-mcp-server (Apache-2.0), plus peterdresslar/zotero-mcp (MIT). Revisions, executable references and license identifiers are recorded in `integrations/literature/servers.json`. Their server code and dependency trees are not vendored or covered by Galileo's original MIT license. Installing/running these optional adapters obtains third-party packages under their own licenses; consult the linked pinned repositories and dependency notices.

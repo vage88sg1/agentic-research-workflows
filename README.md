@@ -88,6 +88,10 @@ The first intake creates a project configuration; [example settings](examples/pr
 
 [Scientific integrity and skill integration](skills/research-drafting/references/skill-integration.md) explain evidence verification, scoring, tool limits, confidentiality and upstream instructions that require explicit project choices. [Synthetic evaluation](examples/SYNTHETIC_EVALUATION.md) defines behavioral checks; these have not been run as full multi-agent research trials.
 
+## Optional literature connections
+
+An opt-in MCP module provides pinned configuration examples for PubMed/Europe PMC, OpenAlex, Crossref and an experimental Zotero adapter. Codex entries start disabled; other clients use individual opt-in fragments and need their own permission controls. The skill installer does not activate servers. See [literature integrations, setup and connection checks](docs/LITERATURE_INTEGRATIONS.md).
+
 ## Included scientific skills
 
 `scientific-writing`, `citation-management`, `scientific-critical-thinking`, `statistical-analysis`, `literature-review`, `scientific-visualization`, `peer-review`, `scientific-slides`, `academic-writing-latex`.
@@ -99,8 +103,9 @@ Eight are third-party skills from K-Dense; academic-writing-latex comes from HS0
 ```bash
 python3 -m unittest discover -s tests -v
 python3 scripts/validate_package.py
+python3 scripts/check_literature_mcp.py
 ```
 
-These checks verify packaging, links, provenance, and installer behavior, not scientific correctness or successful host execution. See [contributing](CONTRIBUTING.md), [security](SECURITY.md), and the [Italian guide](docs/README.it.md).
+The full test suite requires Python 3.11+. These checks verify packaging, links, provenance, MCP configuration/protocol fixtures, and installer behavior, not scientific correctness or successful host execution. See [contributing](CONTRIBUTING.md), [security](SECURITY.md), and the [Italian guide](docs/README.it.md).
 
 Original workflow code and documentation: MIT. Third-party content retains its own MIT notices. See [LICENSE](LICENSE) and third-party notices. No affiliation with journals, universities, OpenAI, or K-Dense is implied.

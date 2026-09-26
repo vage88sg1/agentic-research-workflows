@@ -1,0 +1,57 @@
+# Optional examples; merge only selected entries into your client config.
+# Disabled by default. See docs/LITERATURE_INTEGRATIONS.md.
+
+[mcp_servers.galileo_pubmed]
+command = "npx"
+args = ["-y", "@cyanheads/pubmed-mcp-server@2.10.18"]
+enabled = false
+required = false
+startup_timeout_sec = 60
+tool_timeout_sec = 60
+default_tools_approval_mode = "prompt"
+enabled_tools = ["pubmed_search_articles", "pubmed_europepmc_search", "pubmed_fetch_articles", "pubmed_fetch_fulltext", "pubmed_lookup_mesh", "pubmed_convert_ids"]
+env_vars = ["NCBI_API_KEY", "NCBI_ADMIN_EMAIL", "UNPAYWALL_EMAIL"]
+[mcp_servers.galileo_pubmed.env]
+MCP_TRANSPORT_TYPE = "stdio"
+MCP_LOG_LEVEL = "error"
+
+[mcp_servers.galileo_openalex]
+command = "npx"
+args = ["-y", "@cyanheads/openalex-mcp-server@0.7.16"]
+enabled = false
+required = false
+startup_timeout_sec = 60
+tool_timeout_sec = 60
+default_tools_approval_mode = "prompt"
+enabled_tools = ["openalex_search_entities", "openalex_resolve_name", "openalex_get_citation_graph", "openalex_describe_fields"]
+env_vars = ["OPENALEX_API_KEY", "OPENALEX_MAILTO"]
+[mcp_servers.galileo_openalex.env]
+MCP_TRANSPORT_TYPE = "stdio"
+MCP_LOG_LEVEL = "error"
+
+[mcp_servers.galileo_crossref]
+command = "npx"
+args = ["-y", "@cyanheads/crossref-mcp-server@0.4.1"]
+enabled = false
+required = false
+startup_timeout_sec = 60
+tool_timeout_sec = 60
+default_tools_approval_mode = "prompt"
+enabled_tools = ["crossref_get_work", "crossref_search_works", "crossref_get_references", "crossref_search_journals"]
+env_vars = ["CROSSREF_MAILTO"]
+[mcp_servers.galileo_crossref.env]
+MCP_TRANSPORT_TYPE = "stdio"
+MCP_LOG_LEVEL = "error"
+
+[mcp_servers.galileo_zotero]
+command = "uvx"
+args = ["--from", "git+https://github.com/peterdresslar/zotero-mcp.git@cf6ca92a5610add9ba886532fe619bc854e6e7b9", "zotero-mcp", "serve", "--transport", "stdio"]
+enabled = false
+required = false
+startup_timeout_sec = 60
+tool_timeout_sec = 60
+default_tools_approval_mode = "prompt"
+enabled_tools = ["zotero_search_items", "zotero_search_by_tag", "zotero_get_item_metadata", "zotero_get_item_fulltext"]
+env_vars = []
+[mcp_servers.galileo_zotero.env]
+ZOTERO_LOCAL = "true"

@@ -39,6 +39,8 @@ def validate():
         ui = (path.parent / 'agents/openai.yaml').read_text()
         if '$' + name not in ui:
             errors.append(f'Missing skill reference in UI prompt: {name}')
+    from check_literature_mcp import CATALOG, validate_catalog
+    errors.extend(validate_catalog(json.loads(CATALOG.read_text())))
     return errors
 
 

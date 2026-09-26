@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "galileo_pubmed": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@cyanheads/pubmed-mcp-server@2.10.18"
+      ],
+      "env": {
+        "MCP_TRANSPORT_TYPE": "stdio",
+        "MCP_LOG_LEVEL": "error"
+      }
+    }
+  }
+}

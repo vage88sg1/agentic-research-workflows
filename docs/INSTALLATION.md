@@ -23,3 +23,7 @@ There is no model/API key requirement for installation. Authorize any cloud proc
 Sources: [Codex desktop slash commands](https://learn.chatgpt.com/docs/reference/slash-commands), [Codex CLI slash commands](https://learn.chatgpt.com/docs/cli/slash-commands). Consult your host's current documentation for changes.
 
 For users of the first published version: this release adds files and changes the original entry points. Install into a fresh supported skill location or explicitly reconcile existing versions after backup. Do not overwrite modified skills to bypass the collision check. Format selection activates only the relevant installed guidance.
+
+## Optional literature MCP module
+
+MCP examples are kept outside skill installation. Configure selected servers separately using the [literature integration guide](LITERATURE_INTEGRATIONS.md). The installer does not copy or merge client settings, install server runtimes or enable services.

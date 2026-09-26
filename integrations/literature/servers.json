@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "verified_date": "2026-09-27",
+  "pinning_scope": "Top-level npm versions / Zotero source commit; transitive dependencies are NOT locked.",
+  "servers": {
+    "pubmed": {
+      "repository": "https://github.com/cyanheads/pubmed-mcp-server",
+      "source_commit": "620f5cc575c774027582baf1b91b77bcad98f2c0",
+      "version": "2.10.18",
+      "license": "Apache-2.0",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@cyanheads/pubmed-mcp-server@2.10.18"
+      ],
+      "env": {
+        "MCP_TRANSPORT_TYPE": "stdio",
+        "MCP_LOG_LEVEL": "error"
+      },
+      "optional_env_vars": [
+        "NCBI_API_KEY",
+        "NCBI_ADMIN_EMAIL",
+        "UNPAYWALL_EMAIL"
+      ],
+      "allowed_tools": [
+        "pubmed_search_articles",
+        "pubmed_europepmc_search",
+        "pubmed_fetch_articles",
+        "pubmed_fetch_fulltext",
+        "pubmed_lookup_mesh",
+        "pubmed_convert_ids"
+      ],
+      "runtime": "Node.js >=24 + npx",
+      "status": "configuration verified; live service not tested"
+    },
+    "openalex": {
+      "repository": "https://github.com/cyanheads/openalex-mcp-server",
+      "source_commit": "b719786e00622052d8a61d0eebdc992e41c0d000",
+      "version": "0.7.16",
+      "license": "Apache-2.0",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@cyanheads/openalex-mcp-server@0.7.16"
+      ],
+      "env": {
+        "MCP_TRANSPORT_TYPE": "stdio",
+        "MCP_LOG_LEVEL": "error"
+      },
+      "optional_env_vars": [
+        "OPENALEX_API_KEY",
+        "OPENALEX_MAILTO"
+      ],
+      "allowed_tools": [
+        "openalex_search_entities",
+        "openalex_resolve_name",
+        "openalex_get_citation_graph",
+        "openalex_describe_fields"
+      ],
+      "runtime": "Node.js >=24 + npx",
+      "status": "configuration verified; live service not tested"
+    },
+    "crossref": {
+      "repository": "https://github.com/cyanheads/crossref-mcp-server",
+      "source_commit": "5456019845a0ab3ec0a6ded6714e5c20629474b2",
+      "version": "0.4.1",
+      "license": "Apache-2.0",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@cyanheads/crossref-mcp-server@0.4.1"
+      ],
+      "env": {
+        "MCP_TRANSPORT_TYPE": "stdio",
+        "MCP_LOG_LEVEL": "error"
+      },
+      "optional_env_vars": [
+        "CROSSREF_MAILTO"
+      ],
+      "allowed_tools": [
+        "crossref_get_work",
+        "crossref_search_works",
+        "crossref_get_references",
+        "crossref_search_journals"
+      ],
+      "runtime": "Node.js >=24 + npx",
+      "status": "configuration verified; live service not tested"
+    },
+    "zotero": {
+      "repository": "https://github.com/peterdresslar/zotero-mcp",
+      "source_commit": "cf6ca92a5610add9ba886532fe619bc854e6e7b9",
+      "version": "0.1.1",
+      "license": "MIT",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/peterdresslar/zotero-mcp.git@cf6ca92a5610add9ba886532fe619bc854e6e7b9",
+        "zotero-mcp",
+        "serve",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "ZOTERO_LOCAL": "true"
+      },
+      "optional_env_vars": [],
+      "allowed_tools": [
+        "zotero_search_items",
+        "zotero_search_by_tag",
+        "zotero_get_item_metadata",
+        "zotero_get_item_fulltext"
+      ],
+      "runtime": "uv + Python >=3.10",
+      "status": "experimental; startup configuration must be inspected"
+    }
+  }
+}

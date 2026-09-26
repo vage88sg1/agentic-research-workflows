@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "galileo_openalex": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@cyanheads/openalex-mcp-server@0.7.16"
+      ],
+      "env": {
+        "MCP_TRANSPORT_TYPE": "stdio",
+        "MCP_LOG_LEVEL": "error"
+      }
+    }
+  }
+}

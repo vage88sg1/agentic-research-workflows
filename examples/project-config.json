@@ -34,5 +34,14 @@
     ],
     "pdf_only_source": null,
     "speaker_notes": true
+  },
+  "literature_integrations": {
+    "enabled": false,
+    "servers": [],
+    "allow_library_writes": false,
+    "max_search_calls": 20,
+    "max_results_per_call": 25,
+    "metadata_first": true,
+    "query_log": "literature/search-log.jsonl"
   }
 }

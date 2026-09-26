@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "galileo_crossref": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@cyanheads/crossref-mcp-server@0.4.1"
+      ],
+      "env": {
+        "MCP_TRANSPORT_TYPE": "stdio",
+        "MCP_LOG_LEVEL": "error"
+      }
+    }
+  }
+}
