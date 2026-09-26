@@ -1,104 +1,293 @@
 # Galileo: Agentic Research Workflows
 
-Reusable AI-assisted workflows for drafting and simulated peer review of research papers, theses, dissertations, and reports. English instructions; output in the language you choose.
+AI-assisted workflows for research papers, theses, dissertations and scientific talks. Galileo guides an assistant through progressive questions, specialist roles, traceable evidence and bounded revision loops. Instructions are in English; choose the language of your own documents.
 
-Four entry points coordinate drafting, review, DOCX/LaTeX typesetting and scientific presentations, with evidence records and bounded revision loops. Nine upstream skills are bundled at pinned revisions. No patient data, manuscript, institutional template, or personal project history is included.
+**Start with the workflow that matches your current material.** You can draft from study information, review an existing manuscript, format an already checked text, or build slides from verified findings. You do not have to complete every workflow.
 
-**This is an instruction package, not an autonomous execution engine.** Parallel agents, model routing, tools, and slash menus depend on your host. The package does not send submissions, run paid APIs, certify research quality, or replace responsible human authors and reviewers.
+| Your goal | Workflow | Typical deliverables |
+|---|---|---|
+| Develop a paper or thesis, with questions along the way | **Research drafting** | Study summary, evidence records, analysis outputs when executed, manuscript and unresolved issues |
+| Test a manuscript through a realistic editorial simulation | **Research review** | Three simulated anonymous reviewer reports, editorial decision, response and revised manuscript |
+| Produce a manuscript in Word or LaTeX | **Research typesetting** | Selected editable DOCX or TeX source, bibliography/assets and requested PDF when built |
+| Prepare a conference talk, seminar or thesis defense | **Research presentations** | Storyboard, editable PPTX and PDF when generated, notes and timing plan |
 
-## Install
+Galileo is an **instruction package, not an execution engine**. Independent agents, model routing, menus, analysis tools and document renderers depend on the host. A configured role is not proof that a separate agent or model ran. The review workflow is a simulation: it does not submit to a journal or produce real acceptance.
 
-Requires Python 3.10+ for the optional offline installer. The workflow instructions themselves have no Python dependency; individual bundled tools have separate requirements.
+[Italian guide](docs/README.it.md) · [Installation details](docs/INSTALLATION.md) · [DOCX, LaTeX and slides](docs/FORMATS_AND_SLIDES.md) · [Optional literature MCP](docs/LITERATURE_INTEGRATIONS.md)
+
+## Guide contents
+
+- [Install](#1-install-in-your-research-project)
+- [Invoke a workflow](#2-invoke-a-workflow)
+- [Prepare your first request](#3-prepare-your-first-request)
+- [A — Drafting](#workflow-a--draft-a-paper-or-thesis)
+- [B — Editorial review](#workflow-b--simulate-editorial-review-and-revision)
+- [C — DOCX or LaTeX](#workflow-c--format-in-docx-or-latex)
+- [D — Scientific slides](#workflow-d--create-scientific-presentation-slides)
+- [Resume and hand off](#continue-change-scope-or-switch-workflow)
+- [Quality and cost](#select-quality-and-cost-settings)
+- [Literature MCP](#optional-literature-mcp-add-only-what-you-need)
+- [Common problems](#common-problems)
+
+## 1. Install in your research project
+
+The offline installer requires Python 3.10+. Choose the research project in which your assistant should discover the skills, then replace the destination below with its real path:
 
 ```bash
 git clone https://github.com/vage88sg1/agentic-research-workflows.git
 cd agentic-research-workflows
-python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills --dry-run
-python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills
+python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills --profile full --dry-run
+python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills --profile full
 ```
 
-By default the installer copies thirteen skill directories (four original workflows and nine upstream skills), preserves licenses and records hashes/provenance. It refuses existing destinations and does not install libraries, start services, change host settings, or make network calls. Use an absolute path if unsure about the current directory. Do not commit generated research artifacts just because the skills are installed in a repository.
+The dry run previews installation; the second command copies the skills. `full` installs four workflow entry points and nine upstream support skills. It preserves licenses and provenance, refuses existing skill names and does not install libraries, compilers or MCP servers. It does not alter client settings or make network calls.
 
-For a user-level or another client's location, pass its documented skill directory to `--dest`. See [installation and host compatibility](docs/INSTALLATION.md). Installing files does not guarantee your client discovers them; refresh its skill list or start a new session.
+For a smaller installation, use the same profile in both commands:
 
-## Optional installation profiles
+| Profile | Workflow entry points | Additional guidance |
+|---|---|---|
+| `core` | Drafting, review | Seven scientific support skills |
+| `docx` | Drafting, review, typesetting | Core scientific guidance; DOCX uses available host tools |
+| `latex` | Drafting, review, typesetting | Core guidance plus academic-writing-latex |
+| `slides` | Drafting, review, presentations | Core guidance plus scientific-slides |
+| `full` | All four | All nine support skills |
 
-Pass `--profile core`, `docx`, `latex`, `slides` or `full` (default). Profiles install only relevant entry points and guidance, without compilers, Office software or model services. Installing a skill does not activate it for every task.
+Use a profile for a fresh destination. Installing another profile over the same skill names is not an update mechanism; back up and reconcile existing versions deliberately. For other scopes or clients, use their documented skill location. See [installation and host compatibility](docs/INSTALLATION.md).
 
-```bash
-python3 scripts/install.py --dest /path/to/project/.agents/skills --profile latex --dry-run
-python3 scripts/install.py --dest /path/to/project/.agents/skills --profile slides --dry-run
-```
+Open the research project in your assistant and refresh discovery or start a new session. Confirm that the installed workflow names appear. Installation alone does not establish that browsing, analysis, rendering or independent agents are operational.
 
-Use one profile per fresh destination. Existing skill names still block installation; there is no silent update/merge. See [formats, slides and dependencies](docs/FORMATS_AND_SLIDES.md).
+## 2. Invoke a workflow
 
-## Use
+In a compatible Codex desktop client, type `/`, select the actual workflow entry in the skill menu, and add your task and file locations. In Codex CLI, use `/skills` to select a skill. The entries are:
 
-In a Codex desktop client that exposes enabled skills in the slash menu, type `/` and select **Research drafting** or **Research review**. In Codex CLI use `/skills`. Alternatively:
+- **Research drafting**
+- **Research review**
+- **Research typesetting**
+- **Research presentations**
+
+The prompt examples below use the explicit `$skill-name` syntax. Selecting the skill in the menu and then entering the task is an alternative. The installer does not register arbitrary aliases such as `/research-review`.
+
+If your client does not support native skills, provide the relevant `skills/<workflow>/SKILL.md`, its references and applicable bundled guidance as instructions. Ask it to declare missing tools and whether it is using independent agents or sequential roles in one context.
+
+## 3. Prepare your first request
+
+Give the assistant the material you already have and identify its location. You can begin with an incomplete study description; the drafting workflow asks for missing information progressively.
+
+Useful starting information includes:
+
+- Research question, discipline and document type.
+- Current stage: planning, data collected, analysis completed or manuscript drafted.
+- Available protocol, data dictionary, instrument manuals, analysis code/results and references.
+- Writing language, requested format and any institutional or journal requirements.
+- Output directory, cost profile and authorized processing boundary.
+
+For confidential research, establish what the selected host and services may receive before providing the material. Do not put private research files or credentials in this public repository. Public literature queries should contain topic terms rather than patient information or private manuscript passages.
+
+The assistant records answers in project configuration and saves resumable state. The [example configuration](examples/project-config.json) shows available settings; you do not need to fill every field before starting. These settings guide the assistant, rather than implementing automatic metering or enforcement.
+
+## Workflow A — Draft a paper or thesis
+
+Use **Research drafting** when you need to develop a manuscript from study information, sources and results. It also resumes an incomplete draft.
+
+### Start
 
 ```text
-$research-drafting Help me draft a research paper. Ask for missing study information first. Write in English and use the balanced cost profile.
+$research-drafting Help me draft a research article from the materials in study_inputs/.
+Write in English, use DOCX as the final manuscript format, and save work in research_workspace/.
+Use the balanced cost profile. Ask up to three focused questions at a time.
+Start with the research question, study design and available materials.
 ```
+
+For a thesis, replace “research article” with the thesis type and provide the institution's requirements when available. For LaTeX, select LaTeX instead of DOCX; only the chosen route is applied.
+
+### What happens
+
+1. **Progressive intake:** the coordinator clarifies scope, design, measurements, available results and format. It reuses answers already recorded.
+2. **Evidence and methods:** the bibliographer documents searches and source support; specialist roles check measurement rules, bias and the analysis plan.
+3. **Analysis when authorized and possible:** the assistant executes code, records the environment and preserves outputs. If execution is unavailable, reproduction remains marked NOT PERFORMED.
+4. **Outline and drafting:** the writer develops evidence-linked sections, then reconciles methods, results, tables, figures and citations.
+5. **Internal correction:** methodological and consistency checks generate issues. Corrections update the underlying evidence/results before dependent prose.
+
+Missing facts block dependent work, while useful independent work can continue. The workflow does not invent results, scoring rules, citations or declarations to complete a section.
+
+### What to expect at handoff
+
+A manuscript plus study/configuration records, bibliography, source/claim records, actual analysis code and outputs where available, an issue register and saved state. Exact filenames adapt to the project. Read the outstanding issues and distinguish checks actually performed from those still pending.
+
+You can then invoke **Research review** on the saved manuscript. Editorial simulation is a separate step; drafting does not start it automatically. Selected-format production may use **Research typesetting** after the draft is checked.
+
+[Drafting instructions](skills/research-drafting/SKILL.md) · [Role contracts and cost profiles](skills/research-drafting/references/agent-contracts.md)
+
+## Workflow B — Simulate editorial review and revision
+
+Use **Research review** on an existing manuscript, whether it was written with Galileo or elsewhere. Provide relevant supplements and specify a journal or use a generic editorial profile.
+
+### Start
 
 ```text
-$research-review Review manuscript.md using three independent simulated reviewers, an editor, and a bounded revision loop. Write in Spanish.
+$research-review Review research_workspace/manuscript/draft.md and the supplements in study_inputs/.
+Use a generic research-journal profile, three independent simulated anonymous reviewers,
+and a maximum of three review rounds. Write reports and author responses in English.
+Save the review run in research_workspace/. State any limits on reviewer independence.
 ```
 
-For selected-format manuscript production, use **Research typesetting** in the slash menu, or:
+To match a particular journal, name it and ask the assistant to verify its current official requirements. For a thesis, specify institutional assessment criteria and any journal-style simulation you want; those are different processes.
 
-```text
-$research-typesetting Format my thesis in LaTeX and compile a PDF using the selected template.
-```
+### What happens
 
-For a research talk, use **Research presentations**, or:
-
-```text
-$research-presentations Create a 12-minute scientific talk from the verified manuscript, in editable PPTX and PDF, with speaker notes.
-```
-
-Choose DOCX or LaTeX during drafting intake. Only the selected authoring route is applied: LaTeX guidance is not activated for DOCX. A standalone typesetting invocation is also available after drafting/review. Slides reuse verified evidence but have their own storyboard, scientific/visual checks and bounded correction loop.
-
-Resume with the same entry point and “Resume from the saved state.” Do not assume arbitrary aliases such as `/research-review` exist: select the actual menu entry your host provides.
-
-Without native skills, give your assistant the relevant `skills/*/SKILL.md`, its references, and the applicable bundled skills; explicitly request the workflow. Report sequential role simulation honestly when independent agents are unavailable.
-
-## Workflows
+1. **Freeze the submitted version:** the coordinator records versions/hashes and available supplements.
+2. **Technical and editorial assessment:** a secretary checks required materials; the simulated editor can request clarification, return for correction, desk-reject or send for review.
+3. **Anonymous simulated peer review:** three complementary reviewers assess domain relevance, methods/statistics and measurement or another discipline-specific specialty. First-pass reports use fresh contexts when supported.
+4. **Reasoned decision:** the editor weighs evidence and disagreements, producing simulated acceptance, minor revision, major revision or rejection.
+5. **Author response and corrections:** the author team responds point by point, supplies a clean revision and change comparison, and reruns affected analysis or checks.
+6. **Verification and rereview:** reviewers or a distinct verifier check corrections. Major changes return to the relevant reviewers.
 
 ```mermaid
 flowchart LR
-  A[Progressive intake] --> B[Evidence and measurement rules]
-  B --> C[Analysis plan and executed outputs]
-  C --> D[Draft and internal audit]
-  D --> E[Frozen review package]
-  E --> F[Technical and editorial assessment]
-  F --> G[Independent simulated reviewers]
-  G --> H[Reasoned simulated decision]
-  H --> I[Point-by-point response and corrections]
-  I --> G
-  H --> J[Simulated acceptance or rejection]
+  A[Frozen manuscript] --> B[Technical and editorial assessment]
+  B --> C[Independent simulated reviewers]
+  C --> D[Reasoned decision]
+  D --> E[Response and corrections]
+  E --> F[Verification and rereview]
+  F --> D
+  D --> G[Simulated acceptance or rejection]
 ```
 
-The loop ends at the configured round limit, lack of progress, a blocking information gap, acceptance, or rejection. Unresolved validity problems never turn into automatic acceptance. Optional production artifacts carry **SIMULATION — NOT SUBMITTED — NOT PUBLISHED**.
+The default limit is three complete rounds, stopping after two without substantive progress or at a blocking evidence gap. Reaching the limit never causes automatic acceptance. If separate contexts are unavailable, sequential role simulation is reported explicitly.
 
-## Configure
+### What to expect at handoff
 
-The first intake creates a project configuration; [example settings](examples/project-config.json) show the supported concepts. Set language, manuscript format (docx/latex), requested PDF, presentation formats/timing, document type, design, target venue, output directory, cost profile, optional budget, review count, and maximum rounds. Default: three simulated reviewers and three rounds, adaptable to scope and host capacity.
+Reviewer reports, author-facing and editor-only comments, decision rationale, issue ledger, point-by-point response, revised manuscript/change comparison, check log and saved state. Editorial dossiers and simulated publication artifacts carry **SIMULATION — NOT SUBMITTED — NOT PUBLISHED**. No real DOI, journal acceptance, submission or publisher identity is created.
 
-[Agent contracts and cost profiles](skills/research-drafting/references/agent-contracts.md) assign outputs, independence boundaries and escalation rules. Model names are optional examples, not dependencies or evidence of domain competence. No fixed price claims are embedded.
+[Review instructions](skills/research-review/SKILL.md)
 
-[Scientific integrity and skill integration](skills/research-drafting/references/skill-integration.md) explain evidence verification, scoring, tool limits, confidentiality and upstream instructions that require explicit project choices. [Synthetic evaluation](examples/SYNTHETIC_EVALUATION.md) defines behavioral checks; these have not been run as full multi-agent research trials.
+## Workflow C — Format in DOCX or LaTeX
 
-## Optional literature connections
+Use **Research typesetting** when the scientific text is ready for formatting. It can be invoked directly on an existing manuscript without running Galileo's other workflows.
 
-An opt-in MCP module provides pinned configuration examples for PubMed/Europe PMC, OpenAlex, Crossref and an experimental Zotero adapter. Codex entries start disabled; other clients use individual opt-in fragments and need their own permission controls. The skill installer does not activate servers. See [literature integrations, setup and connection checks](docs/LITERATURE_INTEGRATIONS.md).
+### Start with Word
 
-## Included scientific skills
+```text
+$research-typesetting Format the checked manuscript in manuscript/ as an editable DOCX.
+Use the supplied template in templates/, preserve all results and citations,
+and export a PDF from the same final version. Inspect the rendered pages.
+Save the deliverables in formatted_manuscript/.
+```
 
-`scientific-writing`, `citation-management`, `scientific-critical-thinking`, `statistical-analysis`, `literature-review`, `scientific-visualization`, `peer-review`, `scientific-slides`, `academic-writing-latex`.
+### Start with LaTeX
 
-Eight are third-party skills from K-Dense; academic-writing-latex comes from HS0n4. These are not OpenAI-maintained skills. Their source, license, revision, file hashes and local modifications are recorded in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `vendor/provenance.json`. Bundled instructions and code must be inspected before use; their services and optional dependencies are not activated by this package.
+```text
+$research-typesetting Format the checked thesis in manuscript/ as LaTeX.
+Use the supplied institutional template in templates/ and the verified bibliography.
+Deliver editable TeX source, required assets and a compiled PDF in formatted_manuscript/.
+Record the compiler/backend and inspect the final rendered pages.
+```
 
-## Validation and contributing
+### What happens and what you receive
+
+The assistant resolves template, language, paper size, bibliography style and output requirements, then activates the selected route. DOCX uses editable document objects and available document tools. LaTeX uses academic-writing-latex guidance conditionally and a compatible compiler; a supported built-in editor/compiler is preferred when available.
+
+Checks cover citations, cross-references, equations, tables/figures, pagination and actual rendered pages. Formatting preserves verified content; substantive changes return to scientific review.
+
+You receive the selected editable source and requested PDF **only if actually generated**, plus assets and build/QA status. Without a renderer/compiler, source can be delivered with visual QA NOT PERFORMED or PDF NOT BUILT. A compiler pass does not establish scientific validity. Both authoring formats are produced only when requested.
+
+[Typesetting instructions](skills/research-typesetting/SKILL.md) · [Format requirements](docs/FORMATS_AND_SLIDES.md)
+
+## Workflow D — Create scientific presentation slides
+
+Use **Research presentations** for a conference talk, seminar, journal club or thesis defense. Start from a manuscript, verified findings or an authorized source package; a completed editorial simulation is not required.
+
+### Start
+
+```text
+$research-presentations Build a scientific conference talk from the checked manuscript
+and figures in research_workspace/. The audience is researchers in this discipline.
+Plan 12 minutes of speaking plus 3 minutes of Q&A, in English.
+Deliver editable PPTX and PDF from the same final deck, with speaker notes and a timing plan.
+Save work in presentation/. Ask about missing template or slide-count requirements.
+```
+
+For a thesis defense, specify the committee audience and required duration. If you want a PDF-only Beamer presentation, say so; Beamer does not automatically produce editable PowerPoint.
+
+### What happens
+
+1. **Presentation intake:** clarify audience, duration/Q&A, language, slide count, template, accessibility and outputs.
+2. **Storyboard:** map each slide's purpose, message, evidence, visual, notes and time allocation.
+3. **Production:** writer/designer roles build editable content and preserve uncertainty, units, denominators, limitations and source attribution.
+4. **Scientific and visual review:** a science verifier checks claims; a visual reviewer inspects actual rendered slides and timing.
+5. **Correction and export:** fix issues within the bounded loop, then check the final PPTX/PDF count, order and content agreement.
+
+### What to expect at handoff
+
+Requested slide files when generated, editable source/assets, references, speaker notes, timing plan, open issues and saved state. Missing conversion/rendering capabilities are reported; source or ZIP checks alone do not establish visual quality. Actual research talks about unpublished work are not automatically labeled simulated publication; illustrative data and simulated editorial outcomes are labeled where used.
+
+[Presentation instructions](skills/research-presentations/SKILL.md) · [Export and visual QA](skills/research-presentations/references/export-and-qa.md)
+
+## Continue, change scope or switch workflow
+
+Resume with the same entry point and point to the saved run:
+
+```text
+$research-drafting Resume from research_workspace/workflow_state.json.
+Reuse the recorded answers and completed checks. Identify the next unresolved task.
+```
+
+Use the corresponding entry point for a saved review, typesetting or presentation run and provide its actual state location. Do not assume the assistant remembers a previous session. State records should identify inputs/versions, phase, actual tools/models, review round, unresolved issues and the next action.
+
+When changing language, format, venue or analysis scope, explain the change and ask the coordinator to identify affected outputs. Preserve originals and prior versions. Changes to scientific results require renewed checking of dependent text, tables, figures and slides.
+
+A common route is **drafting → review → typesetting → presentation**, but each workflow remains independently usable. At every handoff, provide the current checked version, supporting records and outstanding issues rather than relying on chat history alone.
+
+## Select quality and cost settings
+
+Start with `balanced` for general drafting and substantive review. Use the `economy` profile when cost constraints are central, or `quality` for more intensive methodological and editorial assessment. Frontier models are an escalation tier for difficult, consequential unresolved problems. Ask the coordinator to apply the [role contracts and cost policy](skills/research-drafting/references/agent-contracts.md), record actual model choices and keep reviewer contexts scoped.
+
+Provider/model mappings are configurable. Model names in the guidance are examples, not required subscriptions or benchmark claims. A requested mapping is not an applied override unless the host supports and records it. Set budget and maximum active agents to match the host; the example limits concurrency to four including the coordinator. No paid service is activated by installation.
+
+## Optional literature MCP: add only what you need
+
+| Source connection | Main use |
+|---|---|
+| PubMed / Europe PMC | Biomedical discovery, MeSH, PMID metadata and available full text |
+| OpenAlex | Complementary cross-disciplinary discovery and citation neighbors |
+| Crossref | DOI and deposited bibliographic metadata/reference checks |
+| Zotero | Reading an authorized reference library; experimental adapter |
+
+These community adapters are configured separately from the skills. Codex examples start disabled. Other clients have individual opt-in fragments and need their own permission controls. Zotero startup settings require separate inspection because they can activate indexing/embeddings.
+
+Start with an offline configuration check:
+
+```bash
+python3 scripts/check_literature_mcp.py
+```
+
+After choosing and inspecting an adapter, an explicit connection probe is available:
+
+```bash
+python3 scripts/check_literature_mcp.py --connect pubmed --timeout 60
+```
+
+`--connect` can download packages and execute the adapter. It initializes MCP and lists tools; it does not test an actual search or client access enforcement. Top-level versions/source revisions are pinned, but transitive dependencies are not locked. See the [setup and verification guide](docs/LITERATURE_INTEGRATIONS.md) before activation. Live service access was not tested as part of this release.
+
+## Common problems
+
+| What you see | What to do |
+|---|---|
+| Workflow missing from the menu | Check the host-supported destination, refresh discovery and confirm the chosen profile includes the entry point |
+| Installer reports an existing directory | Back up and reconcile versions or choose a fresh supported destination; installation does not overwrite |
+| Assistant lacks an essential input | Provide its location or clarify the fact; leave dependent work pending rather than asking for invented content |
+| Review reports are not independent | Use supported fresh agent contexts, or retain the explicit sequential-simulation limitation |
+| DOCX/PPTX exists but PDF is missing | Check actual rendering/conversion availability; preserve source and the unperformed QA status |
+| LaTeX does not compile | Check the template's engine/backend and diagnostics; compilation status must remain unverified until it succeeds |
+| MCP initializes but searches fail | Inspect current tool schemas, runtime/credentials/rate limits and record the failure; tool discovery is not API validation |
+
+## Included support skills and project validation
+
+Nine upstream skills support the four workflows: `scientific-writing`, `citation-management`, `scientific-critical-thinking`, `statistical-analysis`, `literature-review`, `scientific-visualization`, `peer-review`, `scientific-slides` and `academic-writing-latex`.
+
+Eight come from K-Dense; academic-writing-latex comes from HS0n4. They are third-party skills, not OpenAI-maintained instructions. Sources, licenses, revisions and file hashes are recorded in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `vendor/provenance.json`. Read applicable instructions before use; installation does not activate their external services or optional dependencies.
+
+For contributors, run the package checks with Python 3.11+:
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -106,6 +295,8 @@ python3 scripts/validate_package.py
 python3 scripts/check_literature_mcp.py
 ```
 
-The full test suite requires Python 3.11+. These checks verify packaging, links, provenance, MCP configuration/protocol fixtures, and installer behavior, not scientific correctness or successful host execution. See [contributing](CONTRIBUTING.md), [security](SECURITY.md), and the [Italian guide](docs/README.it.md).
+These checks cover packaging, links, provenance, installer behavior and MCP configuration/protocol fixtures. They do not certify scientific correctness or end-to-end host execution. The [synthetic evaluation protocol](examples/SYNTHETIC_EVALUATION.md) describes behavioral checks that have not been run as full multi-agent research trials.
 
-Original workflow code and documentation: MIT. Third-party content retains its own MIT notices. See [LICENSE](LICENSE) and third-party notices. No affiliation with journals, universities, OpenAI, or K-Dense is implied.
+[Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Evidence integrity](skills/research-drafting/references/skill-integration.md)
+
+Original workflow code and documentation: [MIT](LICENSE). Bundled third-party content retains its own MIT notices; referenced MCP adapters have separate licenses. No affiliation with journals, universities, OpenAI, Zotero or the source providers is implied.
