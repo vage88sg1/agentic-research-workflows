@@ -100,6 +100,27 @@ Start with the research question, study design and available materials.
 
 For a thesis, replace “research article” with the thesis type and provide the institution's requirements when available. For LaTeX, select LaTeX instead of DOCX; only the chosen route is applied.
 
+### Workflow design
+
+```mermaid
+flowchart TD
+  A[Study materials and research question] --> B[Coordinator: progressive intake]
+  B --> C[Bibliographer: search and evidence records]
+  B --> D[Methodologist: design and measurement checks]
+  C --> E[Analysis plan and authorized execution]
+  D --> E
+  E --> F[Writer: outline and scientific draft]
+  F --> G[Internal methodological and consistency checks]
+  G --> H{Blocking or actionable issues?}
+  H -->|Corrections possible| I[Update evidence, analysis and affected prose]
+  I --> G
+  H -->|Missing input| J[Save state and request required information]
+  J -->|Input supplied| B
+  H -->|Checks complete| K[Draft, evidence records and open-issue handoff]
+```
+
+Roles are delegated when supported and authorized; otherwise they run sequentially with that limitation recorded. Internal drafting checks are distinct from the editorial simulation below.
+
 ### What happens
 
 1. **Progressive intake:** the coordinator clarifies scope, design, measurements, available results and format. It reuses answers already recorded.
@@ -142,16 +163,32 @@ To match a particular journal, name it and ask the assistant to verify its curre
 5. **Author response and corrections:** the author team responds point by point, supplies a clean revision and change comparison, and reruns affected analysis or checks.
 6. **Verification and rereview:** reviewers or a distinct verifier check corrections. Major changes return to the relevant reviewers.
 
+### Workflow design
+
 ```mermaid
-flowchart LR
-  A[Frozen manuscript] --> B[Technical and editorial assessment]
-  B --> C[Independent simulated reviewers]
-  C --> D[Reasoned decision]
-  D --> E[Response and corrections]
-  E --> F[Verification and rereview]
-  F --> D
-  D --> G[Simulated acceptance or rejection]
+flowchart TD
+  A[Frozen manuscript and supplements] --> B[Editorial secretary: technical check]
+  B --> C[Simulated editor: initial assessment]
+  C -->|Send for review| R1[Reviewer 1: domain relevance]
+  C -->|Send for review| R2[Reviewer 2: methods and statistics]
+  C -->|Send for review| R3[Reviewer 3: measurement or technical specialty]
+  R1 --> D[Editor: synthesize independent reports]
+  R2 --> D
+  R3 --> D
+  C -->|Return for clarification| Q[Request information or technical correction]
+  Q -->|Materials supplied| A
+  C -->|Desk rejection| X[Simulated rejection dossier]
+  D --> E{Simulated decision}
+  E -->|Minor or major revision| F[Author team: response, corrections and change comparison]
+  F --> G[Relevant reviewers or distinct verifier]
+  G --> H{Within round and progress limits?}
+  H -->|Yes| D
+  H -->|No| L[Revision required or rejection; saved state]
+  E -->|Accept with major issues resolved| P[Simulated acceptance and optional proofs]
+  E -->|Reject| X
 ```
+
+First-pass reviewers receive the same frozen evidence in separate contexts when available. They do not modify the master manuscript. The editor reasons from the reports rather than counting votes; correction verification is separate from author self-assessment. All decisions remain simulated.
 
 The default limit is three complete rounds, stopping after two without substantive progress or at a blocking evidence gap. Reaching the limit never causes automatic acceptance. If separate contexts are unavailable, sequential role simulation is reported explicitly.
 
@@ -183,6 +220,30 @@ Deliver editable TeX source, required assets and a compiled PDF in formatted_man
 Record the compiler/backend and inspect the final rendered pages.
 ```
 
+### Workflow design
+
+```mermaid
+flowchart TD
+  A[Checked manuscript, bibliography and template] --> B[Resolve language, format and output requirements]
+  B --> C{Selected authoring format}
+  C -->|DOCX| D[Document tools: editable styles, tables and captions]
+  C -->|LaTeX| E[TeX guidance: template, engine and bibliography backend]
+  D --> F[Render document and export requested PDF]
+  E --> G[Compile source and inspect diagnostics]
+  G -->|Source errors, within repair limit| E
+  F --> H[Inspect actual pages and cross-references]
+  G -->|Build succeeds| H
+  H --> I{Layout or citation issues?}
+  I -->|Yes| J[Correct selected source and rebuild]
+  J --> C
+  I -->|Checks complete| K[Editable source, requested PDF and QA log]
+  F -->|Renderer unavailable| L[Source handoff; visual QA not performed]
+  G -->|Unavailable or repair limit reached| M[Preserve source; PDF not built]
+  H -->|Scientific content needs changing| N[Return affected content to scientific review]
+```
+
+Only the selected authoring route runs. Each final artifact is checked against its actual source version; scientific corrections are handled by the scientific workflow.
+
 ### What happens and what you receive
 
 The assistant resolves template, language, paper size, bibliography style and output requirements, then activates the selected route. DOCX uses editable document objects and available document tools. LaTeX uses academic-writing-latex guidance conditionally and a compatible compiler; a supported built-in editor/compiler is preferred when available.
@@ -208,6 +269,32 @@ Save work in presentation/. Ask about missing template or slide-count requiremen
 ```
 
 For a thesis defense, specify the committee audience and required duration. If you want a PDF-only Beamer presentation, say so; Beamer does not automatically produce editable PowerPoint.
+
+### Workflow design
+
+```mermaid
+flowchart TD
+  A[Verified manuscript, findings and figures] --> B[Coordinator: audience, duration and output intake]
+  B --> C[Story planner: evidence-linked slides and timing]
+  C --> D[Writer and designer: slide content, visuals and notes]
+  D --> E[Science verifier: claims, uncertainty and attribution]
+  D --> F[Visual reviewer: actual rendered slides and readability]
+  E --> G[Coordinator: reconcile issues and timing]
+  F --> G
+  G --> H{Corrections required?}
+  H -->|Within round and progress limits| I[Correct slides and affected evidence or notes]
+  I --> E
+  I --> F
+  H -->|Checks complete| J[Export selected final deck and requested formats]
+  J --> K[Verify final renders, slide order and format agreement]
+  K -->|Export or layout issue within limits| I
+  K -->|Verified| L[Slide files, notes, timing plan and QA log]
+  H -->|Limit or essential capability gap| M[Supported source, open issues and saved state]
+  J -->|Export unavailable| M
+  K -->|Unresolved issue at limit| M
+```
+
+Scientific and visual checks have separate responsibilities. PPTX and PDF come from the same final deck when both are selected; PDF-only Beamer uses its own build route. Final export changes are rechecked before handoff.
 
 ### What happens
 
