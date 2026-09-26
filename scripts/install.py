@@ -82,7 +82,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dest', required=True, help='The skill directory supported by your host')
     parser.add_argument('--dry-run', action='store_true', help='Validate and show plan without writing')
-    parser.add_argument('--profile', choices=('core', 'docx', 'latex', 'slides', 'full'), default='full')
+    parser.add_argument('--profile', choices=tuple(json.loads((ROOT / 'bundle.json').read_text())['profiles']), default='full')
     args = parser.parse_args()
     try:
         print(json.dumps(install(args.dest, args.dry_run, profile=args.profile), indent=2))

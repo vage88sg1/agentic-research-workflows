@@ -1,0 +1,4 @@
+interface:
+  display_name: "Submission dossier"
+  short_description: "Prepare journal-specific files and author declarations"
+  default_prompt: "Use $research-submission for my research project and ask for missing inputs."

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "analyze.py",
+      "sharing": "synthetic",
+      "sha256": "c7e0272f9e1046412f38e5e715b8b2cb4b2e631faefeb823751d49bc77fe8652"
+    },
+    {
+      "path": "manuscript.md",
+      "sharing": "synthetic",
+      "sha256": "6ec6145defc72114dff0f413cf772c54a8ad22f389af0687f95416183405985b"
+    },
+    {
+      "path": "observations.csv",
+      "sharing": "synthetic",
+      "sha256": "c34fb374b187db3031090f157691372e059f8b80ed1b461fe3c9c573f5a39e5f"
+    },
+    {
+      "path": "research-map.json",
+      "sharing": "synthetic",
+      "sha256": "de09090305f88e39564ce9a4307ce943fe31f55ce06fdf289ac0e0209d9d8852"
+    },
+    {
+      "path": "results.json",
+      "sharing": "synthetic",
+      "sha256": "f3df56043ba8383dfc6acb422d024179e3f480ef84c1bc3c70b3e4b78b2ccc2d"
+    },
+    {
+      "path": "slides.md",
+      "sharing": "synthetic",
+      "sha256": "6de9c81d999742e414709094ee9998f8d0a370a9979d7ca3c2d3b3f3de755f5a"
+    }
+  ],
+  "environment": {
+    "python": "3.10+; standard library only",
+    "dependencies": "No third-party runtime dependencies"
+  },
+  "reproduction_commands": [
+    "python3 analyze.py"
+  ],
+  "excluded_inputs": [],
+  "license_or_terms": "MIT, matching Galileo; synthetic example, no real participant data."
+}

@@ -14,13 +14,13 @@ class InstallationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             dest = Path(folder) / 'not-created'
             result = installer.install(dest, dry_run=True)
-            self.assertEqual(len(result['skills']), 13)
+            self.assertEqual(len(result['skills']), 18)
             self.assertFalse(dest.exists())
 
     def test_install_is_self_contained_and_retains_notices(self):
         with tempfile.TemporaryDirectory() as folder:
             result = installer.install(Path(folder) / 'skills')
-            self.assertEqual(len(result['installed']), 13)
+            self.assertEqual(len(result['installed']), 18)
             dest = Path(result['destination'])
             for name in result['installed']:
                 self.assertTrue((dest / name / 'SKILL.md').is_file())
@@ -93,6 +93,24 @@ class InstallationTests(unittest.TestCase):
                           for p in target.rglob('*') if p.is_file() and p.name != 'bundle-provenance.json'}
                 self.assertEqual(record['installed_files_sha256'], actual)
                 self.assertIn('BUNDLE_LICENSE.txt', actual)
+
+    def test_extended_profiles_include_portable_project_tools(self):
+        import subprocess
+        import sys
+        expected = {'publishing': ['research-thesis-to-article', 'research-submission'],
+                    'defense': ['research-defense', 'research-presentations'],
+                    'systematic': ['research-systematic-review']}
+        with tempfile.TemporaryDirectory() as directory:
+            for profile, names in expected.items():
+                destination = Path(directory) / profile
+                result = installer.install(destination, profile=profile)
+                for name in names:
+                    self.assertIn(name, result['installed'])
+                script = destination / 'research-project/scripts/research_tools.py'
+                check = subprocess.run([sys.executable, str(script), 'preflight'], cwd=directory,
+                                       capture_output=True, text=True)
+                self.assertEqual(check.returncode, 0, check.stderr)
+                self.assertIn('not_verified', check.stdout)
 
     def test_copy_failure_rolls_back_only_new_skills(self):
         from unittest.mock import patch

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "data",
+      "path": "observations.csv",
+      "sha256": "c34fb374b187db3031090f157691372e059f8b80ed1b461fe3c9c573f5a39e5f",
+      "access": "full_text"
+    },
+    {
+      "id": "result",
+      "path": "results.json",
+      "sha256": "f3df56043ba8383dfc6acb422d024179e3f480ef84c1bc3c70b3e4b78b2ccc2d",
+      "access": "executed_result",
+      "depends_on": [
+        "analysis"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "mean-claim",
+      "text": "The four synthetic values have mean 7.0.",
+      "evidence": [
+        {
+          "source_id": "result",
+          "relation": "supports",
+          "verification": "ai_checked",
+          "locator": "results.json: mean and n",
+          "verified_by": "package-building assistant; executed example only",
+          "checked_at": "2026-09-27",
+          "assessment": "Executed analyze.py on artificial values 4, 6, 8, 10. No empirical research claim."
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "analysis",
+      "path": "analyze.py",
+      "sha256": "c7e0272f9e1046412f38e5e715b8b2cb4b2e631faefeb823751d49bc77fe8652",
+      "depends_on": [
+        "data"
+      ]
+    },
+    {
+      "id": "manuscript",
+      "path": "manuscript.md",
+      "sha256": "6ec6145defc72114dff0f413cf772c54a8ad22f389af0687f95416183405985b",
+      "depends_on": [
+        "mean-claim"
+      ]
+    },
+    {
+      "id": "slides",
+      "path": "slides.md",
+      "sha256": "6de9c81d999742e414709094ee9998f8d0a370a9979d7ca3c2d3b3f3de755f5a",
+      "depends_on": [
+        "manuscript"
+      ]
+    }
+  ]
+}

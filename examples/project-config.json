@@ -43,5 +43,32 @@
     "max_results_per_call": 25,
     "metadata_first": true,
     "query_log": "literature/search-log.jsonl"
+  },
+  "project_support": {
+    "research_map": "research-map.json",
+    "reproducibility_manifest": "reproducibility-manifest.json",
+    "capabilities_status": "not_tested"
+  },
+  "thesis_to_article": {
+    "central_question": null,
+    "word_limit": null,
+    "source_version": null
+  },
+  "defense": {
+    "mode": "coaching",
+    "questions_per_turn": 1,
+    "duration_minutes": null
+  },
+  "submission": {
+    "mode": "preparation_only",
+    "status": "NOT_SUBMITTED",
+    "target_instructions_url": null
+  },
+  "systematic_review": {
+    "review_type": null,
+    "protocol_path": null,
+    "registration_status": "not_supplied",
+    "screening_roles": 2,
+    "human_screening_completed": false
   }
 }

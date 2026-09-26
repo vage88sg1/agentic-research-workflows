@@ -3,10 +3,16 @@
     "research-drafting",
     "research-review",
     "research-typesetting",
-    "research-presentations"
+    "research-presentations",
+    "research-project",
+    "research-thesis-to-article",
+    "research-defense",
+    "research-submission",
+    "research-systematic-review"
   ],
   "profiles": {
     "core": [
+      "research-project",
       "research-drafting",
       "research-review",
       "scientific-writing",
@@ -18,6 +24,7 @@
       "peer-review"
     ],
     "docx": [
+      "research-project",
       "research-drafting",
       "research-review",
       "research-typesetting",
@@ -30,6 +37,7 @@
       "peer-review"
     ],
     "latex": [
+      "research-project",
       "research-drafting",
       "research-review",
       "research-typesetting",
@@ -43,6 +51,7 @@
       "academic-writing-latex"
     ],
     "slides": [
+      "research-project",
       "research-drafting",
       "research-review",
       "research-presentations",
@@ -56,6 +65,7 @@
       "scientific-slides"
     ],
     "full": [
+      "research-project",
       "research-drafting",
       "research-review",
       "research-typesetting",
@@ -68,7 +78,54 @@
       "scientific-visualization",
       "peer-review",
       "academic-writing-latex",
-      "scientific-slides"
+      "scientific-slides",
+      "research-thesis-to-article",
+      "research-defense",
+      "research-submission",
+      "research-systematic-review"
+    ],
+    "publishing": [
+      "research-project",
+      "research-drafting",
+      "research-review",
+      "research-typesetting",
+      "scientific-writing",
+      "citation-management",
+      "scientific-critical-thinking",
+      "statistical-analysis",
+      "literature-review",
+      "scientific-visualization",
+      "peer-review",
+      "research-thesis-to-article",
+      "research-submission"
+    ],
+    "defense": [
+      "research-project",
+      "research-drafting",
+      "research-review",
+      "research-presentations",
+      "scientific-writing",
+      "citation-management",
+      "scientific-critical-thinking",
+      "statistical-analysis",
+      "literature-review",
+      "scientific-visualization",
+      "peer-review",
+      "scientific-slides",
+      "research-defense"
+    ],
+    "systematic": [
+      "research-project",
+      "research-drafting",
+      "research-review",
+      "scientific-writing",
+      "citation-management",
+      "scientific-critical-thinking",
+      "statistical-analysis",
+      "literature-review",
+      "scientific-visualization",
+      "peer-review",
+      "research-systematic-review"
     ]
   }
 }

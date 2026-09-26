@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research defense"
+  short_description: "Rehearse a thesis defense with evidence-based feedback"
+  default_prompt: "Use $research-defense for my research project and ask for missing inputs."

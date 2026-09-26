@@ -55,3 +55,22 @@ Fourteen automated tests passed, including the two new installation regressions;
 | Before recommending a cost-optimal mapping | Compare economy/balanced/quality on the same synthetic task | Defects caught/missed, actual usage/cost where available and time; model names alone are insufficient |
 
 The package is suitable for documented experimental use. Packaging checks are not evidence of end-to-end scientific performance. Remaining items are explicit validation gaps, not features to silently mark as complete. Real journal submission remains outside the project's intended scope.
+
+## Lifecycle extensions (2026-09-27)
+
+Implemented all proposed feature areas: environment preflight, evidence mapping, dependency-based change impact, explicit reproducibility packaging, thesis-to-article conversion, defense rehearsal, local submission dossier preparation and a separate systematic-review workflow.
+
+The package now contains nine original entry points and nine unchanged upstream skills. Research project is included in every profile; publishing, defense and systematic profiles are added. Support scripts and templates ship inside the skill, so they work after installation without relying on repository-relative paths. Main/Italian documentation, installation counts and separate workflow diagrams were updated.
+
+### Concrete validation
+
+- 27 automated tests passed. New cases cover claim-evidence record gaps, graph integrity, indirect impact and missing files, path/symlink rejection, allowlisted bundle copying, restricted/credential paths, hash mismatch, failed-copy cleanup, no execution by preflight/packaging, and portable execution after profile installation.
+- The bundled synthetic example was actually analyzed and packaged, then its recorded analysis was rerun from the package. The regenerated result matched the original bytes (four artificial values, arithmetic mean 7.0). This is a software example, not research data or scientific performance evidence.
+- All nine original skill structures passed the skill-creator validator. Package/local-link/vendor-provenance and whitespace checks passed.
+- An independent agent executed the new thesis-to-article skill on a synthetic cross-sectional summary. Its artifacts retained 80 recruited versus 60 completers and the supplied correlation, identified the inconsistent abstract denominator, replaced unsupported causal wording with association, and left missing methods/scoring/declarations unresolved. It produced an outline, provisional draft, conversion map, word counts, issues and resumable state in an isolated temporary workspace. This was one sequential-role execution by a separate evaluator, not independent scientific peer review. The exercise prompted an explicit “corrected” transformation category in the skill.
+
+### Boundaries that remain
+
+Preflight cannot infer host capabilities from PATH alone. The evidence script checks structure and recorded status; semantic claim support needs actual source assessment. Impact tracking requires registered dependencies. Packaging does not itself execute research code or establish lawful disclosure/independent reproduction. Systematic-review decisions, extraction, appraisal and flow counts must come from work actually performed; the included templates do not execute a review.
+
+Complete host trials of defense interaction, submission preparation and systematic review, full scientific datasets, real DOCX/LaTeX/PPTX/PDF production, external MCP searches and model-cost comparisons remain unperformed. The new bounded tests narrow earlier validation gaps without closing those broader ones. No submission, registration, personal data processing or live external service activation was performed.

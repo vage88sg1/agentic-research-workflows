@@ -2,7 +2,7 @@
 
 AI-assisted workflows for research papers, theses, dissertations and scientific talks. Galileo guides an assistant through progressive questions, specialist roles, traceable evidence and bounded revision loops. Instructions are in English; choose the language of your own documents.
 
-**Start with the workflow that matches your current material.** You can draft from study information, review an existing manuscript, format an already checked text, or build slides from verified findings. You do not have to complete every workflow.
+**Start with the workflow that matches your current material.** You can draft from study information, review an existing manuscript, format an already checked text, or build slides from verified findings. You do not have to complete every workflow. Nine entry points cover the research lifecycle and shared project checks.
 
 | Your goal | Workflow | Typical deliverables |
 |---|---|---|
@@ -10,6 +10,11 @@ AI-assisted workflows for research papers, theses, dissertations and scientific 
 | Test a manuscript through a realistic editorial simulation | **Research review** | Three simulated anonymous reviewer reports, editorial decision, response and revised manuscript |
 | Produce a manuscript in Word or LaTeX | **Research typesetting** | Selected editable DOCX or TeX source, bibliography/assets and requested PDF when built |
 | Prepare a conference talk, seminar or thesis defense | **Research presentations** | Storyboard, editable PPTX and PDF when generated, notes and timing plan |
+| Check tools, trace evidence and changes, or package reproducibility files | **Research project** | Capability report, evidence map, impact report and selected-file bundle |
+| Turn a thesis into a focused paper | **Thesis to article** | Article, conversion map, word budget and omission audit |
+| Practice oral questions and answers | **Research defense** | Interactive rehearsal, feedback and backup-slide plan |
+| Assemble journal-specific materials | **Submission dossier** | Cover letter, file/declaration checklist and local dossier |
+| Plan and conduct systematic evidence synthesis | **Systematic review** | Protocol, screening/extraction/appraisal records and synthesis |
 
 Galileo is an **instruction package, not an execution engine**. Independent agents, model routing, menus, analysis tools and document renderers depend on the host. A configured role is not proof that a separate agent or model ran. The review workflow is a simulation: it does not submit to a journal or produce real acceptance.
 
@@ -24,6 +29,11 @@ Galileo is an **instruction package, not an execution engine**. Independent agen
 - [B — Editorial review](#workflow-b--simulate-editorial-review-and-revision)
 - [C — DOCX or LaTeX](#workflow-c--format-in-docx-or-latex)
 - [D — Scientific slides](#workflow-d--create-scientific-presentation-slides)
+- [E — Project checks and reproducibility](#workflow-e--check-project-capabilities-evidence-and-changes)
+- [F — Thesis to article](#workflow-f--convert-a-thesis-into-an-article)
+- [G — Defense rehearsal](#workflow-g--rehearse-a-defense-or-scientific-qa)
+- [H — Submission dossier](#workflow-h--prepare-a-submission-dossier)
+- [I — Systematic review](#workflow-i--conduct-a-systematic-review)
 - [Resume and hand off](#continue-change-scope-or-switch-workflow)
 - [Quality and cost](#select-quality-and-cost-settings)
 - [Literature MCP](#optional-literature-mcp-add-only-what-you-need)
@@ -40,7 +50,7 @@ python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills 
 python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills --profile full
 ```
 
-The dry run previews installation; the second command copies the skills. `full` installs four workflow entry points and nine upstream support skills. It preserves licenses and provenance, refuses existing skill names and does not install libraries, compilers or MCP servers. It does not alter client settings or make network calls.
+The dry run previews installation; the second command copies the skills. `full` installs nine workflow entry points and nine upstream support skills (18 skill directories). It preserves licenses and provenance, refuses existing skill names and does not install libraries, compilers or MCP servers. It does not alter client settings or make network calls.
 
 For a smaller installation, use the same profile in both commands:
 
@@ -50,7 +60,12 @@ For a smaller installation, use the same profile in both commands:
 | `docx` | Drafting, review, typesetting | Core scientific guidance; DOCX uses available host tools |
 | `latex` | Drafting, review, typesetting | Core guidance plus academic-writing-latex |
 | `slides` | Drafting, review, presentations | Core guidance plus scientific-slides |
-| `full` | All four | All nine support skills |
+| `publishing` | Drafting, review, typesetting, thesis-to-article, submission | Core guidance and project support |
+| `defense` | Drafting, review, presentations, defense | Core guidance, scientific-slides and project support |
+| `systematic` | Drafting, review, systematic review | Core guidance and project support |
+| `full` | All nine entry points | All nine upstream support skills |
+
+Research project is included in every profile. The existing core/docx/latex/slides profiles keep their focused workflow selection and now include that support entry point.
 
 Use a profile for a fresh destination. Installing another profile over the same skill names is not an update mechanism; back up and reconcile existing versions deliberately. For other scopes or clients, use their documented skill location. See [installation and host compatibility](docs/INSTALLATION.md).
 
@@ -64,6 +79,11 @@ In a compatible Codex desktop client, type `/`, select the actual workflow entry
 - **Research review**
 - **Research typesetting**
 - **Research presentations**
+- **Research project**
+- **Thesis to article**
+- **Research defense**
+- **Submission dossier**
+- **Systematic review**
 
 The prompt examples below use the explicit `$skill-name` syntax. Selecting the skill in the menu and then entering the task is an alternative. The installer does not register arbitrary aliases such as `/research-review`.
 
@@ -310,6 +330,142 @@ Requested slide files when generated, editable source/assets, references, speake
 
 [Presentation instructions](skills/research-presentations/SKILL.md) · [Export and visual QA](skills/research-presentations/references/export-and-qa.md)
 
+## Workflow E — Check project capabilities, evidence and changes
+
+Use **Research project** before selecting a production route, when assessing claim support, after a source/result changes, or when preparing reproducibility materials. This support skill is included in every profile.
+
+```text
+$research-project Check the capabilities available for my project, then create an evidence
+and dependency map from the supplied materials. Distinguish actual host capabilities from
+unverified binaries, and identify claims needing source inspection. Save reports in project_checks/.
+```
+
+For a changed result, ask it to compare recorded hashes and trace affected claims, tables, figures, text and slides. It reports indirect dependencies and preserves prior records. For reproducibility, supply an explicit list of public/synthetic files, commands, environment and any restricted-input access conditions.
+
+```mermaid
+flowchart TD
+  A[Project inputs and requested operation] --> B[Inspect host capabilities and local tools]
+  B --> C[Map sources, claims and artifact dependencies]
+  C --> D[Structural evidence check and source-content assessment]
+  C --> E[Compare input hashes or record explicit source changes]
+  E --> F[Trace direct and indirect affected artifacts]
+  F --> G[Update issues, regenerate and reverify]
+  D --> G
+  G --> H[Select authorized reproducibility files]
+  H --> I[Package payload, hashes, environment and commands]
+  I --> J[Separate actual reproduction run if requested]
+```
+
+The Python tools perform concrete structural/file checks; a verifier still assesses whether consulted evidence supports a claim. Packaging does not execute analysis, classify private material automatically or prove reproduction. See [tool commands and the runnable synthetic example](docs/PROJECT_TOOLS.md).
+
+## Workflow F — Convert a thesis into an article
+
+Use **Thesis to article** on an existing thesis. Select a focused question and target article type before compressing the text.
+
+```text
+$research-thesis-to-article Adapt thesis/ into a focused research article in English.
+Use a generic journal profile until I provide a target. Propose the central question and
+word budget, preserve relevant positive and negative findings, and document every
+retained, condensed, corrected or omitted section. Save a separate run in article_conversion/.
+```
+
+```mermaid
+flowchart LR
+  A[Frozen thesis and results] --> B[Question, scope and word budget]
+  B --> C[Section and claim conversion map]
+  C --> D[Article outline and draft]
+  D --> E[Consistency and omission audit]
+  E -->|Corrections within limits| C
+  E -->|Checked handoff| F[Article, supplements, conversion map and issues]
+```
+
+The scope editor, evidence mapper, writer and consistency verifier preserve provenance while adapting structure and readership. New analyses need methodological review. You receive a draft, a conversion/omission map, word counts, supplement inventory and unresolved declarations. Real previous dissemination and authorship decisions remain author-supplied facts.
+
+[Thesis-to-article instructions](skills/research-thesis-to-article/SKILL.md)
+
+## Workflow G — Rehearse a defense or scientific Q&A
+
+Use **Research defense** with the manuscript, slides or source package you will present.
+
+```text
+$research-defense Help me rehearse my thesis defense using manuscript/ and presentation/.
+Use coaching mode in Italian: ask one question, wait for my answer, then give feedback.
+Cover scientific rationale, methods, interpretation and limitations. Prepare a backup-slide brief.
+```
+
+```mermaid
+flowchart TD
+  A[Manuscript, slides and audience] --> B[Coverage plan and evidence-linked questions]
+  B --> C[Simulated examiner asks a question]
+  C --> D[Wait for the presenter's actual answer]
+  D --> E[Scientific feedback and observed timing]
+  E -->|Practice within agreed limits| C
+  E -->|Evidence gap| F[Return to research records]
+  E -->|Session complete| G[Answer notes, open issues and backup-slide plan]
+```
+
+Choose coaching with feedback after each answer or mock examination with feedback after a block. Model-generated sample answers are labeled demonstrations; they are not observed presenter performance. Timing is labeled measured or estimated. Building backup slides is a separate invocation of Research presentations when requested.
+
+[Defense instructions](skills/research-defense/SKILL.md)
+
+## Workflow H — Prepare a submission dossier
+
+Use **Submission dossier** to assemble local materials for a selected journal, or an explicitly generic incomplete dossier.
+
+```text
+$research-submission Prepare a local submission dossier from the checked manuscript.
+Verify the named journal's current official instructions, draft the cover letter,
+map requirements to files, and identify declarations that need my actual answers.
+Keep the package marked NOT SUBMITTED and preserve simulated-review labels where applicable.
+```
+
+```mermaid
+flowchart TD
+  A[Checked manuscript and selected venue] --> B[Official requirements and file inventory]
+  B --> C[Cover letter, title or blinded files and supplements]
+  C --> D[Collect genuine author declarations]
+  D --> E[Distinct file, anonymity and consistency check]
+  E -->|Corrections within limits| C
+  E -->|Missing author input| F[Pending register and saved state]
+  E -->|Checks complete| G[Local dossier marked NOT SUBMITTED]
+```
+
+Outputs include a cover-letter draft, appropriate identified/blinded files, supplements, requirements checklist and unresolved declaration register. Missing ethics, conflict, contribution or approval information is never silently filled with “none.” The workflow prepares materials; it does not upload, sign, contact editors or claim real acceptance.
+
+[Submission instructions](skills/research-submission/SKILL.md)
+
+## Workflow I — Conduct a systematic review
+
+Use **Systematic review** for a planned evidence synthesis, not simply the background section of a thesis. Adapt the question, methods and reporting framework to the discipline and review type.
+
+```text
+$research-systematic-review Help me plan a systematic review of my stated research question.
+Start with protocol, eligibility criteria, source coverage and independent screening roles.
+Record human versus AI participation, preserve search and screening decisions, and keep
+unperformed stages incomplete. Decide whether quantitative synthesis is justified from the evidence.
+```
+
+```mermaid
+flowchart TD
+  A[Question and review type] --> B[Protocol, criteria and amendments]
+  B --> C[Documented searches and raw exports]
+  C --> D[Audited deduplication and record-report-study links]
+  D --> E[Independent title and abstract screening]
+  E --> F[Full-report retrieval and eligibility]
+  F --> G[Conflict adjudication and exclusion reasons]
+  G --> H[Extraction, second checks and design-specific appraisal]
+  H --> I[Appropriate synthesis with executed analysis if applicable]
+  I --> J[Reconciled selection counts and reporting checklist]
+  J -->|Unresolved inconsistency| G
+  J -->|Required stages complete| K[Review evidence package and writing handoff]
+```
+
+Keep unavailable full texts separate from exclusions; records, reports and studies use distinct IDs. Two AI agents are not two human screeners. Meta-analysis is conditional on appropriate data and methods. PRISMA supports reporting; it does not certify methodological quality or complete coverage. Protocol registration, author contact and submission are not automatic actions.
+
+You receive protocol/amendments, search logs/exports, deduplication and screening records, extraction/appraisal tables, synthesis/code when executed, reconciled flow counts and outstanding issues. Budget limits leave incomplete screening visibly incomplete.
+
+[Systematic-review instructions](skills/research-systematic-review/SKILL.md) · [Record conventions and official guidance](skills/research-systematic-review/references/systematic-records.md)
+
 ## Continue, change scope or switch workflow
 
 Resume with the same entry point and point to the saved run:
@@ -370,7 +526,7 @@ python3 scripts/check_literature_mcp.py --connect pubmed --timeout 60
 
 ## Included support skills and project validation
 
-Nine upstream skills support the four workflows: `scientific-writing`, `citation-management`, `scientific-critical-thinking`, `statistical-analysis`, `literature-review`, `scientific-visualization`, `peer-review`, `scientific-slides` and `academic-writing-latex`.
+Nine upstream skills support the nine entry points: `scientific-writing`, `citation-management`, `scientific-critical-thinking`, `statistical-analysis`, `literature-review`, `scientific-visualization`, `peer-review`, `scientific-slides` and `academic-writing-latex`.
 
 Eight come from K-Dense; academic-writing-latex comes from HS0n4. They are third-party skills, not OpenAI-maintained instructions. Sources, licenses, revisions and file hashes are recorded in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `vendor/provenance.json`. Read applicable instructions before use; installation does not activate their external services or optional dependencies.
 
