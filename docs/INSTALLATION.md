@@ -10,9 +10,29 @@ For normal use select **Galileo** in the supported skill menu and describe your 
 
 For project scope choose `/path/to/project/.agents/skills`. For a different scope consult current host documentation rather than assuming paths are interchangeable. Refresh discovery/start a new session. Desktop enabled skills can appear in the slash menu; CLI `/skills` selects a skill. `$research-drafting` and `$research-review` are explicit invocation examples. UI display names are Research drafting and Research review. Arbitrary slash aliases are not registered by this installer.
 
+## Claude Code, OpenCode and GitHub Copilot
+
+Choose the project directory documented by your harness:
+
+| Harness | Example destination | Invocation |
+|---|---|---|
+| Claude Code | `/path/to/project/.claude/skills` | `/galileo` followed by the request |
+| OpenCode | `/path/to/project/.opencode/skills` | Ask the agent to load and use the Galileo skill |
+| GitHub Copilot, in a skill-capable mode | `/path/to/project/.github/skills` | Ask the agent to use the Galileo skill |
+
+For example, from the package checkout:
+
+```bash
+python3 scripts/install.py --dest "/path/to/project/.claude/skills" --profile full --dry-run
+```
+
+Review the plan, then run the same command without `--dry-run`. Open the target research project in the client and refresh skill discovery or start a new session.
+
+Sources: [Claude Code skills and commands](https://code.claude.com/docs/en/skills), [OpenCode skill discovery](https://opencode.ai/docs/skills/), [GitHub Copilot agent skills](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills). These document format and discovery support; complete Galileo runs on these harnesses have not yet been verified.
+
 ## Other clients
 
-If your client supports the SKILL.md format, point `--dest` to its supported skill location. Extra Codex UI metadata may be ignored. Use `--profile core|docx|latex|slides|publishing|defense|systematic|full` to choose installed capabilities; full includes nineteen directories. All profiles preserve non-overwrite behavior. The workflows themselves are portable Markdown instructions, but model settings, independent contexts, tool identifiers and menus are not universal. No claim is made of end-to-end testing in other clients.
+If your client supports the SKILL.md format, point `--dest` to its supported skill location. Extra Codex UI metadata may be ignored. Use `--profile core|docx|latex|slides|publishing|defense|systematic|full` to choose installed capabilities; full includes nineteen directories. All profiles preserve non-overwrite behavior. The workflows themselves are portable Markdown instructions, but model settings, independent contexts, tool identifiers and menus are not universal. No claim is made of end-to-end testing in other clients. Installing skills does not add native harness agent definitions. Separate agents require explicit delegation support and host permission; otherwise the roles are performed sequentially with that limitation disclosed. Model recommendations must be mapped to the models available in the host, and MCP settings must be configured for that host separately.
 
 If skills are unsupported, provide the entry point, its references and relevant vendor guidance as instructions. The workflow must report unavailable parallelism, computation, browsing and model routing instead of simulating successful tool execution.
 

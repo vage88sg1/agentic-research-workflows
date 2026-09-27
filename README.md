@@ -2,18 +2,29 @@
 
 **Describe what you want to achieve. Galileo guides the research work.**
 
-Write a thesis or paper, improve a manuscript, prepare slides, or rehearse your defense. Start with one entry point; Galileo selects the relevant workflow and asks for missing information as it becomes necessary. Work in your preferred language.
+Write a thesis or paper, improve a manuscript, prepare slides, or rehearse your defense. Start with one entry point; Galileo selects the relevant workflow and asks for missing information as it becomes necessary. Work in your preferred language and AI coding assistant (harness). Galileo ships portable `SKILL.md` instructions and local tools; your harness supplies the model, agents and execution environment.
 
 ## Start here
 
-After installation, type `/` in a compatible Codex desktop client and select **Galileo**. Then describe your goal and provide the location of any materials you already have. In Codex CLI, use `/skills` to select it. You can also invoke it explicitly:
+After installation, ask your assistant to use the **Galileo** skill and describe your goal. Include the location of any materials you already have:
 
 ```text
-$galileo Help me write my thesis. I have a study description and results in study_inputs/.
+Use the Galileo skill to help me write my thesis.
+I have a study description and results in study_inputs/.
 Write in English and guide me through the next step.
 ```
 
-No workflow names, model selection or JSON configuration are needed for normal use. Menu availability depends on the client; the installer does not register a literal `/galileo` alias.
+No workflow names, model selection or JSON configuration are needed for normal use. Explicit invocation depends on your harness:
+
+| Harness | Project skill directory | How to start |
+|---|---|---|
+| Claude Code | `.claude/skills/` | `/galileo` followed by your request |
+| Codex | `.agents/skills/` | `$galileo` followed by your request, or select Galileo in the supported skill menu |
+| OpenCode | `.opencode/skills/` | Ask the agent to load the Galileo skill and follow your request |
+| GitHub Copilot, in a skill-capable mode | `.github/skills/` | Ask the agent to use the Galileo skill and follow your request |
+| Other skill-compatible harnesses | The directory documented by the harness | Use its skill menu, invocation syntax or an explicit natural-language request |
+
+These are documented skill discovery paths, not a claim of end-to-end testing on every harness. See the [installation and compatibility guide](docs/INSTALLATION.md) for sources and execution limits. The installer copies skills; it does not create a universal slash command.
 
 ## What would you like to do?
 
@@ -47,7 +58,7 @@ flowchart LR
 
 Format choices such as Word or LaTeX are discussed when they matter. Technical evidence records, model settings and dependency checks stay in the project records and are explained when useful. The default cost guidance is balanced; actual model use depends on your host.
 
-To resume in the same project, select Galileo again and say:
+To resume in the same project, invoke Galileo using your harness and say:
 
 ```text
 Continue from the saved state in research_workspace/. Reuse my previous answers.
@@ -57,17 +68,47 @@ If more than one run could match, Galileo asks which one to continue.
 
 ## Install once
 
-Requires Python 3.10+ for the offline installer. Replace the destination with the skill directory of your research project:
+Requires Python 3.10+ for the offline installer. Clone the package:
 
 ```bash
 git clone https://github.com/vage88sg1/agentic-research-workflows.git
 cd agentic-research-workflows
-python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills
+```
+
+Then install into your research project's skill directory. Choose **one** command matching your harness and replace `/path/to/research-project` with the actual path:
+
+```bash
+# Claude Code
+python3 scripts/install.py --dest "/path/to/research-project/.claude/skills"
+
+# Codex
+python3 scripts/install.py --dest "/path/to/research-project/.agents/skills"
+
+# OpenCode
+python3 scripts/install.py --dest "/path/to/research-project/.opencode/skills"
+
+# GitHub Copilot
+python3 scripts/install.py --dest "/path/to/research-project/.github/skills"
 ```
 
 Then open that research project in your assistant and refresh its skills or start a new session. The default complete installation includes Galileo and its specialist/support skills. Add `--dry-run` to preview the installation. Existing skill names are never overwritten; see the [installation guide](docs/INSTALLATION.md) for updates, other clients and smaller profiles.
 
 The installer copies instructions and local tools. It does not install document renderers, activate MCP services or purchase API access. The assistant reports missing capabilities when they affect your task.
+
+## Agentic execution and portability
+
+The workflow instructions describe coordination, specialist roles and review loops. For separate agents, include a request such as:
+
+```text
+Use Galileo in agentic mode. Delegate the relevant roles to separate agents
+where supported, and coordinate their reviews and corrections.
+```
+
+Independent agents require harness support and permission to delegate. Otherwise, the assistant follows the roles sequentially and discloses that limitation. Installing skills does not install native agent definitions or guarantee parallel execution.
+
+Model examples are optional guidance, not a dependency on one provider. Use models available in your harness; actual model routing and costs depend on its capabilities. MCP connections and document/export tools also require host-specific setup. Codex UI metadata can be ignored by other clients.
+
+Package checks and synthetic workflow exercises are documented in the [release review](docs/RELEASE_REVIEW.md) and [usability report](docs/USABILITY_TESTS.md). Complete runs on Claude Code, OpenCode and GitHub Copilot have not yet been verified.
 
 ## Explore when needed
 
