@@ -12,6 +12,12 @@ Use the user's language. Read the request, supplied file locations and relevant 
 
 If the goal is clear, state the chosen next step in one sentence and begin it. If unclear, ask one simple question about the desired outcome, with everyday choices such as writing a document, improving an existing document, or preparing a presentation. Ask for the relevant material/location only when not supplied. Limit each intake turn to at most three necessary questions; defer venue, format and detailed design questions until they affect the work. Preserve critical methodological questions when they are needed for valid analysis.
 
+## Match the amount of process to the request
+
+For a one-off language edit, a short outline or content-only slide notes, deliver the requested artifact and a brief explanation directly when the supplied information is sufficient. Do not create a new project configuration, issue ledger, comparison file or saved-state file merely to complete a small task. Preserve the original and check the affected scientific meaning. If the user requests a comparison/resume record, or the work belongs to an existing tracked project, provide/update the relevant records without duplicating them.
+
+For an actual new research project, a first useful planning note plus compact resumable state is enough to start. Create additional evidence/analysis/configuration records when real work populates them; avoid empty scaffolding. Important missing facts can still block dependent claims or analyses. Do not ask about formats, visual themes or tools that are irrelevant to the requested deliverable.
+
 ## Route and execute the relevant instructions
 
 Read [routing](references/routing.md) to select the narrowest applicable workflow. Resolve its SKILL.md through the host catalog or as a sibling directory of this skill; read it and its relevant references before executing. The complete profile installs all routes. A smaller profile may omit one: report that concrete limitation and use a genuinely available compatible route only if it serves the user's request. Do not invent tool availability or start installing dependencies/services automatically.
@@ -30,6 +36,6 @@ Apply scientific evidence, processing boundaries, honest execution status and si
 
 ## Resume and handoff
 
-On “continue”, locate the selected run's saved state from supplied locations and current project records. If several relevant runs are plausible, ask which one rather than merging their state. Read only the referenced inputs, check versions and resume the next unresolved task. Preserve prior answers. Use [saved state](references/run-state.md); the active workflow field names the actual route, not a second duplicate Galileo run.
+On “continue”, locate the selected run's saved state from supplied locations and current project records. If several relevant runs are plausible, ask which one rather than merging their state. Read only the referenced inputs, check versions and resume the next unresolved task. Preserve prior answers. For resumable project work, use [saved state](references/run-state.md); the active workflow field names the actual route, not a second duplicate Galileo run.
 
-Keep updates short: what is being done, what changed, and the next input needed. Return deliverable links, meaningful checks/limitations and the next useful action. Detailed role/model/technical records remain in saved artifacts and are explained when relevant or requested.
+Keep updates short: what is being done, what changed, and the next input needed. Return deliverable links, meaningful checks/limitations and the next useful action. Mention missing capabilities or checks only when they affect the requested result; do not report unrequested exports as missing deliverables. Detailed role/model/technical records, when needed, remain in project artifacts and are explained when relevant or requested.

@@ -6,13 +6,23 @@ license: MIT
 
 # Scientific presentation workflow
 
-Read [roles and revision](references/presentation-agents.md) and [export and QA](references/export-and-qa.md). Use scientific-slides for talk structure, timing, design and Beamer guidance; scientific-writing, citation-management and scientific-visualization for factual content. Read only relevant references. This package does not supply a PPTX renderer or generative service; check host capabilities first.
+For deck production, read [roles and revision](references/presentation-agents.md) and [export and QA](references/export-and-qa.md). For a content-only request, start with the scoped path below; read export guidance only when export is requested. Load scientific-slides or other support guidance only when needed for the requested structure, design, citation or figure task; an adequately specified content-only outline need not load a full production toolkit. Read only relevant references. This package does not supply a PPTX renderer or generative service; check actual host production capabilities when a rendered deck is requested.
+
+## Content-only path
+
+If the user requests an outline, slide text or speaker notes in Markdown, produce that content directly from the supplied material when audience, duration and scope are sufficient. Follow the requested slide count and include message, notes, source attribution and estimated timing as appropriate. Preserve scientific qualifiers, denominators and evidence limits. Ask only a question that materially blocks this content task; do not require a theme, aspect ratio, presenter identity, renderer or output format already specified.
+
+Do not run export/render setup, create unrequested PPTX/PDF, or report those files as missing. State timing as estimated rather than measured. Deliver the requested content file and a concise explanation. New state/technical ledgers are unnecessary for a one-off content task unless requested; update relevant records if this is part of an existing tracked run. The full deck's production and visual checks apply when that production stage is requested, not to a content-only handoff.
 
 ## Progressive intake
 
 Ask up to three focused questions at a time: audience/talk type, duration including Q&A, source material and language. Then resolve requested total slide count, template/branding, aspect ratio, accessibility needs, presenter identity supplied by the user, speaker notes and export choice. Default request for PPTX and PDF means both outputs from one final deck. For PDF-only, ask whether editable PPTX source or Beamer .tex is preferred if it matters. Resume saved presentation state and preserve original inputs.
 
 Use only authorized evidence. Do not infer missing results, fabricate speakers/institutions or assume a thesis has been published. A real research talk about unpublished work is not automatically a simulated publication: apply the simulation label only to simulated results/decisions/dossiers, labeling illustrative data explicitly.
+
+## Attribution without unverified bibliography
+
+Retain applicable software/skill license notices in the project distribution. Do not automatically insert a paper title, DOI or arXiv identifier found in a support skill into a user's slide content or references. Verify a primary bibliographic record before adding such a citation when it is actually appropriate to the talk. If verification is unavailable, omit the academic reference from the deliverable and retain any necessary software credit separately in project provenance. Labeling a citation “unverified” does not make it suitable to insert automatically. Scientific references should support the talk's claims, not advertise the tooling used to prepare it.
 
 ## Plan and evidence map
 

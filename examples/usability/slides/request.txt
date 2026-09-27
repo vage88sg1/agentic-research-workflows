@@ -1,0 +1,1 @@
+Preparami la struttura di una presentazione di 8 minuti in italiano per studenti universitari partendo da results.md. Voglio 6 slide, con messaggio principale e note per ogni slide. Per ora mi basta il contenuto in Markdown.

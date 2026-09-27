@@ -35,6 +35,8 @@ You can request a sequence in one message, such as “Turn this thesis into an a
 2. **A clear next step:** it chooses the relevant specialist workflow and uses available tools.
 3. **A reviewable result:** you receive files, meaningful checks and any unresolved issues.
 
+Small requests stay small: a language edit returns the corrected text, and a Markdown slide outline does not require export setup or new project records. Longer research projects keep resumable state.
+
 ```mermaid
 flowchart LR
   A[Describe your goal] --> B[Galileo chooses the relevant workflow]

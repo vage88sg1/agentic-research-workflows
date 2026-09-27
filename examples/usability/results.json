@@ -1,0 +1,73 @@
+{
+  "evaluation_type": "synthetic first-turn exercises; no human users",
+  "completed_executions": 6,
+  "cases": [
+    {
+      "case": "thesis",
+      "before": {
+        "questions": 3,
+        "artifact_count": 5,
+        "artifacts": [
+          "research_workspace/avvio_tesi.md",
+          "research_workspace/evidence.json",
+          "research_workspace/issues.json",
+          "research_workspace/project-config.json",
+          "research_workspace/workflow_state.json"
+        ],
+        "independent_human_check": false
+      },
+      "after": {
+        "questions": 3,
+        "artifact_count": 2,
+        "artifacts": [
+          "research_workspace/piano_iniziale.md",
+          "research_workspace/workflow_state.json"
+        ],
+        "independent_human_check": false
+      }
+    },
+    {
+      "case": "editing",
+      "before": {
+        "questions": 0,
+        "artifact_count": 3,
+        "artifacts": [
+          "excerpt_corretto.md",
+          "confronto.diff",
+          "workflow_state.json"
+        ],
+        "independent_human_check": false
+      },
+      "after": {
+        "questions": 0,
+        "artifact_count": 1,
+        "artifacts": [
+          "excerpt_corretto.md"
+        ],
+        "independent_human_check": false
+      }
+    },
+    {
+      "case": "slides",
+      "before": {
+        "questions": 0,
+        "artifact_count": 2,
+        "artifacts": [
+          "presentazione.md",
+          "workflow_state.json"
+        ],
+        "independent_human_check": false
+      },
+      "after": {
+        "questions": 0,
+        "artifact_count": 1,
+        "artifacts": [
+          "presentazione.md"
+        ],
+        "independent_human_check": false
+      }
+    }
+  ],
+  "timing_or_cost_benchmark_performed": false,
+  "citation_rule_retest": "Not executed: the additional evaluator hit the host usage limit. The amended instruction was structurally checked only."
+}

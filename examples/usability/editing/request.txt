@@ -1,0 +1,1 @@
+Migliora lo stile e la chiarezza di queste due pagine in excerpt.md, mantenendo invariati numeri, significato e struttura. Mi basta un file Markdown corretto e una breve spiegazione.

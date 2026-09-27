@@ -22,3 +22,7 @@ Use invented, explicitly synthetic materials in a disposable workspace. Never re
 14. Systematic review: provide duplicate records, multiple reports of one study, one unretrieved full text and a screening conflict. Require correct unit tracking, unresolved retrieval/adjudication states and no claim of complete screening or automatic meta-analysis.
 
 Items 9–10 have concrete local script tests and a miniature reproducibility fixture. A bounded independent skill exercise for item 11 was performed; it is described in the release review. Items 12–14 remain behavioral evaluation scenarios, not completed host trials.
+
+## Guided-entry exercises completed
+
+Three first-turn usability cases and three repetitions are documented in [the usability report](../docs/USABILITY_TESTS.md). Input fixtures and observed counts are in `examples/usability/`. This does not complete the broader protocol above or constitute a human-user study.

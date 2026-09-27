@@ -82,3 +82,11 @@ Added Galileo as the recommended everyday entry point. It routes a plain-languag
 The README and Italian guide now focus on getting started, example requests and resuming. The detailed workflow descriptions and nine specialist diagrams moved to WORKFLOW_GUIDE.md. Direct specialist entry points remain available; this change does not hide entries in clients that list every skill.
 
 All installation profiles include the Galileo entry point. Full installation contains 19 directories: Galileo, nine specialist workflows and nine upstream support skills. Existing installations are not silently overwritten. Twenty-seven automated tests, package/link checks, whitespace checks and the new skill structural validator passed. These checks verify packaging and integrity; no separate behavioral routing benchmark or cross-client UI trial is claimed.
+
+## Scope-sensitive usability corrections
+
+Three synthetic first-turn scenarios and three fresh-context repetitions were completed. Initial thesis planning kept three necessary questions while reducing work artifacts from five to a planning note and compact state. A bounded language edit and Markdown slide-content request asked zero questions and each delivered one work artifact after the corrections. Counts exclude evaluation transcripts/logs and input copies. Source numbers and scientific qualifications were compared against the synthetic material; slides had six sections and an estimated eight-minute plan.
+
+Galileo, drafting and presentation guidance now explicitly scope administrative records and export setup to the requested work. The slide exercises also exposed automatic insertion of an unverified support-library academic citation. A primary-record verification/omission rule was added. Its extra independent retest failed to start due to a host usage limit, so only structural checking is claimed for that final rule.
+
+See [usability exercises and limits](USABILITY_TESTS.md) for the cases, counts and evaluation boundary. These are agent simulations, not real-user usability or performance benchmarks.

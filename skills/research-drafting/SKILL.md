@@ -6,7 +6,13 @@ license: MIT
 
 # Research drafting
 
-Read [agent contracts](references/agent-contracts.md) and [skill integration](references/skill-integration.md). Use the user's language, discipline, institution and venue requirements; do not assume a particular country, field, study design or dataset. This workflow can be invoked through a host's skill/slash picker, explicitly by name, or as plain instructions.
+For a full drafting project, read [agent contracts](references/agent-contracts.md) and [skill integration](references/skill-integration.md). For a bounded edit, start with the scoped path below and load further guidance only if a substantive issue requires it. Use the user's language, discipline, institution and venue requirements; do not assume a particular country, field, study design or dataset. This workflow can be invoked through a host's skill/slash picker, explicitly by name, or as plain instructions.
+
+## Scoped editing path
+
+When the user supplies text and asks only for style, clarity or a bounded revision, edit that text directly. Preserve requested structure, numbers, units, qualifiers, citations and meaning; compare against the original. Do not start full study intake, bibliography discovery, model selection or simulated review. Ask a targeted question only if an ambiguity prevents a faithful edit. Flag an observed scientific inconsistency rather than silently changing the underlying result.
+
+Return the requested corrected file (or text in chat) with a brief account of meaningful edits. Keep the original intact. Do not create new configuration, state, issue or diff files for a one-off task unless requested or needed to update an existing tracked run. The full-project output/state sections below apply to resumable research projects, not mandatory scaffolding for every edit.
 
 ## Intake and continuation
 
@@ -46,7 +52,7 @@ After the scientific draft is checked, use the installed research-typesetting sk
 
 ## Outputs
 
-Save project configuration, study summary, source/claim records, bibliography, measurement records, analysis code/output where available, draft, issues and state. Report missing inputs, checks performed, limits and next action. Offer research-review as a separate invocation rather than starting simulated editorial review unasked.
+As a full project develops, save relevant project configuration, study summary, source/claim records, bibliography, measurement records, actual analysis code/output, draft, issues and state. Initial planning can start with a useful study note and compact state; create further records when there is substantive content to save, rather than empty ledgers. Report missing inputs, checks performed, limits and next action. Offer research-review as a separate invocation rather than starting simulated editorial review unasked.
 
 ## Saved state and continuation
 
