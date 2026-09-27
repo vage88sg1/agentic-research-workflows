@@ -1,8 +1,34 @@
 # Galileo: Agentic Research Workflows
 
-**Describe what you want to achieve. Galileo guides the research work.**
+**From research materials to manuscripts, peer-review simulations and scientific presentations—with one guided entry point.**
 
-Write a thesis or paper, improve a manuscript, prepare slides, or rehearse your defense. Start with one entry point; Galileo selects the relevant workflow and asks for missing information as it becomes necessary. Work in your preferred language and AI coding assistant (harness). Galileo ships portable `SKILL.md` instructions and local tools; your harness supplies the model, agents and execution environment.
+Galileo brings together scientific writing, specialist roles, evidence records and correction loops. Describe your goal in your preferred language; the assistant selects the relevant workflow and asks for information when it matters. Use a focused workflow or request several connected deliverables in one message.
+
+**9 specialist workflows · 19 skill folders in the full profile · 4 offline project commands**
+
+Works through skill-compatible AI assistants such as Claude Code, Codex, OpenCode and GitHub Copilot. The package contains portable `SKILL.md` instructions and local tools; your harness supplies models, agents and execution capabilities. Cross-client discovery support and complete runtime validation are distinct.
+
+[Quick start](#start-here) · [Features](#features-at-a-glance) · [Workflows](#choose-your-workflow) · [Install](#install-once) · [Italian guide](docs/README.it.md)
+
+## Features at a glance
+
+| Capability | What Galileo provides |
+|---|---|
+| **Guided research assistance** | Progressive questions, narrow task routing, reusable answers and saved progress. Small edits stay small; requested multi-stage work moves between workflows. |
+| **Specialist roles and correction loops** | Coordinators, writers, bibliographers, methodologists, statistical/measurement specialists and scientific/visual reviewers. Separate agents when supported and authorized; bounded revision with explicit unresolved issues. |
+| **Scientific drafting and analysis** | Evidence-linked outlines and prose; design, questionnaire/scoring and missing-data checks; analysis plans, code/output records and data-faithful figures when actually executed. |
+| **Realistic editorial simulation** | Technical assessment, three complementary anonymous simulated reviewers by default, reasoned editorial decisions, point-by-point author responses, corrections and rereview. |
+| **Literature discovery and references** | Optional PubMed / Europe PMC, OpenAlex, Crossref and experimental Zotero integrations; query/access logs, source/claim records and identifier checks. Galileo proposes useful connections and can assess other MCP candidates beyond the catalog. |
+| **Word and LaTeX production** | Conditional DOCX or LaTeX workflows, bibliography/cross-reference checks and requested PDF production using available host tools. Only the selected authoring route is activated. |
+| **Scientific slides and visual design** | Storyboards, editable PPTX/PDF or PDF-first Beamer, speaker notes and timing plans; visual directions, shared styling, representative slides and final rendered-slide review. |
+| **Research-group and university branding** | Supplied or verified official logos, palettes, fonts and templates; logo placement, multiple affiliations, accessible chart colors and recorded font substitutions. |
+| **Thesis conversion and oral preparation** | Focused thesis-to-article conversion with source/omission maps and word budgets; interactive defense coaching, simulated examiners and backup-slide planning. |
+| **Systematic evidence synthesis** | Protocol, reproducible search, record/report/study tracking, deduplication, screening, extraction, appraisal and appropriate synthesis. Meta-analysis is conditional, not automatic. |
+| **Journal dossier preparation** | Current venue requirements, cover-letter draft, title/blinded files where needed, supplements and declaration/checklist tracking. Local preparation only. |
+| **Traceability and reproducibility** | Environment discovery, structural evidence audits, registered dependency/change-impact tracking and allowlisted reproducibility bundles with hashes and recorded commands. |
+| **Provider flexibility and cost guidance** | Configurable economy/balanced/quality guidance, targeted delegation, reuse of verified evidence and escalation of specific difficult issues. Actual routing and costs depend on the host. |
+
+These are workflow instructions plus scoped local tools. File creation, computation, independent contexts, browsing and rendering are claimed only when actually performed. [Detailed workflow designs](docs/WORKFLOW_GUIDE.md) · [Validation and limits](docs/RELEASE_REVIEW.md)
 
 ## Start here
 
@@ -26,27 +52,39 @@ No workflow names, model selection or JSON configuration are needed for normal u
 
 These are documented skill discovery paths, not a claim of end-to-end testing on every harness. See the [installation and compatibility guide](docs/INSTALLATION.md) for sources and execution limits. The installer copies skills; it does not create a universal slash command.
 
-## What would you like to do?
+## Choose your workflow
 
-| Start with this | Galileo helps you do |
-|---|---|
-| “Help me write my thesis.” | Clarify the question, organize evidence/results and develop a draft |
-| “Improve this manuscript.” | Make scoped improvements; run simulated peer review when you request it |
-| “Create a 12-minute talk from this paper.” | Plan and produce slides, notes and timing with scientific and visual checks |
-| “Turn my thesis into an article.” | Select a focused scope and preserve a map back to the thesis |
-| “Help me rehearse my defense.” | Ask questions, wait for your answers and provide feedback |
-| “Prepare the files for this journal.” | Assemble a local submission dossier and identify missing declarations |
-| “Help me plan a systematic review.” | Develop the protocol and documented search, screening and synthesis process |
+Start through Galileo without memorizing these names, or invoke a specialist directly using your harness's skill mechanism.
 
-You can request a sequence in one message, such as “Turn this thesis into an article, then create presentation slides.” Galileo handles the requested handoffs without requiring a new command at each step.
+| Workflow | Use it for | Main outputs |
+|---|---|---|
+| [Research drafting](docs/WORKFLOW_GUIDE.md#workflow-a--draft-a-paper-or-thesis) | A paper, thesis, dissertation or scoped text edit | Outline/draft, evidence and actual analysis records, unresolved questions |
+| [Research review](docs/WORKFLOW_GUIDE.md#workflow-b--simulate-editorial-review-and-revision) | Simulated peer review and editorial revision | Reviewer reports, decision, responses, revised manuscript and issue ledger |
+| [Research typesetting](docs/WORKFLOW_GUIDE.md#workflow-c--format-in-docx-or-latex) | Production of checked scientific text | Selected DOCX/TeX source and requested PDF when built |
+| [Research presentations](docs/WORKFLOW_GUIDE.md#workflow-d--create-scientific-presentation-slides) | Conference, seminar, journal club or defense slides | Storyboard, style and representative slides, requested deck files, notes and timing |
+| [Research project](docs/WORKFLOW_GUIDE.md#workflow-e--check-project-capabilities-evidence-and-changes) | Capability/evidence checks and reproducibility | Preflight, evidence/impact reports and selected-file bundle |
+| [Thesis to article](docs/WORKFLOW_GUIDE.md#workflow-f--convert-a-thesis-into-an-article) | Focused conversion of an existing thesis | Article draft, conversion/omission map and word budget |
+| [Research defense](docs/WORKFLOW_GUIDE.md#workflow-g--rehearse-a-defense-or-scientific-qa) | Interactive oral rehearsal | Questions, feedback, answer notes and backup-slide brief |
+| [Submission dossier](docs/WORKFLOW_GUIDE.md#workflow-h--prepare-a-submission-dossier) | Journal-specific file preparation | Cover letter, file/declaration checklist and local dossier |
+| [Systematic review](docs/WORKFLOW_GUIDE.md#workflow-i--conduct-a-systematic-review) | Explicit systematic evidence synthesis | Protocol, search/screening/extraction/appraisal records and synthesis |
+
+Each workflow has its own diagram and examples in the [advanced guide](docs/WORKFLOW_GUIDE.md). You do not have to complete all nine.
+
+Try a request such as:
+
+```text
+Turn this thesis into a focused article, run a simulated peer review,
+and help me correct the manuscript. Then create a 12-minute scientific talk
+using the research-group branding in brand_assets/.
+```
+
+Or start with one smaller task: “Improve this paragraph,” “Check these references,” or “Rehearse my defense one question at a time.” Galileo handles the requested handoffs without a new command at each step.
 
 ## What to expect
 
 1. **A short conversation:** Galileo uses the material already supplied and asks only the next necessary questions.
 2. **A clear next step:** it chooses the relevant specialist workflow and uses available tools.
 3. **A reviewable result:** you receive files, meaningful checks and any unresolved issues.
-
-For rendered presentations, Galileo supports research-group and university logos, colors, fonts and templates, or proposes suitable visual directions, defines a shared style and checks representative slides before completing the deck.
 
 Small requests stay small: a language edit returns the corrected text, and a Markdown slide outline does not require export setup or new project records. Longer research projects keep resumable state.
 
@@ -108,7 +146,28 @@ where supported, and coordinate their reviews and corrections.
 
 Independent agents require harness support and permission to delegate. Otherwise, the assistant follows the roles sequentially and discloses that limitation. Installing skills does not install native agent definitions or guarantee parallel execution.
 
-Model examples are optional guidance, not a dependency on one provider. Use models available in your harness; actual model routing and costs depend on its capabilities. When literature work would benefit from an unavailable connection, Galileo proposes the relevant MCP integration and offers to help set it up or continue with available sources. It can also look for other task-relevant MCPs beyond the bundled catalog, using current upstream documentation and distinguishing candidates from bundled integrations. It reuses your choice on resume. MCP connections and document/export tools still require host-specific setup; a recommendation does not activate a service. Codex UI metadata can be ignored by other clients.
+Model examples are optional guidance, not a dependency on one provider. Use models available in your harness; actual routing and costs depend on its capabilities. Codex UI metadata can be ignored by other clients.
+
+## Literature connections that fit the task
+
+Galileo proposes a useful connection when the next step needs it and equivalent tools are unavailable:
+
+- **PubMed / Europe PMC:** biomedical and clinical literature.
+- **OpenAlex:** cross-disciplinary discovery and citation neighbors.
+- **Crossref:** DOI and bibliographic metadata checks.
+- **Zotero, experimental:** reuse of an authorized reference library.
+
+The catalog is open to alternatives. Galileo can research other task-relevant MCPs, assess current upstream documentation, compatibility, maintenance, permissions and costs, and present linked recommendations. Newly discovered servers remain candidates rather than tested bundled integrations. Your choice is preserved across resumptions.
+
+Setup uses your actual harness and authorization; a recommendation does not activate a service. MCP does not grant institutional paywall access. [Integration guide and configuration examples](docs/LITERATURE_INTEGRATIONS.md)
+
+## Project tools and installation profiles
+
+Four offline standard-library commands ship in the research-project skill: `preflight` for environment discovery, `evidence` for structural source/claim checks, `impact` for registered dependency changes, and `bundle` for selected reproducibility files. They complement source assessment and actual analysis execution; packaging does not execute research code. [Commands and runnable synthetic example](docs/PROJECT_TOOLS.md)
+
+The default full profile installs **Galileo, nine specialist workflows and nine upstream support skills**. Smaller `core`, `docx`, `latex`, `slides`, `publishing`, `defense` and `systematic` profiles are available. Every profile includes Galileo and project support. Installation preserves licenses/provenance, checks vendor hashes and refuses existing names. [Profiles and format choices](docs/FORMATS_AND_SLIDES.md)
+
+## Validation and execution boundaries
 
 Package checks and synthetic workflow exercises are documented in the [release review](docs/RELEASE_REVIEW.md) and [usability report](docs/USABILITY_TESTS.md). Complete runs on Claude Code, OpenCode and GitHub Copilot have not yet been verified.
 

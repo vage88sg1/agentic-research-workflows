@@ -14,6 +14,46 @@ Galileo contiene istruzioni `SKILL.md` e strumenti locali utilizzabili con diver
 
 I percorsi sono documentati dai client; non implicano un collaudo completo su ciascuno. L'installer non registra un comando `/` universale. Fonti e limiti sono nella [guida di installazione](INSTALLATION.md).
 
+## Tutte le funzionalità
+
+Il profilo completo contiene **Galileo, nove workflow specialistici e nove skill di supporto: 19 cartelle di skill**.
+
+| Funzionalità | Cosa offre |
+|---|---|
+| Guida e ripresa del lavoro | Domande progressive, riuso delle risposte, stato salvato e passaggi tra i workflow richiesti |
+| Agenti e correzioni | Ruoli specialistici, delegazione quando disponibile e autorizzata, revisori distinti e loop con limiti espliciti |
+| Stesura scientifica | Outline e testo collegati alle evidenze, controlli di disegno/scoring/questionari, analisi e figure quando realmente eseguite |
+| Simulazione editoriale | Controllo tecnico, tre peer reviewer anonimi simulati, decisione motivata, risposta agli autori, correzioni e nuova revisione |
+| Ricerca bibliografica | PubMed / Europe PMC, OpenAlex, Crossref e Zotero sperimentale; proposte MCP pertinenti e ricerca di altri candidati |
+| Formati | DOCX o LaTeX, bibliografia e riferimenti incrociati, PDF con strumenti disponibili nel client |
+| Slide e stile | PPTX/PDF o Beamer, storyboard, note, tempi stimati, stili proposti, slide campione e revisione dei render |
+| Identità istituzionale | Loghi, colori, font e template del gruppo/università, più affiliazioni e controlli di leggibilità |
+| Tesi → articolo e discussione | Mappa delle trasformazioni/omissioni, budget di parole, domande interattive, feedback e slide di riserva |
+| Revisione sistematica | Protocollo, ricerca, deduplicazione, screening, estrazione, valutazione e sintesi appropriata |
+| Dossier per la rivista | Cover letter, file identificati/anonimizzati quando richiesti, dichiarazioni e checklist; preparazione locale |
+| Tracciabilità e riproducibilità | Quattro comandi offline: `preflight`, `evidence`, `impact` e `bundle`; dipendenze registrate, hash e file selezionati |
+| Qualità e costo | Profili di costo configurabili, contesti mirati, riuso delle evidenze e modelli disponibili nel proprio client |
+
+Sono istruzioni di workflow e strumenti locali: agenti indipendenti, ricerche, calcoli, esportazioni e controlli visivi dipendono dalle capacità reali del client. I risultati non eseguiti non vengono dichiarati completati.
+
+## Scegli il percorso
+
+Non serve imparare i nomi: descrivi l'obiettivo a Galileo. Puoi anche richiamare direttamente questi workflow:
+
+| Workflow | Obiettivo |
+|---|---|
+| Research drafting | Scrivere o migliorare tesi e articoli |
+| Research review | Simulare peer review, decisione e correzioni |
+| Research typesetting | Produrre Word, LaTeX e PDF |
+| Research presentations | Preparare e revisionare slide scientifiche |
+| Research project | Controllare evidenze, cambiamenti e riproducibilità |
+| Thesis to article | Convertire una tesi in un articolo mirato |
+| Research defense | Allenarsi alla discussione e alle domande |
+| Submission dossier | Preparare i materiali richiesti dalla rivista |
+| Systematic review | Svolgere una revisione sistematica esplicitamente richiesta |
+
+[Guida completa con esempi e un diagramma per ogni workflow](WORKFLOW_GUIDE.md).
+
 ## Parti da una richiesta semplice
 
 ```text
@@ -79,6 +119,8 @@ Gli agenti indipendenti richiedono supporto e autorizzazione del client. Altrime
 La scelta dei modelli dipende dal tuo ambiente: gli esempi sono indicativi e non obbligano a usare un provider. Quando una ricerca bibliografica può beneficiare di una connessione non disponibile, Galileo propone gli MCP pertinenti e ti offre di configurarli oppure continuare con le fonti disponibili. Può anche cercare MCP pertinenti oltre al catalogo incluso, verificando la documentazione degli autori e distinguendo i candidati dalle integrazioni del pacchetto. Ricorda la scelta nelle riprese del lavoro. La proposta non attiva servizi: MCP, strumenti per documenti ed esportazioni richiedono configurazioni specifiche. I metadati dell'interfaccia Codex possono essere ignorati dagli altri client.
 
 I controlli del pacchetto e gli esercizi sintetici sono descritti nella [revisione della release](RELEASE_REVIEW.md) e nel [report di usabilità](USABILITY_TESTS.md). Non sono ancora stati verificati workflow completi su Claude Code, OpenCode e GitHub Copilot.
+
+Puoi installare il profilo completo oppure `core`, `docx`, `latex`, `slides`, `publishing`, `defense` o `systematic`. Ogni profilo include Galileo e gli strumenti di progetto; le skill vengono attivate in base al compito, non tutte insieme.
 
 Le funzioni avanzate restano disponibili: [workflow e diagrammi](WORKFLOW_GUIDE.md), [formati](FORMATS_AND_SLIDES.md), [ricerca bibliografica MCP](LITERATURE_INTEGRATIONS.md) e [strumenti di progetto](PROJECT_TOOLS.md). Non occorre configurarli tutti per iniziare.
 
