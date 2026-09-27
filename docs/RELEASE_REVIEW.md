@@ -74,3 +74,11 @@ The package now contains nine original entry points and nine unchanged upstream 
 Preflight cannot infer host capabilities from PATH alone. The evidence script checks structure and recorded status; semantic claim support needs actual source assessment. Impact tracking requires registered dependencies. Packaging does not itself execute research code or establish lawful disclosure/independent reproduction. Systematic-review decisions, extraction, appraisal and flow counts must come from work actually performed; the included templates do not execute a review.
 
 Complete host trials of defense interaction, submission preparation and systematic review, full scientific datasets, real DOCX/LaTeX/PPTX/PDF production, external MCP searches and model-cost comparisons remain unperformed. The new bounded tests narrow earlier validation gaps without closing those broader ones. No submission, registration, personal data processing or live external service activation was performed.
+
+## Guided entry point and simpler onboarding (2026-09-27)
+
+Added Galileo as the recommended everyday entry point. It routes a plain-language goal to the relevant installed specialist instructions, reuses their coordinator/state, asks only the next necessary questions and does not run all workflows by default. Scoped edits remain scoped; simulated editorial review and systematic review require their corresponding intent. Authorized multi-stage requests can proceed across internal handoffs without requiring repeated invocations.
+
+The README and Italian guide now focus on getting started, example requests and resuming. The detailed workflow descriptions and nine specialist diagrams moved to WORKFLOW_GUIDE.md. Direct specialist entry points remain available; this change does not hide entries in clients that list every skill.
+
+All installation profiles include the Galileo entry point. Full installation contains 19 directories: Galileo, nine specialist workflows and nine upstream support skills. Existing installations are not silently overwritten. Twenty-seven automated tests, package/link checks, whitespace checks and the new skill structural validator passed. These checks verify packaging and integrity; no separate behavioral routing benchmark or cross-client UI trial is claimed.

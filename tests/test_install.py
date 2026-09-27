@@ -14,18 +14,20 @@ class InstallationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             dest = Path(folder) / 'not-created'
             result = installer.install(dest, dry_run=True)
-            self.assertEqual(len(result['skills']), 18)
+            self.assertEqual(len(result['skills']), 19)
             self.assertFalse(dest.exists())
 
     def test_install_is_self_contained_and_retains_notices(self):
         with tempfile.TemporaryDirectory() as folder:
             result = installer.install(Path(folder) / 'skills')
-            self.assertEqual(len(result['installed']), 18)
+            self.assertEqual(len(result['installed']), 19)
             dest = Path(result['destination'])
             for name in result['installed']:
                 self.assertTrue((dest / name / 'SKILL.md').is_file())
                 self.assertTrue((dest / name / 'BUNDLE_LICENSE.txt').is_file())
                 self.assertTrue((dest / name / 'bundle-provenance.json').is_file())
+            self.assertTrue((dest / 'galileo/references/routing.md').is_file())
+            self.assertTrue((dest / 'galileo/references/run-state.md').is_file())
             for name in ('research-drafting', 'research-review'):
                 self.assertTrue((dest / name / 'references/agent-contracts.md').is_file())
 
@@ -104,6 +106,7 @@ class InstallationTests(unittest.TestCase):
             for profile, names in expected.items():
                 destination = Path(directory) / profile
                 result = installer.install(destination, profile=profile)
+                self.assertIn('galileo', result['installed'])
                 for name in names:
                     self.assertIn(name, result['installed'])
                 script = destination / 'research-project/scripts/research_tools.py'

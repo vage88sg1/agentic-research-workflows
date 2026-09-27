@@ -1,30 +1,48 @@
-# Galileo: Agentic Research Workflows — Guida italiana
+# Galileo — Guida rapida
 
-Questo pacchetto è generico: tesi, dottorati, articoli e rapporti scientifici di discipline e paesi diversi. Le istruzioni principali sono in inglese, ma puoi chiedere l'output in italiano o un'altra lingua.
+**Descrivi cosa vuoi ottenere. Galileo sceglie il percorso e ti accompagna nel lavoro.**
 
-Installa dal repository con `python3 scripts/install.py --dest /percorso/progetto/.agents/skills`, preceduto da `--dry-run` per verificare il piano. Il profilo completo copia nove voci di workflow e nove skill di supporto, senza installare librerie o attivare servizi. Puoi scegliere `--profile core`, `docx`, `latex`, `slides`,  `publishing`, `defense`, `systematic` o `full`. Leggi [la guida principale](../README.md).
+Dopo l'installazione, digita `/` in un client Codex desktop compatibile e scegli **Galileo**. Nel CLI usa `/skills`; in alternativa puoi scrivere `$galileo` seguito dalla richiesta. Non serve imparare i nomi dei workflow o compilare file di configurazione.
 
-Nell'app Codex digita `/` e scegli Research drafting o Research review, se il client le mostra. Nel CLI usa `/skills`. In alternativa scrivi `$research-drafting` o `$research-review`, seguito dalla richiesta.
+## Parti da una richiesta semplice
 
-Stesura: domande progressive, fonti/scoring, analisi, bozza e audit. Revisione: fascicolo congelato, controlli editoriali, tre reviewer simulati, decisione, risposta e correzioni. Per riprendere chiedi di continuare dallo stato salvato.
+```text
+$galileo Aiutami a scrivere la mia tesi. Ho la descrizione dello studio e i risultati
+nella cartella materiali/. Scrivi in italiano e guidami nel prossimo passo.
+```
 
-Il profilo balanced usa modelli intermedi per la maggior parte del lavoro, economici per compiti di forma e un modello più capace per la revisione statistica e le escalation. I modelli sono esempi configurabili, non una dipendenza. I ruoli non sono reviewer umani e il processo non invia nulla a una rivista.
+Altri esempi:
 
-Questo pacchetto non contiene dati personali o materiali di una tesi specifica. L'utente resta responsabile delle decisioni scientifiche e delle autorizzazioni effettive.
+- «Migliora questo manoscritto mantenendo i risultati.»
+- «Fai una simulazione di peer review e aiutami a rispondere ai commenti.»
+- «Trasforma questa tesi in un articolo e poi prepara le slide.»
+- «Crea una presentazione di 12 minuti da questo articolo.»
+- «Aiutami a preparare la discussione: fammi una domanda alla volta.»
+- «Prepara i documenti richiesti da questa rivista.»
+- «Aiutami a pianificare una revisione sistematica.»
 
-Scegli DOCX o LaTeX durante la stesura; la guida LaTeX si attiva solo per quel formato. Research typesetting gestisce impaginazione, compilazione/export e controllo visivo. Research presentations crea un piano delle slide, PPTX modificabile e PDF della stessa versione con revisione scientifica, visuale e della durata. Il solo PDF può anche usare Beamer; non promette una conversione automatica in PowerPoint modificabile.
+Galileo usa le informazioni già disponibili, fa le domande necessarie e attiva le competenze pertinenti. Quando serve produrre il documento, chiarisce Word o LaTeX. Mantiene nei registri del progetto evidenze, controlli e problemi aperti. Non devi rilanciare un comando per ogni passaggio di un lavoro già richiesto.
 
-## MCP opzionali per la letteratura
+## Riprendi il lavoro
 
-Il pacchetto include configurazioni per PubMed/Europe PMC, OpenAlex, Crossref e un adattatore Zotero sperimentale. In Codex sono inizialmente disattivati; negli altri client i frammenti JSON sono da importare singolarmente con i permessi appropriati. L'installer delle skill non li attiva. La [guida MCP](LITERATURE_INTEGRATIONS.md) spiega requisiti, credenziali opzionali, registro delle ricerche, limiti di costo e controlli di connessione. Per Zotero va controllata anche la configurazione di avvio, che può attivare indicizzazione o embeddings.
+Seleziona di nuovo Galileo nello stesso progetto e scrivi:
 
-## Nuove funzioni
+```text
+Continua dallo stato salvato in research_workspace/. Riutilizza le risposte già date.
+```
 
-Ogni profilo include **Research project**: verifica preliminare delle capacità, mappa affermazioni–evidenze, analisi degli effetti delle modifiche e pacchetto di riproducibilità con file selezionati. I controlli automatici verificano struttura e file; il significato scientifico delle fonti richiede una valutazione distinta. La [guida degli strumenti](PROJECT_TOOLS.md) include un esempio sintetico eseguibile.
+Se ci sono più lavori compatibili, ti chiederà quale riprendere.
 
-- **Thesis to article** trasforma una tesi in un articolo con mappa delle sezioni e controllo delle omissioni.
-- **Research defense** simula domande della commissione, attende le risposte reali e fornisce feedback.
-- **Submission dossier** prepara i materiali locali per una rivista e raccoglie dichiarazioni autentiche; il fascicolo resta NOT SUBMITTED.
-- **Systematic review** gestisce protocollo, ricerca, screening, estrazione, valutazione e sintesi, distinguendo attività AI e umane e lasciando visibili le fasi incomplete.
+## Installa una volta
 
-Dal menu `/` scegli la voce disponibile; in alternativa usa `$research-project`, `$research-thesis-to-article`, `$research-defense`, `$research-submission` o `$research-systematic-review`. Il [README](../README.md) mostra i percorsi e i diagrammi separati.
+Dal repository, con Python 3.10+:
+
+```bash
+python3 scripts/install.py --dest /percorso/del/progetto/.agents/skills
+```
+
+Il profilo completo è quello predefinito. Aggiungi `--dry-run` per vedere il piano senza scrivere file. L'installer non sovrascrive skill già presenti: per aggiornare o scegliere un altro client, segui la [guida di installazione](INSTALLATION.md). Dopo l'installazione aggiorna l'elenco delle skill o apri una nuova sessione nel progetto corretto.
+
+Le funzioni avanzate restano disponibili: [workflow e diagrammi](WORKFLOW_GUIDE.md), [formati](FORMATS_AND_SLIDES.md), [ricerca bibliografica MCP](LITERATURE_INTEGRATIONS.md) e [strumenti di progetto](PROJECT_TOOLS.md). Non occorre configurarli tutti per iniziare.
+
+La revisione editoriale resta una simulazione; Galileo non invia nulla alle riviste. Capacità effettive e strumenti dipendono dal client: eventuali verifiche o esportazioni non eseguite restano indicate come tali. Per materiale riservato va prima definito il trattamento autorizzato.

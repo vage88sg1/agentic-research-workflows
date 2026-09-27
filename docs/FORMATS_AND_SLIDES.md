@@ -4,16 +4,16 @@
 
 | Profile | Original entry points | Upstream support | Total skill folders |
 |---|---|---|---|
-| core | Project support, drafting, review | Seven core scientific skills | 10 |
-| docx | Core entry points plus typesetting | Seven core scientific skills | 11 |
-| latex | Core entry points plus typesetting | Core plus academic-writing-latex | 12 |
-| slides | Core entry points plus presentations | Core plus scientific-slides | 12 |
-| publishing | DOCX entry points plus thesis-to-article and submission | Seven core scientific skills | 13 |
-| defense | Slides entry points plus defense rehearsal | Core plus scientific-slides | 13 |
-| systematic | Core entry points plus systematic review | Seven core scientific skills | 11 |
-| full | All nine entry points | All nine upstream skills | 18 |
+| core | Project support, drafting, review | Seven core scientific skills | 11 |
+| docx | Core entry points plus typesetting | Seven core scientific skills | 12 |
+| latex | Core entry points plus typesetting | Core plus academic-writing-latex | 13 |
+| slides | Core entry points plus presentations | Core plus scientific-slides | 13 |
+| publishing | DOCX entry points plus thesis-to-article and submission | Seven core scientific skills | 14 |
+| defense | Slides entry points plus defense rehearsal | Core plus scientific-slides | 14 |
+| systematic | Core entry points plus systematic review | Seven core scientific skills | 12 |
+| full | Galileo and nine specialist workflows | All nine upstream skills | 19 |
 
-Full installation does not activate every skill on every task. Set `manuscript_format` to docx or latex; leave it null until intake resolves the choice. Presentation outputs default to PPTX plus PDF and are independent of manuscript format. A Word thesis can produce Beamer slides; a LaTeX paper can produce editable PowerPoint.
+Every profile includes the Galileo guided entry point. Full installation does not activate every skill on every task. Set `manuscript_format` to docx or latex; leave it null until intake resolves the choice. Presentation outputs default to PPTX plus PDF and are independent of manuscript format. A Word thesis can produce Beamer slides; a LaTeX paper can produce editable PowerPoint.
 
 ## Online skill selection
 

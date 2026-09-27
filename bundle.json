@@ -1,5 +1,6 @@
 {
   "original_skills": [
+    "galileo",
     "research-drafting",
     "research-review",
     "research-typesetting",
@@ -12,6 +13,7 @@
   ],
   "profiles": {
     "core": [
+      "galileo",
       "research-project",
       "research-drafting",
       "research-review",
@@ -24,6 +26,7 @@
       "peer-review"
     ],
     "docx": [
+      "galileo",
       "research-project",
       "research-drafting",
       "research-review",
@@ -37,6 +40,7 @@
       "peer-review"
     ],
     "latex": [
+      "galileo",
       "research-project",
       "research-drafting",
       "research-review",
@@ -51,6 +55,7 @@
       "academic-writing-latex"
     ],
     "slides": [
+      "galileo",
       "research-project",
       "research-drafting",
       "research-review",
@@ -65,6 +70,7 @@
       "scientific-slides"
     ],
     "full": [
+      "galileo",
       "research-project",
       "research-drafting",
       "research-review",
@@ -85,6 +91,7 @@
       "research-systematic-review"
     ],
     "publishing": [
+      "galileo",
       "research-project",
       "research-drafting",
       "research-review",
@@ -100,6 +107,7 @@
       "research-submission"
     ],
     "defense": [
+      "galileo",
       "research-project",
       "research-drafting",
       "research-review",
@@ -115,6 +123,7 @@
       "research-defense"
     ],
     "systematic": [
+      "galileo",
       "research-project",
       "research-drafting",
       "research-review",

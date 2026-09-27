@@ -1,0 +1,4 @@
+interface:
+  display_name: "Galileo"
+  short_description: "Start or resume research with a guided conversation"
+  default_prompt: "Use $galileo to help with my research, choose the appropriate workflow and ask only the necessary questions."

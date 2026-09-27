@@ -6,11 +6,13 @@ The installer verifies vendor hashes, stages the full set and rolls back directo
 
 ## Codex
 
+For normal use select **Galileo** in the supported skill menu and describe your goal. `$galileo` is the explicit alternative. It routes to the installed specialist skills and reuses saved state. Direct specialist entry points remain available for advanced use.
+
 For project scope choose `/path/to/project/.agents/skills`. For a different scope consult current host documentation rather than assuming paths are interchangeable. Refresh discovery/start a new session. Desktop enabled skills can appear in the slash menu; CLI `/skills` selects a skill. `$research-drafting` and `$research-review` are explicit invocation examples. UI display names are Research drafting and Research review. Arbitrary slash aliases are not registered by this installer.
 
 ## Other clients
 
-If your client supports the SKILL.md format, point `--dest` to its supported skill location. Extra Codex UI metadata may be ignored. Use `--profile core|docx|latex|slides|publishing|defense|systematic|full` to choose installed capabilities; full includes eighteen directories. All profiles preserve non-overwrite behavior. The workflows themselves are portable Markdown instructions, but model settings, independent contexts, tool identifiers and menus are not universal. No claim is made of end-to-end testing in other clients.
+If your client supports the SKILL.md format, point `--dest` to its supported skill location. Extra Codex UI metadata may be ignored. Use `--profile core|docx|latex|slides|publishing|defense|systematic|full` to choose installed capabilities; full includes nineteen directories. All profiles preserve non-overwrite behavior. The workflows themselves are portable Markdown instructions, but model settings, independent contexts, tool identifiers and menus are not universal. No claim is made of end-to-end testing in other clients.
 
 If skills are unsupported, provide the entry point, its references and relevant vendor guidance as instructions. The workflow must report unavailable parallelism, computation, browsing and model routing instead of simulating successful tool execution.
 
@@ -30,4 +32,4 @@ MCP examples are kept outside skill installation. Configure selected servers sep
 
 The installer rejects vendor files absent from its provenance inventory, including generated caches; use a clean source checkout. Each installed skill records SHA-256 hashes of its payload and retained license in `bundle-provenance.json` (the manifest excludes itself). This detects later file changes; it is not a signature or authenticity guarantee.
 
-All profiles include research-project and its portable standard-library scripts. The publishing profile adds thesis-to-article and submission preparation; defense adds oral rehearsal; systematic adds the dedicated evidence-synthesis workflow. New profiles still require a fresh destination or deliberate reconciliation with existing installations.
+All profiles include galileo and research-project and its portable standard-library scripts. The publishing profile adds thesis-to-article and submission preparation; defense adds oral rehearsal; systematic adds the dedicated evidence-synthesis workflow. New profiles still require a fresh destination or deliberate reconciliation with existing installations.
