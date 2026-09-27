@@ -22,10 +22,15 @@ Use scientific-slides/references/beamer_guide.md only for this route. Choose the
 
 Deliver .tex/assets and the PDF actually compiled. There is no automatic editable PPTX guarantee from Beamer/PDF conversion. If both PPTX and PDF are required, use PPTX as the canonical deck or explicitly agree on separately authored versions with content reconciliation.
 
+## Representative and final rendering
+
+Follow [visual design](visual-design.md) to render representative slides before full-deck expansion. Use the intended final renderer and inspect actual font/layout behavior; if the engine or fonts change, recheck affected slides. Reuse sample slides within the requested slide count. Their checks do not substitute for inspecting every final slide or reconciling exported formats.
+
 ## Visual and scientific checklist
 
 - Inspect every rendered page/slide and a full-deck overview; no clipping, collisions, missing glyphs or cropped uncertainty.
 - Verify labels, units, n, intervals and sources against the evidence record; simple visual appeal is not validation.
+- Check shared palette, stable scientific color mappings, typography, margins, recurring layouts and template consistency. Verify supplied/official logo identity, variant, proportions, clear space, placement, co-branding and font substitutions against the recorded guidelines.
 - Test distance readability, contrast and redundant encodings rather than blindly applying a fixed font size or color ratio.
 - Keep source attribution on relevant slides/notes and a readable bibliography as appropriate; visible disclosures remain visible.
 - Reconcile final PPTX/PDF versions and note animation/overlay behavior. Do not claim PowerPoint inspection unless it actually occurred there.

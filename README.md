@@ -46,6 +46,8 @@ You can request a sequence in one message, such as “Turn this thesis into an a
 2. **A clear next step:** it chooses the relevant specialist workflow and uses available tools.
 3. **A reviewable result:** you receive files, meaningful checks and any unresolved issues.
 
+For rendered presentations, Galileo supports research-group and university logos, colors, fonts and templates, or proposes suitable visual directions, defines a shared style and checks representative slides before completing the deck.
+
 Small requests stay small: a language edit returns the corrected text, and a Markdown slide outline does not require export setup or new project records. Longer research projects keep resumable state.
 
 ```mermaid

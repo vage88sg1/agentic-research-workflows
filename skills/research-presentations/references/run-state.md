@@ -10,6 +10,8 @@ Record:
 - `inputs`: path, version/hash where material, and the authorized processing boundary.
 - `outputs`: path, version/hash, actual build status and actual check status. Separate source created, compilation/export completed, visual QA completed and human approval.
 - `execution`: actual models, settings, tools and whether role contexts were independent, sequential or unavailable. Unknown telemetry remains null, not an estimate presented as measured usage.
+- Optional `visual_design`: direction and provisional/user-selected status, template/source and style version, representative slide IDs, actual render/scientific/visual checks and any explicitly given user approval. Reuse the choice on resume; invalidate affected render checks after style/font changes.
+- Optional `branding`: supplied group/institution names, logo/template/guideline sources and versions, variants/palette, font availability/substitutions, placement/co-branding and unresolved identity questions.
 - `round`, `max_rounds` and `no_progress_rounds` where a bounded revision loop applies.
 - `open_issues`, `pending_user_input`, `completed_checks` and one concrete `next_action`.
 

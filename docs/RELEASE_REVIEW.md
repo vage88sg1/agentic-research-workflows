@@ -98,3 +98,11 @@ Galileo now offers relevant literature connections when a task benefits from the
 Recommendations do not install or activate services. Selected setup uses the actual harness, preserves existing configuration and records real discovery/test status. Public server pins/catalog and MCP configuration examples are unchanged.
 
 Nine installer tests, package/link/provenance validation, offline MCP configuration checks, the Galileo skill structural validator and whitespace checks passed. A temporary full installation confirmed that the shared reference and specialist links survive copying. These are packaging checks; proactive recommendation behavior, external-server discovery and live connections have not been independently exercised in this update.
+
+## Slide design and institutional identity (2026-09-27)
+
+The presentation workflow now includes visual-direction selection, a common style specification and representative rendered slides before full-deck expansion. Samples belong to the requested storyboard/count and require real supplied evidence; methods/concept slides substitute when results are absent. Optional preferences do not require an approval stop unless requested. Content-only work and bounded edits retain their simpler paths.
+
+Group/university/department/consortium identity can use supplied assets/templates or verified official guidelines: logo variants/proportions/clear space, palette, fonts/substitutions, placement and co-branding are tracked and reviewed. Scientific chart semantics and readability take precedence over decorative palette reuse. An available host presentation/pptx skill is optional; external proprietary skills are not redistributed or installed. Vendor payloads and profile counts are unchanged.
+
+Nine installer tests, package/link/provenance and whitespace checks, and the presentation skill structural validator passed. A temporary slides-profile installation confirmed the new design reference survives copying. The workflow diagram, role responsibilities, QA and saved-state guidance were aligned. No new rendered deck, institutional-brand compliance trial or independent behavioral evaluation was performed for this update.

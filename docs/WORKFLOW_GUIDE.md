@@ -285,7 +285,8 @@ $research-presentations Build a scientific conference talk from the checked manu
 and figures in research_workspace/. The audience is researchers in this discipline.
 Plan 12 minutes of speaking plus 3 minutes of Q&A, in English.
 Deliver editable PPTX and PDF from the same final deck, with speaker notes and a timing plan.
-Save work in presentation/. Ask about missing template or slide-count requirements.
+Save work in presentation/. Use the research-group or university branding in brand_assets/
+if supplied; ask about missing template or slide-count requirements.
 ```
 
 For a thesis defense, specify the committee audience and required duration. If you want a PDF-only Beamer presentation, say so; Beamer does not automatically produce editable PowerPoint.
@@ -296,7 +297,12 @@ For a thesis defense, specify the committee audience and required duration. If y
 flowchart TD
   A[Verified manuscript, findings and figures] --> B[Coordinator: audience, duration and output intake]
   B --> C[Story planner: evidence-linked slides and timing]
-  C --> D[Writer and designer: slide content, visuals and notes]
+  C --> S[Designer: group or university branding and shared style]
+  S --> T[Build and render representative storyboard slides]
+  T --> U{Sample science and visual checks}
+  U -->|Fixable issues within limits| T
+  U -->|Checks complete| D[Writer and designer: full deck, visuals and notes]
+  U -->|Limit or essential capability gap| M
   D --> E[Science verifier: claims, uncertainty and attribution]
   D --> F[Visual reviewer: actual rendered slides and readability]
   E --> G[Coordinator: reconcile issues and timing]
@@ -320,15 +326,16 @@ Scientific and visual checks have separate responsibilities. PPTX and PDF come f
 
 1. **Presentation intake:** clarify audience, duration/Q&A, language, slide count, template, accessibility and outputs.
 2. **Storyboard:** map each slide's purpose, message, evidence, visual, notes and time allocation.
-3. **Production:** writer/designer roles build editable content and preserve uncertainty, units, denominators, limitations and source attribution.
-4. **Scientific and visual review:** a science verifier checks claims; a visual reviewer inspects actual rendered slides and timing.
-5. **Correction and export:** fix issues within the bounded loop, then check the final PPTX/PDF count, order and content agreement.
+3. **Design and samples:** reuse group/university branding and templates or propose visual directions, define a shared style and inspect two representative rendered slides before expanding the deck. Samples use real supplied evidence and remain within the requested slide count. Optional aesthetic choices do not impose an approval stop unless you request one.
+4. **Production:** writer/designer roles apply the style to editable content and preserve uncertainty, units, denominators, limitations and source attribution.
+5. **Scientific and visual review:** a science verifier checks claims; a visual reviewer inspects actual rendered slides and timing.
+6. **Correction and export:** fix issues within the bounded loop, then check the final PPTX/PDF count, order and content agreement.
 
 ### What to expect at handoff
 
 Requested slide files when generated, editable source/assets, references, speaker notes, timing plan, open issues and saved state. Missing conversion/rendering capabilities are reported; source or ZIP checks alone do not establish visual quality. Actual research talks about unpublished work are not automatically labeled simulated publication; illustrative data and simulated editorial outcomes are labeled where used.
 
-[Presentation instructions](../skills/research-presentations/SKILL.md) · [Export and visual QA](../skills/research-presentations/references/export-and-qa.md)
+[Presentation instructions](../skills/research-presentations/SKILL.md) · [Visual design and sample slides](../skills/research-presentations/references/visual-design.md) · [Export and visual QA](../skills/research-presentations/references/export-and-qa.md)
 
 ## Workflow E — Check project capabilities, evidence and changes
 

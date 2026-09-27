@@ -33,6 +33,8 @@ Altri esempi:
 
 Galileo usa le informazioni già disponibili, fa le domande necessarie e attiva le competenze pertinenti. Quando serve produrre il documento, chiarisce Word o LaTeX. Mantiene nei registri del progetto evidenze, controlli e problemi aperti. Non devi rilanciare un comando per ogni passaggio di un lavoro già richiesto.
 
+Per una presentazione completa, Galileo supporta loghi, colori, font e template del gruppo di ricerca o dell’università, oppure propone stili adatti al pubblico, definisce palette e layout comuni e controlla due slide campione prima di completare il deck. Le slide campione fanno parte del numero richiesto. Una richiesta di solo testo o note salta questa fase grafica.
+
 ## Riprendi il lavoro
 
 Richiama Galileo con la modalità prevista dal tuo client, nello stesso progetto, e scrivi:

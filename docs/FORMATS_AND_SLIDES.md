@@ -22,6 +22,16 @@ Every profile includes the Galileo guided entry point. Full installation does no
 
 Sources, revisions, licenses and hashes are pinned in vendor/provenance.json. No popularity or empirical superiority claim is made. Original research-typesetting and research-presentations route these skills to actual tools. Restricted redistribution licenses excluded other document skills from this public bundle.
 
+## Slide styling and representative previews
+
+Rendered-deck production includes a design stage. Galileo reuses your supplied template or proposes two or three visual directions, recommends one and defines a common palette, typography, margins, layouts and scientific color mappings. It then builds two representative storyboard slides—normally introduction and results—and checks their actual renders before expanding the deck. A methods/concept slide replaces results if verified results are unavailable. Samples remain within the requested slide count; they do not replace final full-deck QA.
+
+Research-group, department, university and consortium branding is supported: supply logos, color/font specifications, a brand-book PDF or an existing PPTX/POTX/Beamer template. If you name the institution and ask for branding without assets, Galileo can look for official guidelines/downloads using available browsing. It preserves logo proportions/variants and co-branding rules, records asset sources and font substitutions, and keeps scientific charts readable. Missing official assets remain unresolved rather than being invented. A brand-book PDF guides style but is not an editable slide template.
+
+Optional preferences do not halt reversible production unless you request approval first. Text-only outlines and notes skip theme/sample-export setup; scoped deck edits preserve the existing style. Style decisions and actual checks are kept in existing presentation records. See [visual design instructions](../skills/research-presentations/references/visual-design.md).
+
+A relevant presentation or `pptx` skill already available in your harness can support template editing and technical checks. The [Anthropic pptx skill](https://github.com/anthropics/skills/blob/main/skills/pptx/SKILL.md) has [separate proprietary terms](https://github.com/anthropics/skills/blob/main/skills/pptx/LICENSE.txt) and is not redistributed or installed by this MIT bundle. Galileo works with available licensed host capabilities or the documented local fallback; no extra styling skill is required by the installer.
+
 ## Capabilities and dependencies
 
 | Output | Preferred route | Local fallback if needed | Limits to record |
@@ -36,6 +46,6 @@ Installation does not install these runtimes, office tools, fonts or TeX distrib
 
 ## Verification
 
-Scientific manuscript review precedes format QA; meaning changes return to review. Presentations: evidence map/storyboard → draft → export/render → distinct science and visual review → correction → reconciled files. Default three rounds, two without progress stop unresolved.
+Scientific manuscript review precedes format QA; meaning changes return to review. Presentations: evidence map/storyboard → visual direction and shared style → representative rendered slides → full draft → export/render → distinct science and visual review → correction → reconciled files. Default three rounds, two without progress stop unresolved.
 
 Package tests validate installation, routing and provenance. End-to-end DOCX, LaTeX, PPTX and PDF production has not been tested on every host; use the synthetic evaluation protocol with your actual runtime.

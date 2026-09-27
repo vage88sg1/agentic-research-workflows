@@ -32,6 +32,12 @@ Build a storyboard with slide ID, purpose, message, supporting claim/source/resu
 
 Keep uncertainty, limitations, units, n, denominators and comparison basis when shortening manuscript content. Use supplied verified sources; search additional public background only when needed and log it. Reviewer criticism is not new scientific evidence. Summarize disagreements fairly.
 
+## Visual design and representative slides
+
+For a rendered deck, read [visual design](references/visual-design.md). Support research-group, department, university and consortium identity: reuse supplied logos, brand guidelines, colors/fonts and templates, or verify official asset sources when the user requests branding without supplying them. Preserve logo proportions and documented usage, distinguish affiliation from sponsorship, and record font substitutions or unresolved assets. Reuse the supplied template or established project style. Otherwise propose two or three suitable visual directions in plain language and recommend one; use that recommendation as a provisional default when the choice is optional. Define a compact common style before production: palette and scientific color meanings, fonts, margins, recurring layouts and figure/citation treatment.
+
+Build and render two representative slides from the storyboard, normally an introduction and a results slide, then check both visually and scientifically before expanding the deck. If no verified result is available, use a methods or conceptual slide; do not invent data to demonstrate a layout. Invite feedback without requiring a new approval for routine reversible design work, unless the user has requested approval first. These samples are part of the requested slide count. Preserve content-only and scoped-edit paths; they do not require this full production stage.
+
 ## Specialist production
 
 Delegate scoped roles when authorized/supported, following the role reference and host concurrency. A science verifier checks central claims independently from the writer. A visual reviewer sees actual rendered slides, not only source code. Without separate contexts/rendering, report those limits.
@@ -42,7 +48,7 @@ Upstream scientific-slides proposes OpenRouter/Nano Banana generation and a defa
 
 ## Export, render, review, correct
 
-Prefer host-native presentation tools under their applicable instructions. Otherwise use a documented local PPTX generator and actual renderer. Export final PPTX and derive PDF from that version when both are requested. Beamer is a separate PDF-first route; it does not yield editable PowerPoint automatically. Use a built-in compiler for supported standalone .tex files when available; no unnecessary TeX installation.
+Prefer host-native presentation tools under their applicable instructions. If a presentation or `pptx` skill is already available in the host, use it for actual PowerPoint/template operations; do not assume its dependencies or redistribute it as part of this MIT bundle. Otherwise use a documented local PPTX generator and actual renderer. Export final PPTX and derive PDF from that version when both are requested. Beamer is a separate PDF-first route; it does not yield editable PowerPoint automatically. Use a built-in compiler for supported standalone .tex files when available; no unnecessary TeX installation.
 
 Render every final slide and inspect at presentation size and in an overview/contact sheet. Check overflow/overlap, font substitution, equation glyphs, citations, chart readability, accessibility, scientific fidelity, notes and total timing. Check PPTX/PDF count/order/content agreement, including animation/overlay flattening choices. Basic structural ZIP checks are not visual verification.
 
