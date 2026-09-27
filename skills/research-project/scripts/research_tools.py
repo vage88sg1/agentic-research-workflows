@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline project diagnostics, evidence structure, change impact and explicit bundles.
+"""Offline project diagnostics, evidence structure, change impact, delivery records and explicit bundles.
 
 Python 3.10+ standard library. Reports JSON to stdout. Only bundle writes files;
 no command from a project document is executed and no service is contacted.
@@ -242,6 +242,127 @@ def build_bundle(manifest, root, destination):
     return {'destination': str(destination), 'file_count': len(planned), 'analysis_executed': False}
 
 
+def delivery_report(data, root):
+    """Check recorded delivery bytes/coverage; never certify scientific validity."""
+    if data.get('schema_version') != 1:
+        raise ValueError('Unsupported delivery schema_version')
+    root = Path(root).resolve()
+    if not root.is_dir():
+        raise ValueError('Project root must be an existing directory')
+    outputs = data.get('outputs')
+    checks = data.get('completed_checks', [])
+    required = data.get('required_checks', [])
+    readiness = data.get('readiness', {})
+    if not isinstance(outputs, list) or not outputs:
+        raise ValueError('Delivery outputs must be a nonempty list')
+    if not isinstance(checks, list) or not isinstance(required, list) or not isinstance(readiness, dict):
+        raise ValueError('Invalid delivery checks/readiness records')
+    if any(not isinstance(key, str) or not key.strip() for key in required):
+        raise ValueError('required_checks must contain check IDs')
+    issues, actual, registered = [], {}, {}
+
+    def issue(code, **details):
+        issues.append({'issue': code, **details})
+
+    def reference(row):
+        if not isinstance(row, dict) or not isinstance(row.get('path'), str) or not row['path'].strip():
+            raise ValueError('Artifact references need a path')
+        if not isinstance(row.get('sha256'), str) or not re.fullmatch(r'[a-f0-9]{64}', row['sha256']):
+            raise ValueError('Artifact references need a SHA-256 hash')
+        return str(PurePosixPath(row['path']))
+
+    for row in outputs:
+        path = reference(row)
+        if path in registered:
+            raise ValueError(f'Duplicate delivery output: {path}')
+        registered[path] = row['sha256']
+        try:
+            actual[path] = digest(local_file(root, row['path']))
+        except (ValueError, OSError):
+            issue('missing_or_unsafe_output', path=path)
+            continue
+        if actual[path] != row['sha256']:
+            issue('output_hash_mismatch', path=path)
+
+    by_id = {}
+    for row in checks:
+        if not isinstance(row, dict) or not isinstance(row.get('id'), str) or not row['id'].strip():
+            raise ValueError('Check records need unique nonempty IDs')
+        if row['id'] in by_id:
+            raise ValueError(f'Duplicate check ID: {row["id"]}')
+        by_id[row['id']] = row
+    active = set(required)
+    for kind in ('content', 'bibliography', 'review', 'production'):
+        row = readiness.get(kind)
+        if row is None:
+            issue('readiness_unrecorded', kind=kind)
+            continue
+        if not isinstance(row, dict) or row.get('status') not in ('checked', 'pending', 'blocked', 'not_required'):
+            raise ValueError(f'Invalid readiness record: {kind}')
+        if not isinstance(row.get('rationale'), str) or not row['rationale'].strip():
+            raise ValueError(f'Readiness needs a rationale: {kind}')
+        independent = row.get('requires_independent', False)
+        if not isinstance(independent, bool):
+            raise ValueError('requires_independent must be a boolean')
+        ids = row.get('check_ids', [])
+        if not isinstance(ids, list) or any(not isinstance(key, str) or not key.strip() for key in ids):
+            raise ValueError('check_ids must contain check IDs')
+        if row['status'] == 'checked':
+            if not ids:
+                issue('checked_readiness_without_checks', kind=kind)
+            active.update(ids)
+        elif row['status'] != 'not_required':
+            issue('readiness_pending_or_blocked', kind=kind, status=row['status'])
+        if independent and (kind != 'review' or row['status'] != 'checked' or not ids):
+            issue('required_independent_review_pending', kind=kind)
+
+    covered, passed = set(), set()
+    for key in sorted(active):
+        row = by_id.get(key)
+        if row is None:
+            issue('required_check_missing', check_id=key)
+            continue
+        if row.get('status') != 'performed' or row.get('result') != 'pass':
+            issue('required_check_not_passed', check_id=key, status=row.get('status'))
+            continue
+        fields = ('reviewer', 'scope', 'evidence')
+        if any(not isinstance(row.get(field), str) or not row[field].strip() for field in fields):
+            raise ValueError(f'Performed pass needs reviewer, scope and evidence: {key}')
+        if row.get('context') not in ('independent', 'sequential', 'self', 'tool'):
+            raise ValueError(f'Invalid check context: {key}')
+        refs = row.get('artifacts')
+        if not isinstance(refs, list) or not refs:
+            raise ValueError(f'Performed pass needs artifact revisions: {key}')
+        valid = True
+        check_paths = set()
+        for ref in refs:
+            path = reference(ref)
+            check_paths.add(path)
+            if path not in registered:
+                issue('check_output_not_registered', check_id=key, path=path)
+                valid = False
+            elif ref['sha256'] != registered[path] or ref['sha256'] != actual.get(path):
+                issue('check_revision_mismatch', check_id=key, path=path)
+                valid = False
+        if valid:
+            covered.update(check_paths)
+            passed.add(key)
+    review = readiness.get('review', {})
+    if review.get('requires_independent') and review.get('status') == 'checked':
+        ids = review.get('check_ids', [])
+        if not ids or any(key not in passed or by_id[key].get('context') != 'independent' for key in ids):
+            issue('required_independent_review_pending', kind='review')
+    for path in sorted(registered.keys() - covered):
+        issue('output_without_current_check', path=path)
+    return {'operation': 'delivery', 'record_consistent': not issues,
+            'operational_status': data.get('status'), 'readiness': readiness,
+            'outputs_checked': len(registered), 'active_check_ids': sorted(active),
+            'issues': issues, 'state_modified': False,
+            'scientific_validity_verified_by_script': False,
+            'reviewer_identity_authenticated': False,
+            'limits': 'Checks recorded hashes, statuses and coverage only. It does not assess claim support, bibliography completeness, visual quality, actual reviewer independence or human approval.'}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='command', required=True)
@@ -252,6 +373,9 @@ def main():
         if name == 'impact':
             child.add_argument('--root', required=True)
             child.add_argument('--changed', action='append', default=[])
+    child = sub.add_parser('delivery')
+    child.add_argument('--state', required=True)
+    child.add_argument('--root', required=True)
     child = sub.add_parser('bundle')
     child.add_argument('--manifest', required=True)
     child.add_argument('--root', required=True)
@@ -264,10 +388,12 @@ def main():
             report = evidence_report(load_json(args.map))
         elif args.command == 'impact':
             report = impact_report(load_json(args.map), args.root, args.changed)
+        elif args.command == 'delivery':
+            report = delivery_report(load_json(args.state), args.root)
         else:
             report = build_bundle(load_json(args.manifest), args.root, args.dest)
         print(json.dumps(report, indent=2))
-        return 2 if args.command == 'evidence' and report['issues'] else 0
+        return 2 if args.command in ('evidence', 'delivery') and report['issues'] else 0
     except (ValueError, OSError, KeyError, TypeError) as error:
         print(json.dumps({'error': str(error)}), file=sys.stderr)
         return 1

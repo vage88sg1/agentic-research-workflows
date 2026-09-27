@@ -4,7 +4,7 @@
 
 Galileo brings together scientific writing, specialist roles, evidence records and correction loops. Describe your goal in your preferred language; the assistant selects the relevant workflow and asks for information when it matters. Use a focused workflow or request several connected deliverables in one message.
 
-**9 specialist workflows · 19 skill folders in the full profile · 4 offline project commands**
+**9 specialist workflows · 19 skill folders in the full profile · 5 offline project commands**
 
 Works through skill-compatible AI assistants such as Claude Code, Codex, OpenCode and GitHub Copilot. The package contains portable `SKILL.md` instructions and local tools; your harness supplies models, agents and execution capabilities. Cross-client discovery support and complete runtime validation are distinct.
 
@@ -16,17 +16,17 @@ Works through skill-compatible AI assistants such as Claude Code, Codex, OpenCod
 |---|---|
 | **Guided research assistance** | Progressive questions, narrow task routing, reusable answers and saved progress. Small edits stay small; requested multi-stage work moves between workflows. |
 | **Specialist roles and correction loops** | Coordinators, writers, bibliographers, methodologists, statistical/measurement specialists and scientific/visual reviewers. Separate agents when supported and authorized; bounded revision with explicit unresolved issues. |
-| **Evidence sufficiency and final-version review** | Distinguishes missing inputs from sources present but excluded; checks fitness for the intended document, reader usability and terminology. Review records identify the delivered revision and disclose pending checks or self-review fallbacks. |
+| **Evidence sufficiency and final-version review** | Distinguishes missing inputs from sources present but excluded; maps objectives to the author’s contribution and supporting evidence; checks section completeness, reader usability and terminology. Review records identify the delivered revision and disclose pending checks or self-review fallbacks. |
 | **Scientific drafting and analysis** | Section-by-section drafting with interactive checkpoints or autonomous progression, active literature-gap searches and evidence-linked outlines/prose; design, questionnaire/scoring and missing-data checks; analysis plans, code/output records and data-faithful figures when actually executed. |
 | **Realistic editorial simulation** | Technical assessment, three complementary anonymous simulated reviewers by default, reasoned editorial decisions, point-by-point author responses, corrections and rereview. |
-| **Literature discovery and references** | Optional PubMed / Europe PMC, OpenAlex, Crossref and experimental Zotero integrations; query/access logs, source/claim records and identifier checks. Galileo proposes useful connections and can assess other MCP candidates beyond the catalog. |
+| **Literature discovery and references** | Optional PubMed / Europe PMC, OpenAlex, Crossref and experimental Zotero integrations; query/access logs, topic and claim coverage, source-type assessment, source/claim records and citation-to-bibliography checks in both directions. Galileo proposes useful connections and can assess other MCP candidates beyond the catalog. |
 | **Word and LaTeX production** | Conditional DOCX or LaTeX workflows, bibliography/cross-reference checks and requested PDF production using available host tools. Only the selected authoring route is activated. |
 | **Scientific slides and visual design** | Storyboards, editable PPTX/PDF or PDF-first Beamer, speaker notes and timing plans; visual directions, shared styling, representative slides and final rendered-slide review. |
 | **Research-group and university branding** | Supplied or verified official logos, palettes, fonts and templates; logo placement, multiple affiliations, accessible chart colors and recorded font substitutions. |
 | **Thesis conversion and oral preparation** | Focused thesis-to-article conversion with source/omission maps and word budgets; interactive defense coaching, simulated examiners and backup-slide planning. |
 | **Systematic evidence synthesis** | Protocol, reproducible search, record/report/study tracking, deduplication, screening, extraction, appraisal and appropriate synthesis. Meta-analysis is conditional, not automatic. |
 | **Journal dossier preparation** | Current venue requirements, cover-letter draft, title/blinded files where needed, supplements and declaration/checklist tracking. Local preparation only. |
-| **Traceability and reproducibility** | Environment discovery, structural evidence audits, registered dependency/change-impact tracking and allowlisted reproducibility bundles with hashes and recorded commands. |
+| **Traceability and reproducibility** | Environment discovery, structural evidence audits, registered dependency/change-impact tracking, final delivery-record checks and allowlisted reproducibility bundles with hashes and recorded commands. |
 | **Provider flexibility and cost guidance** | Configurable economy/balanced/quality guidance, targeted delegation, reuse of verified evidence and escalation of specific difficult issues. Actual routing and costs depend on the host. |
 
 These are workflow instructions plus scoped local tools. File creation, computation, independent contexts, browsing and rendering are claimed only when actually performed. [Detailed workflow designs](docs/WORKFLOW_GUIDE.md) · [Validation and limits](docs/RELEASE_REVIEW.md)
@@ -168,7 +168,7 @@ Setup uses your actual harness and authorization; a recommendation does not acti
 
 ## Project tools and installation profiles
 
-Four offline standard-library commands ship in the research-project skill: `preflight` for environment discovery, `evidence` for structural source/claim checks, `impact` for registered dependency changes, and `bundle` for selected reproducibility files. They complement source assessment and actual analysis execution; packaging does not execute research code. [Commands and runnable synthetic example](docs/PROJECT_TOOLS.md)
+Five offline standard-library commands ship in the research-project skill: `preflight` for environment discovery, `evidence` for structural source/claim checks, `impact` for registered dependency changes, `delivery` for final output hashes and recorded check/readiness consistency, and `bundle` for selected reproducibility files. They complement source assessment and actual analysis execution; packaging does not execute research code. [Commands and runnable synthetic example](docs/PROJECT_TOOLS.md)
 
 The default full profile installs **Galileo, nine specialist workflows and nine upstream support skills**. Smaller `core`, `docx`, `latex`, `slides`, `publishing`, `defense` and `systematic` profiles are available. Every profile includes Galileo and project support. Installation preserves licenses/provenance, checks vendor hashes and refuses existing names. [Profiles and format choices](docs/FORMATS_AND_SLIDES.md)
 

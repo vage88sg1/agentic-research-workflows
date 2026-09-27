@@ -32,7 +32,7 @@ Il profilo completo contiene **Galileo, nove workflow specialistici e nove skill
 | Tesi → articolo e discussione | Mappa delle trasformazioni/omissioni, budget di parole, domande interattive, feedback e slide di riserva |
 | Revisione sistematica | Protocollo, ricerca, deduplicazione, screening, estrazione, valutazione e sintesi appropriata |
 | Dossier per la rivista | Cover letter, file identificati/anonimizzati quando richiesti, dichiarazioni e checklist; preparazione locale |
-| Tracciabilità e riproducibilità | Quattro comandi offline: `preflight`, `evidence`, `impact` e `bundle`; dipendenze registrate, hash e file selezionati |
+| Tracciabilità e riproducibilità | Cinque comandi offline: `preflight`, `evidence`, `impact`, `delivery` e `bundle`; dipendenze registrate, hash, coerenza dei controlli di consegna e file selezionati |
 | Qualità e costo | Profili di costo configurabili, contesti mirati, riuso delle evidenze e modelli disponibili nel proprio client |
 
 Sono istruzioni di workflow e strumenti locali: agenti indipendenti, ricerche, calcoli, esportazioni e controlli visivi dipendono dalle capacità reali del client. I risultati non eseguiti non vengono dichiarati completati.
@@ -130,3 +130,5 @@ Puoi installare il profilo completo oppure `core`, `docx`, `latex`, `slides`, `p
 Le funzioni avanzate restano disponibili: [workflow e diagrammi](WORKFLOW_GUIDE.md), [formati](FORMATS_AND_SLIDES.md), [ricerca bibliografica MCP](LITERATURE_INTEGRATIONS.md) e [strumenti di progetto](PROJECT_TOOLS.md). Non occorre configurarli tutti per iniziare.
 
 La revisione editoriale resta una simulazione; Galileo non invia nulla alle riviste. Capacità effettive e strumenti dipendono dal client: eventuali verifiche o esportazioni non eseguite restano indicate come tali. Per materiale riservato va prima definito il trattamento autorizzato.
+
+Per una tesi completa, Galileo collega gli obiettivi alle sezioni, al contributo effettivo dell’autore e alle prove disponibili. Prima di ampliare ogni capitolo controlla che ci siano le spiegazioni necessarie, non soltanto titoli o schermate. La bibliografia viene valutata per copertura, pertinenza e corrispondenza con le citazioni in entrambe le direzioni, senza un numero minimo artificiale di articoli. Lacune centrali e revisioni riferite a versioni precedenti restano aperte; lo stato operativo «completato» non equivale alla prontezza scientifica.

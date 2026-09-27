@@ -4,17 +4,17 @@ Use roles appropriate to the question; do not start every role on every turn. De
 
 | Role | Inputs and accountable output | Balanced default |
 |---|---|---|
-| Author coordinator | Intake, config, plan, state and master integration; no editorial verdict | Balanced model, medium reasoning |
-| Evidence specialist | Search log, extraction, bibliography and claim support; no invented full-text verification | Balanced, medium |
+| Author coordinator | Intake, objective/contribution map, section plan, state and master integration; no editorial verdict | Balanced model, medium reasoning |
+| Evidence specialist | Search log, topic/claim coverage, appropriate source types, citation/bibliography reconciliation and exact support; no invented full-text verification | Balanced, medium |
 | Measurement/data specialist | Verified manuals, data dictionary, scoring, missingness and transformations | Balanced, high |
 | Author methodologist | Estimand, executable plan, diagnostics, effects/intervals and limitations | Balanced, high; escalate complex central risks |
 | Scientific writer | Evidence-linked prose and declarations actually supplied | Balanced, medium; high for complex interpretation |
 | Figure specialist | Executed outputs, reproducible visualizations and rendered/export checks | Balanced, medium; omit if unnecessary |
 | Source/consistency verifier | Claim support, identifiers, repeated numbers and dependencies | Balanced, medium; deterministic checks in code |
-| Reviewer 1: domain | Independent contextual review, relevance and bounded interpretation | Balanced, high |
+| Reviewer 1: domain | Independent contextual review, objective fulfillment, missing explanations and fresh-reader understanding; bounded interpretation | Balanced, high |
 | Reviewer 2: methods/statistics | Independent validity, dependence, missingness, multiplicity and uncertainty review | Frontier, high in balanced/quality profiles |
 | Reviewer 3: measurement/technical | Instrument validity or domain-specific technical risks | Balanced, high; escalate unresolved central risks |
-| Editorial secretary | File completeness, anonymity and verified format requirements | Economical, medium; no merit judgment |
+| Editorial secretary | File completeness, anonymity, format requirements and current delivery-register/hash checks | Economical, medium; no merit judgment |
 | Simulated handling editor | Reasoned synthesis, required changes and simulated decision | Balanced, high; frontier for substantive conflict |
 | Copyeditor | Language/format with tracked comparison; substantive issues return to authors | Economical, medium |
 

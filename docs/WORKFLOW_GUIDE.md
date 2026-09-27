@@ -124,7 +124,7 @@ For a thesis, replace “research article” with the thesis type and provide th
 
 ```mermaid
 flowchart TD
-  A[Study materials and research question] --> B[Coordinator: progressive intake]
+  A[Study materials and research question] --> B[Coordinator: document type, objectives and contribution]
   B --> S{Essential evidence available for this document?}
   S -->|Missing or ambiguous| Q[Ask focused questions and wait; continue independent work]
   Q -->|Answers available| B
@@ -139,7 +139,7 @@ flowchart TD
   L -->|Project fact missing| LQ[Ask and wait; save current section]
   LQ -->|Answers supplied| L
   L -->|Supported| W[Write current section]
-  W --> G[Evidence, terminology and reader review]
+  W --> G[Evidence, completeness, terminology and reader review]
   G --> T{Section blocking issues?}
   T -->|Corrections possible| R[Correct section and dependent records]
   R --> G
@@ -147,7 +147,7 @@ flowchart TD
   T -->|Review or capability limit| P[Provisional draft and pending findings; no automatic pass]
   T -->|No| U{More sections?}
   U -->|Yes; feedback when checkpoint mode| L
-  U -->|No| V[Whole-document consistency and final revision QA]
+  U -->|No| V[Objective and bibliography coverage; final revision QA and delivery records]
   V --> H{Blocking or actionable issues?}
   H -->|Corrections possible| I[Update evidence, analysis and affected sections]
   I --> V
@@ -161,11 +161,11 @@ Roles are delegated when supported and authorized; otherwise they run sequential
 
 ### What happens
 
-1. **Progressive intake and sufficiency:** the coordinator clarifies document type, contribution, design, measurements, available results and format. It distinguishes missing evidence from material present but uninspected or intentionally excluded, reuses answers and asks only questions that matter.
+1. **Progressive intake and sufficiency:** the coordinator clarifies document type, contribution, design, measurements, available results and format. It distinguishes missing evidence from material present but uninspected or intentionally excluded, reuses answers and asks only questions that matter. For full manuscripts, it records a compact objective → section/contribution → evidence → verification map; existing team work and the author’s actual contribution remain distinguishable. A changed title or question reopens affected scope and sections.
 2. **Evidence and methods:** the bibliographer actively checks literature coverage and searches material background/interpretation gaps, consulting primary sources and recording exact claim support and access limits. Published literature cannot establish the user’s actual methods or results; those gaps require author answers or authorized project evidence. Specialist roles check measurement rules, bias and the analysis plan.
 3. **Analysis when authorized and possible:** the assistant executes code, records the environment and preserves outputs. If execution is unavailable, reproduction remains marked NOT PERFORMED.
-4. **Outline and staged drafting:** agree an evidence-linked outline and interactive chapter checkpoints or autonomous progression. Propose a provisional introduction/context, then draft and correct one major section at a time in a suitable order. Check each section’s project facts and literature before dependent prose; reopen affected earlier sections when new information arrives. Finalize abstract and conclusions after the underlying findings are established; assemble and reconcile the whole manuscript afterwards.
-5. **Separate reviews and correction:** evidence/method checks are followed by reader-focused editing and terminology review. Standard disciplinary names and technical identifiers remain consistent across prose, figures and slides. Corrections update underlying records before dependent prose; final checks identify the exact delivered revision and any pending independent review.
+4. **Outline and staged drafting:** agree an evidence-linked outline and interactive chapter checkpoints or autonomous progression. Propose a provisional introduction/context, then draft and correct one major section at a time in a suitable order. Check each section’s project facts, literature and minimum useful explanation before dependent prose; reopen affected earlier sections when new information arrives. Explain supported central rules or mechanisms and a worked example where appropriate; interface signatures or screenshots alone do not establish implementation or evaluation. Finalize abstract and conclusions after the underlying findings are established; assemble and reconcile the whole manuscript afterwards.
+5. **Separate reviews and correction:** evidence/method checks are followed by reader-focused editing and terminology review. Standard disciplinary names and technical identifiers remain consistent across prose, figures and slides. Corrections update underlying records before dependent prose; final checks identify the exact delivered revision and any pending independent review. The existing domain reviewer also tests objective fulfillment and missing explanations with a fresh-reader perspective; no extra mandatory reviewer is added. Check bibliography coverage and citation/reference correspondence in both directions, using source types appropriate to the discipline rather than a paper quota. Consolidate repeated process caveats without removing material uncertainty. Operational completion does not imply scientific readiness.
 
 Missing essential project facts require questions and a wait for answers, while useful independent work and public background searches can continue. Unsupported central claims, invented facts/references, unresolved methods/results contradictions or required review not performed block final readiness; a round or cost limit produces a provisional handoff, never automatic acceptance. The workflow does not invent results, scoring rules, citations or declarations to complete a section.
 
@@ -196,7 +196,7 @@ To match a particular journal, name it and ask the assistant to verify its curre
 
 1. **Freeze the submitted version:** the coordinator records versions/hashes and available supplements.
 2. **Technical and editorial assessment:** a secretary checks required materials; the simulated editor can request clarification, return for correction, desk-reject or send for review.
-3. **Anonymous simulated peer review:** three complementary reviewers assess domain relevance, methods/statistics and measurement or another discipline-specific specialty. First-pass reports use fresh contexts when supported.
+3. **Anonymous simulated peer review:** three complementary reviewers assess domain relevance, methods/statistics and measurement or another discipline-specific specialty. First-pass reports use fresh contexts when supported. The domain reviewer checks objective fulfillment, contribution, missing explanations and bibliography coverage as well as the truth of statements already present.
 4. **Reasoned decision:** the editor weighs evidence and disagreements, producing simulated acceptance, minor revision, major revision or rejection.
 5. **Author response and corrections:** the author team responds point by point, supplies a clean revision and change comparison, and reruns affected analysis or checks.
 6. **Verification and rereview:** reviewers or a distinct verifier check corrections. Major changes return to the relevant reviewers.
@@ -357,7 +357,7 @@ Requested slide files when generated, editable source/assets, references, speake
 
 ## Workflow E — Check project capabilities, evidence and changes
 
-Use **Research project** before selecting a production route, when assessing claim support, after a source/result changes, or when preparing reproducibility materials. This support skill is included in every profile.
+Use **Research project** before selecting a production route, when assessing claim support, after a source/result changes, before a tracked final handoff, or when preparing reproducibility materials. This support skill is included in every profile.
 
 ```text
 $research-project Check the capabilities available for my project, then create an evidence
@@ -369,19 +369,23 @@ For a changed result, ask it to compare recorded hashes and trace affected claim
 
 ```mermaid
 flowchart TD
-  A[Project inputs and requested operation] --> B[Inspect host capabilities and local tools]
-  B --> C[Map sources, claims and artifact dependencies]
-  C --> D[Structural evidence check and source-content assessment]
-  C --> E[Compare input hashes or record explicit source changes]
-  E --> F[Trace direct and indirect affected artifacts]
-  F --> G[Update issues, regenerate and reverify]
-  D --> G
-  G --> H[Select authorized reproducibility files]
-  H --> I[Package payload, hashes, environment and commands]
-  I --> J[Separate actual reproduction run if requested]
+  A[Project inputs and requested operation] --> B{Select the relevant check}
+  B -->|Preflight| C[Inspect available host capabilities and local tools]
+  B -->|Evidence| D[Check registered sources and claims; assess source content separately]
+  B -->|Impact| E[Compare hashes or record source changes; trace dependencies]
+  B -->|Delivery| F[Compare current outputs, check revisions and readiness records]
+  D --> G[Report findings and unresolved checks]
+  E --> G
+  F --> G
+  G -->|Corrections needed| H[Perform authorized corrections or actual missing reviews]
+  H --> B
+  C --> I[Report capabilities and limits]
+  B -->|Bundle| J[Select explicitly authorized reproducibility files]
+  J --> K[Package payload, hashes, environment and commands]
+  K --> L[Separate actual reproduction run if requested]
 ```
 
-The Python tools perform concrete structural/file checks; a verifier still assesses whether consulted evidence supports a claim. Packaging does not execute analysis, classify private material automatically or prove reproduction. See [tool commands and the runnable synthetic example](PROJECT_TOOLS.md).
+Choose only the needed operation; a delivery check does not require creating a reproducibility bundle. The assistant maintains the current register from real checks, and stale or missing required checks stay pending. The Python tools perform concrete structural/file checks; a verifier still assesses whether consulted evidence supports a claim. Packaging does not execute analysis, classify private material automatically or prove reproduction. See [tool commands and the runnable synthetic example](PROJECT_TOOLS.md).
 
 ## Workflow F — Convert a thesis into an article
 

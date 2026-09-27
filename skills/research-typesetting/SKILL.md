@@ -34,6 +34,8 @@ Return selected editable source, requested PDF if actually generated, bibliograp
 
 Link each final check to the actual artifact revision/hash and inspection scope. Export and inspect the requested PDF from that editable revision. Invalidate affected checks after content/layout/renderer changes; keep required independent review pending if only coordinator self-review was possible, with that fallback explicit. Separate successful generation from verified usability and human approval.
 
+Reconcile citations with bibliography in both directions and preserve source metadata/versions; source or topic coverage gaps return to evidence/content review rather than being hidden by formatting. For tracked final outputs, use the shared delivery-register guidance to distinguish produced files from content, bibliography, required-review and production readiness.
+
 ## Saved state and continuation
 
 When starting, resuming or handing off a run, follow [saved state and handoff](references/run-state.md). Save the current phase, artifact versions, actual checks, open issues and next action in the run directory.

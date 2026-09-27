@@ -19,6 +19,8 @@ Do not use hypotheses, generic best practices, invented examples or repeated cav
 
 Keep a compact sufficiency summary in the existing project note/state when a run is tracked: intended product, essential available facts, remaining gaps and their source status, affected claims, next question/action. No new form or configuration step is required from the user.
 
+For full manuscripts/theses, read [objective and content completeness](content-completeness.md): map objectives to their substantive answers/evidence, identify attributed contributions and check section purpose plus bibliography coverage. Revisit the agreed document type and affected sections when objectives change.
+
 ### Resolve literature gaps actively
 
 For a substantive scientific manuscript or thesis, map the outline's background, definitions, rationale and interpretations to the literature actually consulted. Reuse verified sources and search records when they cover the task; a supplied bibliography or search-result snippet alone does not establish coverage or support. Identify material gaps before writing the dependent claims and revisit them during QA.
@@ -68,5 +70,7 @@ After an edit, invalidate affected checks rather than copying a previous pass to
 If a distinct verifier is unavailable, continue authorized corrections and report a coordinator/self-review fallback. Keep independent review pending where it was required by the selected workflow or requested by the user; do not invent a second reviewer, self-close scientific reviewer issues, or claim the earlier independent pass covers the final changed revision. A useful qualified handoff is possible without automatic acceptance or a fabricated verified status.
 
 Before final readiness, verify that essential questions are resolved, required literature gaps are covered by consulted sources, no blocking content/terminology/visual findings remain, and required checks cover the delivered revision. A passed checklist, successful export, number of agents or fluent text cannot substitute for this assessment. At a review/cost/capability limit, hand off the useful draft and open findings; never turn the limit into automatic acceptance. Do not promise absolute correctness or certify scientific validity from AI review.
+
+For tracked final delivery, keep one current artifact register with current hashes, check scope/results and readiness statuses for content, bibliography, required reviews and production; preserve earlier snapshots as historical/superseded. Operational `complete` does not mean scientifically ready or human-approved. Use the installed research-project [delivery record check](../../research-project/references/project-tools.md#delivery-record-check) when Python is available to identify stale hashes, uncovered outputs and missing/pending required checks. The assistant maintains these records; do not require another user setup form. The command is read-only and does not establish scientific validity or authenticate reviewers.
 
 At delivery distinguish **files produced**, **checks performed on this revision**, **checks still pending** and **human approval**. Inspecting every page does not by itself establish good design or scientific merit. Mention limits affecting the requested use, with the concrete question/source/check needed next; ordinary reversible choices do not need an extra approval stop.

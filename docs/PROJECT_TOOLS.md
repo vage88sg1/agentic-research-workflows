@@ -1,6 +1,6 @@
 # Project checks and a runnable synthetic example
 
-Research project supplies four offline Python commands: `preflight`, `evidence`, `impact` and `bundle`. They complement the agent workflows with file/record checks, not semantic fact-checking or automatic scientific approval. The [installed skill guide](../skills/research-project/references/project-tools.md) describes schemas, exit codes and limits.
+Research project supplies five offline Python commands: `preflight`, `evidence`, `impact`, `delivery` and `bundle`. They complement the agent workflows with file/record checks, not semantic fact-checking or automatic scientific approval. The [installed skill guide](../skills/research-project/references/project-tools.md) describes schemas, exit codes and limits.
 
 Run these examples from the repository root. After installation, use the corresponding script inside the installed research-project directory instead.
 
@@ -29,4 +29,14 @@ The resulting `results.json` should contain `n: 4` and `mean: 7.0`. The packager
 
 For your own project, copy and fill the [research-map template](../skills/research-project/assets/research-map.json) and [reproducibility manifest](../skills/research-project/assets/reproducibility-manifest.json). Empty templates are intentionally incomplete. Use actual hashes, explicitly permitted files, dependency/environment records and truthful verification status. Do not put tokens or private material in manifests, commands or supposedly public files.
 
-Evidence check exit 2 means review items exist; exit 1 means malformed input or I/O failure. A successful structural check cannot determine whether a source really supports a claim. The AI/human evidence verifier must inspect the material and record its reasoning. Impact tracking only covers registered dependencies. Preflight finds executable names but cannot infer native host capabilities or validate a server connection.
+Evidence and delivery check exit 2 means review items exist; exit 1 means malformed input or I/O failure. A successful structural check cannot determine whether a source really supports a claim. The AI/human evidence verifier must inspect the material and record its reasoning. Impact tracking only covers registered dependencies. Preflight finds executable names but cannot infer native host capabilities or validate a server connection.
+
+## Check final delivery records
+
+For a tracked final handoff, ask the assistant to maintain one current output register and record checks actually performed against those revisions. The [delivery schema](../skills/research-project/references/project-tools.md#delivery-record-check) distinguishes content, bibliography, review and production readiness from operational completion. The assistant can normalize compatible existing records into a snapshot; users do not need to complete another configuration form.
+
+```bash
+python3 skills/research-project/scripts/research_tools.py delivery --state /path/to/project/delivery-state.json --root /path/to/project
+```
+
+This read-only command compares selected output bytes with their registered hashes and active check records. It reports stale or absent reviews, pending readiness and missing recorded independence when required. Updating a hash alone cannot renew an old review. Historical checks can remain but cannot close a current requirement. A clear report establishes record consistency only: source support, completeness, genuine reviewer independence, rendered layout and human approval still require their respective assessments.

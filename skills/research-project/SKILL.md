@@ -1,12 +1,12 @@
 ---
 name: research-project
-description: Inspect project capabilities, maintain a claim-evidence dependency map, identify artifacts affected by changed inputs, and assemble an explicitly selected reproducibility package. Use for cross-workflow project checks and traceability; not for certifying scientific validity.
+description: Inspect project capabilities, maintain a claim-evidence dependency map, identify artifacts affected by changed inputs, check final delivery records, and assemble an explicitly selected reproducibility package. Use for cross-workflow project checks and traceability; not for certifying scientific validity.
 license: MIT
 ---
 
 # Research project support
 
-Use this support workflow for preflight, evidence mapping, change impact or reproducibility packaging. Ask which operation is needed only if it cannot be inferred. Read [tool usage and schemas](references/project-tools.md) before running the bundled Python CLI. It uses the standard library, requires Python 3.10+, and remains available after skill installation.
+Use this support workflow for preflight, evidence mapping, change impact, final delivery-record checks or reproducibility packaging. Ask which operation is needed only if it cannot be inferred. Read [tool usage and schemas](references/project-tools.md) before running the bundled Python CLI. It uses the standard library, requires Python 3.10+, and remains available after skill installation.
 
 ## Check the actual environment
 
@@ -24,6 +24,10 @@ Keep `depends_on` IDs for tables, figures, manuscript sections and slides, plus 
 
 Copy impacted IDs into the issue/state records as requiring recheck, rerun affected analysis when authorized, then verify dependent claims/artifacts. Preserve prior maps and source files. Rebaseline hashes only after corrected content and checks are recorded; merely updating a checksum is not a correction. Impact reporting never silently rewrites state, evidence or a manuscript.
 
+## Check a final delivery record
+
+Run `delivery` with the selected state snapshot and project root after reading its format in [tool usage](references/project-tools.md#delivery-record-check). It compares current output/check hashes, checks referenced required review records and distinguishes recorded readiness from operational completion. It does not update hashes, repair state, render files, execute analysis or establish scientific validity. Resolve affected checks before rebaselining; preserve historical snapshots and keep one clearly identified current register. The assistant maintains this record for tracked final work, not another configuration task for the user.
+
 ## Assemble reproducibility materials
 
 Use `assets/reproducibility-manifest.json` to select individual files with author-reviewed public/synthetic sharing classification and expected hashes. Include code, environment/dependency records, README commands, figure-generation inputs and license/access information appropriate to scope. Exclude restricted data, secrets and licensed full texts not authorized for redistribution. Supply access instructions and limitations for excluded inputs; a package with unavailable inputs is not independently reproducible merely because code is present.
@@ -32,4 +36,4 @@ Run `bundle` into a new destination. It copies only listed files and records the
 
 ## Roles and delivery
 
-A coordinator maintains records, an economical metadata assistant can populate IDs, a balanced evidence verifier checks claim support, and an execution specialist handles real runs. Use stronger reasoning for a specific unresolved methodological risk. Save reports, unresolved issues and [run state](references/run-state.md). Return a concise capability/evidence/change/bundle summary and the next actionable gap, not a global scientific approval.
+A coordinator maintains records, an economical metadata assistant can populate IDs, a balanced evidence verifier checks claim support, and an execution specialist handles real runs. Use stronger reasoning for a specific unresolved methodological risk. Save reports, unresolved issues and [run state](references/run-state.md). Return a concise capability/evidence/change/delivery/bundle summary and the next actionable gap, not a global scientific approval.
