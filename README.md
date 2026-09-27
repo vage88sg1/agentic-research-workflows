@@ -16,7 +16,8 @@ Works through skill-compatible AI assistants such as Claude Code, Codex, OpenCod
 |---|---|
 | **Guided research assistance** | Progressive questions, narrow task routing, reusable answers and saved progress. Small edits stay small; requested multi-stage work moves between workflows. |
 | **Specialist roles and correction loops** | Coordinators, writers, bibliographers, methodologists, statistical/measurement specialists and scientific/visual reviewers. Separate agents when supported and authorized; bounded revision with explicit unresolved issues. |
-| **Scientific drafting and analysis** | Evidence-linked outlines and prose; design, questionnaire/scoring and missing-data checks; analysis plans, code/output records and data-faithful figures when actually executed. |
+| **Evidence sufficiency and final-version review** | Distinguishes missing inputs from sources present but excluded; checks fitness for the intended document, reader usability and terminology. Review records identify the delivered revision and disclose pending checks or self-review fallbacks. |
+| **Scientific drafting and analysis** | Section-by-section drafting with interactive checkpoints or autonomous progression, active literature-gap searches and evidence-linked outlines/prose; design, questionnaire/scoring and missing-data checks; analysis plans, code/output records and data-faithful figures when actually executed. |
 | **Realistic editorial simulation** | Technical assessment, three complementary anonymous simulated reviewers by default, reasoned editorial decisions, point-by-point author responses, corrections and rereview. |
 | **Literature discovery and references** | Optional PubMed / Europe PMC, OpenAlex, Crossref and experimental Zotero integrations; query/access logs, source/claim records and identifier checks. Galileo proposes useful connections and can assess other MCP candidates beyond the catalog. |
 | **Word and LaTeX production** | Conditional DOCX or LaTeX workflows, bibliography/cross-reference checks and requested PDF production using available host tools. Only the selected authoring route is activated. |
@@ -84,7 +85,7 @@ Or start with one smaller task: “Improve this paragraph,” “Check these ref
 
 1. **A short conversation:** Galileo uses the material already supplied and asks only the next necessary questions.
 2. **A clear next step:** it chooses the relevant specialist workflow and uses available tools.
-3. **A reviewable result:** you receive files, meaningful checks and any unresolved issues.
+3. **A reviewable result:** you receive files, checks linked to that revision and any unresolved issues. Essential project gaps trigger focused questions and a wait for answers; external-knowledge gaps trigger targeted source searches. Unresolved central gaps keep final readiness pending.
 
 Small requests stay small: a language edit returns the corrected text, and a Markdown slide outline does not require export setup or new project records. Longer research projects keep resumable state.
 
@@ -95,6 +96,10 @@ flowchart LR
   C --> D[Deliver files and save progress]
   D -->|Continue later| B
 ```
+
+Full manuscripts and theses default to a section-by-section plan: outline, provisional introduction/context, then the appropriate methods/implementation and results/evaluation sections. Choose interactive chapter checkpoints or autonomous progression; each section is checked and corrected before expansion. Abstract and conclusions are finalized later, followed by whole-document review.
+
+For full projects, evidence/content review is separate from terminology and reader-focused editing and from visual production checks. Established disciplinary terms and exact technical identifiers are preserved, including customary English terms in other-language prose. Primary literature is consulted to resolve background and interpretation gaps; it cannot supply missing project facts. Unsupported central claims, invented references/results and unresolved substantive contradictions block final readiness. A successful export is not treated as proof of a complete thesis or readable presentation. [Evidence and delivery checks](skills/galileo/references/quality-gates.md)
 
 Format choices such as Word or LaTeX are discussed when they matter. Technical evidence records, model settings and dependency checks stay in the project records and are explained when useful. The default cost guidance is balanced; actual model use depends on your host.
 

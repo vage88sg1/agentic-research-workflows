@@ -28,6 +28,12 @@ Use peer-review and scientific-critical-thinking, plus relevant statistical, cit
 
 Each report includes neutral summary, strengths, major/minor issues, unavailable material and competence limits. Each comment carries ID, location/version, observation, evidence/criterion, consequence, proportionate requested action and verification method. Request additional work only when necessary for a central claim; consider clarification, sensitivity analysis, narrower conclusions or limitations instead.
 
+Use [evidence sufficiency and reader-focused review](../galileo/references/quality-gates.md) to distinguish absent, uninspected and deliberately excluded evidence and to assess fitness for the actual document type. Keep scientific/content issues separate from editorial/visual issues; a reconstructed analysis is not automatically equivalent to a thesis about completed work. Do not demand unavailable results from a proposal or treat a proposed test as a performed result.
+
+Assess disciplinary terminology separately from grammar. Preserve exact names and customary English technical vocabulary in other-language manuscripts when that matches field/user convention; an accepted local equivalent is not inherently wrong. Distinguish stylistic awkwardness from a translation that changes meaning, and route the latter to the relevant domain/technical reviewer. Do not add another mandatory peer reviewer solely for copyediting.
+
+Check whether material literature gaps were actually researched and central references support their specific claims. Use targeted authorized primary-source searches for external background; request missing project facts from the author. Invented facts/citations, unsupported central conclusions and unresolved methods/results contradictions are blocking findings. A longer reference list or a successful metadata check does not resolve missing claim support. Keep readiness pending when essential search/full-text verification is unavailable.
+
 Separate comments to authors from confidential notes to the editor. Ordinary scientific criticism belongs in the author report. Reserved notes may address conflicts, competence, process or observable integrity concerns; avoid speculative accusations. Recommendations are advisory and simulated; the editor determines the simulated outcome.
 
 When this step needs external literature, identifier checks or an authorized reference library, follow [literature connection recommendations](../galileo/references/literature-connections.md). Offer relevant MCP connections if equivalent tools are unavailable; reuse the coordinator's recorded choice. Do not propose setup for a task fully supported by supplied sources.
@@ -41,6 +47,8 @@ The author team produces a clean revision, change comparison and point-by-point 
 Original reviewers or a distinct verifier confirm corrections; authors do not self-close scientific issues. Major revision returns to relevant reviewers; minor may be checked by the editor according to the profile. New comments require evidence, not shifting preferences. Escalate substantive disagreements to the accountable user.
 
 Default cap: three complete rounds; stop after two rounds without substantive progress, blocking evidence gaps, rejection or acceptance. User configuration may change these operational limits. Hitting the cap leaves revision required or rejection; never auto-accept. Save a resumable state and continue only independent work when information is missing.
+
+Apply [revision-specific closure](../galileo/references/quality-gates.md#3-close-checks-against-the-delivered-revision): reviewer checks identify the inspected artifact version/hash, scope and context. Changes reopen affected checks. If a distinct verifier is unavailable, preserve the required review as pending and disclose any coordinator fallback; author self-review cannot close scientific reviewer issues or produce simulated acceptance.
 
 ## Production and handoff
 

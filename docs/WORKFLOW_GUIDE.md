@@ -125,31 +125,49 @@ For a thesis, replace “research article” with the thesis type and provide th
 ```mermaid
 flowchart TD
   A[Study materials and research question] --> B[Coordinator: progressive intake]
-  B --> C[Bibliographer: search and evidence records]
-  B --> D[Methodologist: design and measurement checks]
-  C --> E[Analysis plan and authorized execution]
+  B --> S{Essential evidence available for this document?}
+  S -->|Missing or ambiguous| Q[Ask focused questions and wait; continue independent work]
+  Q -->|Answers available| B
+  S -->|Sufficient or intentionally scoped draft| C[Bibliographer: search and evidence records]
+  S -->|Sufficient or intentionally scoped draft| D[Methodologist: design and measurement checks]
+  C --> E[Analysis plan and authorized execution when relevant]
   D --> E
-  E --> F[Writer: outline and scientific draft]
-  F --> G[Internal methodological and consistency checks]
-  G --> H{Blocking or actionable issues?}
-  H -->|Corrections possible| I[Update evidence, analysis and affected prose]
-  I --> G
+  E --> F[Agree outline and checkpoint or autonomous mode]
+  F --> L[Next section: facts and literature coverage]
+  L -->|External knowledge gap| LS[Targeted search and source consultation]
+  LS --> L
+  L -->|Project fact missing| LQ[Ask and wait; save current section]
+  LQ -->|Answers supplied| L
+  L -->|Supported| W[Write current section]
+  W --> G[Evidence, terminology and reader review]
+  G --> T{Section blocking issues?}
+  T -->|Corrections possible| R[Correct section and dependent records]
+  R --> G
+  T -->|Missing evidence| L
+  T -->|Review or capability limit| P[Provisional draft and pending findings; no automatic pass]
+  T -->|No| U{More sections?}
+  U -->|Yes; feedback when checkpoint mode| L
+  U -->|No| V[Whole-document consistency and final revision QA]
+  V --> H{Blocking or actionable issues?}
+  H -->|Corrections possible| I[Update evidence, analysis and affected sections]
+  I --> V
   H -->|Missing input| J[Save state and request required information]
   J -->|Input supplied| B
-  H -->|Checks complete| K[Draft, evidence records and open-issue handoff]
+  H -->|Essentials resolved; required checks pass on final revision| K[Deliver checked artifact and coverage]
+  H -->|Review or capability limit| P
 ```
 
 Roles are delegated when supported and authorized; otherwise they run sequentially with that limitation recorded. Internal drafting checks are distinct from the editorial simulation below.
 
 ### What happens
 
-1. **Progressive intake:** the coordinator clarifies scope, design, measurements, available results and format. It reuses answers already recorded.
-2. **Evidence and methods:** the bibliographer documents searches and source support; specialist roles check measurement rules, bias and the analysis plan.
+1. **Progressive intake and sufficiency:** the coordinator clarifies document type, contribution, design, measurements, available results and format. It distinguishes missing evidence from material present but uninspected or intentionally excluded, reuses answers and asks only questions that matter.
+2. **Evidence and methods:** the bibliographer actively checks literature coverage and searches material background/interpretation gaps, consulting primary sources and recording exact claim support and access limits. Published literature cannot establish the user’s actual methods or results; those gaps require author answers or authorized project evidence. Specialist roles check measurement rules, bias and the analysis plan.
 3. **Analysis when authorized and possible:** the assistant executes code, records the environment and preserves outputs. If execution is unavailable, reproduction remains marked NOT PERFORMED.
-4. **Outline and drafting:** the writer develops evidence-linked sections, then reconciles methods, results, tables, figures and citations.
-5. **Internal correction:** methodological and consistency checks generate issues. Corrections update the underlying evidence/results before dependent prose.
+4. **Outline and staged drafting:** agree an evidence-linked outline and interactive chapter checkpoints or autonomous progression. Propose a provisional introduction/context, then draft and correct one major section at a time in a suitable order. Check each section’s project facts and literature before dependent prose; reopen affected earlier sections when new information arrives. Finalize abstract and conclusions after the underlying findings are established; assemble and reconcile the whole manuscript afterwards.
+5. **Separate reviews and correction:** evidence/method checks are followed by reader-focused editing and terminology review. Standard disciplinary names and technical identifiers remain consistent across prose, figures and slides. Corrections update underlying records before dependent prose; final checks identify the exact delivered revision and any pending independent review.
 
-Missing facts block dependent work, while useful independent work can continue. The workflow does not invent results, scoring rules, citations or declarations to complete a section.
+Missing essential project facts require questions and a wait for answers, while useful independent work and public background searches can continue. Unsupported central claims, invented facts/references, unresolved methods/results contradictions or required review not performed block final readiness; a round or cost limit produces a provisional handoff, never automatic acceptance. The workflow does not invent results, scoring rules, citations or declarations to complete a section.
 
 ### What to expect at handoff
 
@@ -253,10 +271,10 @@ flowchart TD
   G -->|Source errors, within repair limit| E
   F --> H[Inspect actual pages and cross-references]
   G -->|Build succeeds| H
-  H --> I{Layout or citation issues?}
+  H --> I{Layout, readability or citation issues?}
   I -->|Yes| J[Correct selected source and rebuild]
   J --> C
-  I -->|Checks complete| K[Editable source, requested PDF and QA log]
+  I -->|Checks cover delivered revision| K[Editable source, requested PDF and review coverage]
   F -->|Renderer unavailable| L[Source handoff; visual QA not performed]
   G -->|Unavailable or repair limit reached| M[Preserve source; PDF not built]
   H -->|Scientific content needs changing| N[Return affected content to scientific review]
@@ -268,7 +286,7 @@ Only the selected authoring route runs. Each final artifact is checked against i
 
 The assistant resolves template, language, paper size, bibliography style and output requirements, then activates the selected route. DOCX uses editable document objects and available document tools. LaTeX uses academic-writing-latex guidance conditionally and a compatible compiler; a supported built-in editor/compiler is preferred when available.
 
-Checks cover citations, cross-references, equations, tables/figures, pagination and actual rendered pages. Formatting preserves verified content; substantive changes return to scientific review.
+Checks cover citations, cross-references, equations, tables/figures, pagination and actual rendered pages, including isolated short continuations, avoidable gaps and readable detail. Formatting preserves verified content and terminology; substantive changes return to scientific review. Checks identify the delivered artifact revision/hash, reviewer context and actual inspection scope. A changed layout/export reopens affected checks; a coordinator fallback is disclosed when required independent review remains pending.
 
 You receive the selected editable source and requested PDF **only if actually generated**, plus assets and build/QA status. Without a renderer/compiler, source can be delivered with visual QA NOT PERFORMED or PDF NOT BUILT. A compiler pass does not establish scientific validity. Both authoring formats are produced only when requested.
 
@@ -320,7 +338,7 @@ flowchart TD
   K -->|Unresolved issue at limit| M
 ```
 
-Scientific and visual checks have separate responsibilities. PPTX and PDF come from the same final deck when both are selected; PDF-only Beamer uses its own build route. Final export changes are rechecked before handoff.
+Scientific, terminology/editorial and visual checks have separate responsibilities. The audience must understand the domain objects before dense technical detail, and labels needed for a slide message must be readable at presentation size. PPTX and PDF come from the same final deck when both are selected; PDF-only Beamer uses its own build route. Final export changes are rechecked against the delivered revision before handoff; unavailable independent review stays pending rather than becoming a pass.
 
 ### What happens
 
@@ -328,8 +346,8 @@ Scientific and visual checks have separate responsibilities. PPTX and PDF come f
 2. **Storyboard:** map each slide's purpose, message, evidence, visual, notes and time allocation.
 3. **Design and samples:** reuse group/university branding and templates or propose visual directions, define a shared style and inspect two representative rendered slides before expanding the deck. Samples use real supplied evidence and remain within the requested slide count. Optional aesthetic choices do not impose an approval stop unless you request one.
 4. **Production:** writer/designer roles apply the style to editable content and preserve uncertainty, units, denominators, limitations and source attribution.
-5. **Scientific and visual review:** a science verifier checks claims; a visual reviewer inspects actual rendered slides and timing.
-6. **Correction and export:** fix issues within the bounded loop, then check the final PPTX/PDF count, order and content agreement.
+5. **Scientific, terminology and visual review:** the relevant roles check claims, disciplinary names shared with the manuscript, audience context and actual rendered-slide readability. Estimated duration remains distinct from a timed rehearsal.
+6. **Correction and export:** fix issues within the bounded loop, then check the final PPTX/PDF count, order and content agreement. Record the final revision/hash and review coverage; do not apply an earlier review to changed content without rechecking it.
 
 ### What to expect at handoff
 

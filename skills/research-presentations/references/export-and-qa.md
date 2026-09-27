@@ -32,8 +32,13 @@ Follow [visual design](visual-design.md) to render representative slides before 
 - Verify labels, units, n, intervals and sources against the evidence record; simple visual appeal is not validation.
 - Check shared palette, stable scientific color mappings, typography, margins, recurring layouts and template consistency. Verify supplied/official logo identity, variant, proportions, clear space, placement, co-branding and font substitutions against the recorded guidelines.
 - Test distance readability, contrast and redundant encodings rather than blindly applying a fixed font size or color ratio.
+- Check the detail required for each message: dense table labels and full-size screenshots may fit yet remain unreadable to the audience. Use a faithful crop, annotation, conceptual view or backup placement without changing the source meaning or agreed slide count.
 - Keep source attribution on relevant slides/notes and a readable bibliography as appropriate; visible disclosures remain visible.
 - Reconcile final PPTX/PDF versions and note animation/overlay behavior. Do not claim PowerPoint inspection unless it actually occurred there.
 - Record generated, rendered, visually inspected, scientifically checked and human-approved separately.
 
 If rendering is unavailable, leave visual review pending; if export is unavailable, deliver source/build instructions and mark missing output. Neither source code nor an image-only deck is a verified editable PPTX.
+
+## Checks covering the delivered deck
+
+Follow [revision-specific closure](../../galileo/references/quality-gates.md#3-close-checks-against-the-delivered-revision). For each scientific or visual check record the PPTX/PDF revision/hash, reviewer/tool and context, actual slide coverage, render size or inspection method and evidence locator. Compare exports against their final editable source. After changes recheck affected slides, notes, page order and fonts; an earlier report only remains applicable to documented unchanged material. If a distinct reviewer cannot complete the final pass, identify the coordinator fallback and leave required independent review pending. Do not convert export success or a contact-sheet inspection alone into a claim of scientific or presentation readiness.

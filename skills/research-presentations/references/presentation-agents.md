@@ -10,7 +10,7 @@ Use the user's chosen provider mapping; examples are configurable: economical GP
 | Figure/layout specialist | Visual directions, verified institutional/group branding, shared style, representative slides and data-faithful editable visuals | Balanced, medium |
 | Export engineer | Reproducible PPTX/PDF or Beamer build, font/tool compatibility | Balanced, medium; deterministic checks in code |
 | Visual reviewer | Rendered sample and final slides; branding/style consistency, readability, overlap, accessibility and cross-format agreement | Balanced vision-capable model, medium; actual image access required |
-| Timing/copy editor | Notes, transitions, duration estimates and language; no independent empirical timing claims | Economical, medium |
+| Timing/copy and terminology editor | Notes, transitions, duration estimates, language and discipline-specific terminology consistent with the manuscript; exact identifiers remain unchanged and meaning ambiguity returns to scientific review. No independent empirical timing claims | Economical, medium; escalate domain ambiguity |
 
 Maximum four active agents including coordinator by default. Activate only necessary roles; avoid sending the full thesis to every worker. Reviewer contexts receive sources and frozen slide versions without desired verdicts. Context separation is not file access isolation.
 

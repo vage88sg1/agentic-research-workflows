@@ -32,6 +32,10 @@ Build a storyboard with slide ID, purpose, message, supporting claim/source/resu
 
 Keep uncertainty, limitations, units, n, denominators and comparison basis when shortening manuscript content. Use supplied verified sources; search additional public background only when needed and log it. Reviewer criticism is not new scientific evidence. Summarize disagreements fairly.
 
+Use [evidence sufficiency and reader-focused review](../galileo/references/quality-gates.md) for full decks. Check whether the audience has enough context to understand domain objects before detailed methods or results. A source-grounded example or conceptual view can explain dense evidence; use backup detail or faithful crops/annotations when the audience cannot read the needed labels. Missing outcomes remain missing, and assets with uncertain versions remain labeled as such. Content-only requests use only the relevant scope checks, without production records.
+
+Reuse the manuscript's established terminology or resolve the relevant terms from authorized domain sources. Preserve standard English technical terms when customary in the discipline, even in another-language talk, and keep API/component/instrument names exact. Explain unfamiliar terms for the audience without renaming them; check headings, captions and speaker notes as well as slide bodies. A grammar pass alone is not a terminology check.
+
 ## Visual design and representative slides
 
 For a rendered deck, read [visual design](references/visual-design.md). Support research-group, department, university and consortium identity: reuse supplied logos, brand guidelines, colors/fonts and templates, or verify official asset sources when the user requests branding without supplying them. Preserve logo proportions and documented usage, distinguish affiliation from sponsorship, and record font substitutions or unresolved assets. Reuse the supplied template or established project style. Otherwise propose two or three suitable visual directions in plain language and recommend one; use that recommendation as a provisional default when the choice is optional. Define a compact common style before production: palette and scientific color meanings, fonts, margins, recurring layouts and figure/citation treatment.
@@ -53,6 +57,8 @@ Prefer host-native presentation tools under their applicable instructions. If a 
 Render every final slide and inspect at presentation size and in an overview/contact sheet. Check overflow/overlap, font substitution, equation glyphs, citations, chart readability, accessibility, scientific fidelity, notes and total timing. Check PPTX/PDF count/order/content agreement, including animation/overlay flattening choices. Basic structural ZIP checks are not visual verification.
 
 Loop writer/designer corrections → distinct scientific and visual checks → coordinator decision. Default maximum three rounds, stop after two without substantive progress or missing essential capability/evidence. Keep issues open honestly; do not label files presentation-ready without the relevant checks. Changing scientific content invalidates dependent figures/notes and returns to the science verifier.
+
+At final handoff follow [revision-specific closure](../galileo/references/quality-gates.md#3-close-checks-against-the-delivered-revision): record artifact revision/hash, reviewer context, inspected slides/render size and outstanding issues for each check. Recheck downstream notes and exports after corrections. If a distinct reviewer becomes unavailable, identify coordinator self-review and keep required independent review pending rather than carrying an earlier pass to the changed deck.
 
 ## Delivery
 

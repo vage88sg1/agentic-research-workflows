@@ -18,11 +18,15 @@ For a one-off language edit, a short outline or content-only slide notes, delive
 
 For an actual new research project, a first useful planning note plus compact resumable state is enough to start. Create additional evidence/analysis/configuration records when real work populates them; avoid empty scaffolding. Important missing facts can still block dependent claims or analyses. Do not ask about formats, visual themes or tools that are irrelevant to the requested deliverable.
 
+For a full manuscript, thesis, rendered presentation or tracked revision, apply the relevant [evidence sufficiency and delivery checks](references/quality-gates.md). Ask and wait when essential project information is missing; actively search consulted primary literature for external-knowledge gaps using authorized tools. Distinguish missing material from material present but excluded by the user's protocol. Preserve the intended document type; keep final readiness pending rather than silently replacing a thesis with a reconstruction or filling gaps with plausible prose. Use existing notes/state for these checks, not another user-facing configuration step.
+
 ## Route and execute the relevant instructions
 
 Read [routing](references/routing.md) to select the narrowest applicable workflow. Resolve its SKILL.md through the host catalog or as a sibling directory of this skill; read it and its relevant references before executing. The complete profile installs all routes. A smaller profile may omit one: report that concrete limitation and use a genuinely available compatible route only if it serves the user's request. Do not invent tool availability or start installing dependencies/services automatically.
 
 Treat this skill as an entry point, not an extra specialist agent layer. Reuse the selected workflow's coordinator, state and limits. Do not load every workflow, run every diagnostic or delegate every role for a simple task. A language edit does not automatically launch three reviewers; the full simulated editorial process is used when requested. A background literature search does not become a systematic review without explicit systematic-review intent.
+
+For a full manuscript or thesis, default to section-by-section development: agree an evidence-linked outline, propose the next section and apply the drafting workflow’s section checks before expanding. Ask whether the user wants section checkpoints or continuous autonomous progress; reuse an existing preference and honor whole-draft requests. Do not impose approval after every paragraph.
 
 For a requested multi-stage outcome, give a short plan in terms of deliverables, then perform its authorized stages using the relevant skills. The user does not need to reinvoke a different command at each internal handoff. A request for slides alone does not authorize rewriting the thesis or preparing a submission dossier. Offer optional next stages at handoff without starting unrelated work.
 

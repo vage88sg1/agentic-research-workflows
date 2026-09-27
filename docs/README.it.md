@@ -22,7 +22,8 @@ Il profilo completo contiene **Galileo, nove workflow specialistici e nove skill
 |---|---|
 | Guida e ripresa del lavoro | Domande progressive, riuso delle risposte, stato salvato e passaggi tra i workflow richiesti |
 | Agenti e correzioni | Ruoli specialistici, delegazione quando disponibile e autorizzata, revisori distinti e loop con limiti espliciti |
-| Stesura scientifica | Outline e testo collegati alle evidenze, controlli di disegno/scoring/questionari, analisi e figure quando realmente eseguite |
+| Completezza e revisione della versione finale | Distingue materiali mancanti da fonti presenti ma escluse; verifica adeguatezza allo scopo, terminologia e leggibilità. I controlli indicano la versione esaminata e le revisioni ancora pendenti |
+| Stesura scientifica | Sviluppo per sezioni, checkpoint interattivi o avanzamento autonomo, ricerca attiva delle lacune bibliografiche, outline e testo collegati alle evidenze, controlli di disegno/scoring/questionari, analisi e figure quando realmente eseguite |
 | Simulazione editoriale | Controllo tecnico, tre peer reviewer anonimi simulati, decisione motivata, risposta agli autori, correzioni e nuova revisione |
 | Ricerca bibliografica | PubMed / Europe PMC, OpenAlex, Crossref e Zotero sperimentale; proposte MCP pertinenti e ricerca di altri candidati |
 | Formati | DOCX o LaTeX, bibliografia e riferimenti incrociati, PDF con strumenti disponibili nel client |
@@ -72,6 +73,10 @@ Altri esempi:
 - «Aiutami a pianificare una revisione sistematica.»
 
 Galileo usa le informazioni già disponibili, fa le domande necessarie e attiva le competenze pertinenti. Quando serve produrre il documento, chiarisce Word o LaTeX. Mantiene nei registri del progetto evidenze, controlli e problemi aperti. Non devi rilanciare un comando per ogni passaggio di un lavoro già richiesto.
+
+Per tesi e articoli completi, Galileo propone un indice e una stesura per sezioni: introduzione provvisoria, poi i capitoli adatti al lavoro. Puoi scegliere checkpoint dopo ogni capitolo o avanzamento autonomo con controlli intermedi; abstract e conclusioni vengono finalizzati dopo metodi/implementazione e risultati/valutazione. La revisione complessiva resta obbligatoria prima della consegna finale.
+
+Per un progetto completo, Galileo verifica prima quali informazioni essenziali sono disponibili e fa domande mirate sui punti mancanti. Il controllo delle evidenze è distinto dalla revisione del linguaggio tecnico e della leggibilità: i termini disciplinari d’uso, anche inglesi in un testo italiano, e i nomi di API/componenti restano coerenti. Per lacune sul progetto fa domande e attende le risposte; per lacune di conoscenza esterna cerca e consulta fonti primarie pertinenti, senza usarle per inventare ciò che è stato svolto. Affermazioni centrali senza supporto, riferimenti/risultati inventati e contraddizioni sostanziali impediscono di dichiarare il lavoro finale. Una bozza incompleta viene qualificata come tale. Ogni controllo finale identifica il file e la revisione esaminati; se il revisore distinto non è disponibile, il controllo del coordinatore viene dichiarato e la revisione indipendente richiesta resta pendente. [Criteri operativi](../skills/galileo/references/quality-gates.md).
 
 Per una presentazione completa, Galileo supporta loghi, colori, font e template del gruppo di ricerca o dell’università, oppure propone stili adatti al pubblico, definisce palette e layout comuni e controlla due slide campione prima di completare il deck. Le slide campione fanno parte del numero richiesto. Una richiesta di solo testo o note salta questa fase grafica.
 

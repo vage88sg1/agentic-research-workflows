@@ -16,7 +16,7 @@ Use roles appropriate to the question; do not start every role on every turn. De
 | Reviewer 3: measurement/technical | Instrument validity or domain-specific technical risks | Balanced, high; escalate unresolved central risks |
 | Editorial secretary | File completeness, anonymity and verified format requirements | Economical, medium; no merit judgment |
 | Simulated handling editor | Reasoned synthesis, required changes and simulated decision | Balanced, high; frontier for substantive conflict |
-| Copyeditor | Language/format with tracked comparison; substantive issues return to authors | Economical, medium |
+| Copyeditor and terminology editor | Grammar/style and a separate discipline-specific terminology pass; preserve customary English terms, exact identifiers and the shared term list. Substantive or uncertain meaning changes return to domain/content review | Economical, medium for bounded checks; balanced for unresolved domain ambiguity |
 
 ## Cost profiles
 

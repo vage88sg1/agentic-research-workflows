@@ -10,6 +10,8 @@ Ask or read the configured manuscript format: DOCX or LaTeX. Activate only the s
 
 Resolve authorized source material, template, language/script, paper size, bibliography style and intended output. Check current official venue/institution rules; never assume English, IEEE, A4 or a specific thesis structure. Formatting must preserve verified claims, numbers, uncertainty, citations and declarations.
 
+Apply the relevant [editorial/visual checks and revision-specific closure](../galileo/references/quality-gates.md#2-separate-evidence-review-from-usefulness-to-the-reader). Inspect isolated short continuations before chapter breaks, avoidable figure/table gaps, detail readability and final index numbers, as well as clipping. Resolve page size/template from supplied or verified requirements; otherwise state the provisional choice without claiming compliance. A justified figure-only or institutional blank page is not automatically a defect. Preserve content rather than compressing text to hide layout problems.
+
 ## DOCX route
 
 Use the host's document skill/tools when available and compatible with the request. Otherwise use a documented local DOCX tool such as python-docx or a template-based converter, recording its limitations. Create editable headings/styles, captions, tables and equations where supported. Do not rename another file to .docx or substitute screenshots for required editable evidence.
@@ -29,6 +31,8 @@ Compilation success is required before declaring a PDF built. Check undefined re
 ## Handoff
 
 Return selected editable source, requested PDF if actually generated, bibliography/assets and concise build/QA status. Record build input hashes, actual tool/version and output version. Substantive content changes return to scientific review; simulated publication artifacts retain their simulation label. Do not create both formats unless requested or required.
+
+Link each final check to the actual artifact revision/hash and inspection scope. Export and inspect the requested PDF from that editable revision. Invalidate affected checks after content/layout/renderer changes; keep required independent review pending if only coordinator self-review was possible, with that fallback explicit. Separate successful generation from verified usability and human approval.
 
 ## Saved state and continuation
 
