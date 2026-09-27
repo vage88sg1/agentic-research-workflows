@@ -30,6 +30,8 @@ Each report includes neutral summary, strengths, major/minor issues, unavailable
 
 Separate comments to authors from confidential notes to the editor. Ordinary scientific criticism belongs in the author report. Reserved notes may address conflicts, competence, process or observable integrity concerns; avoid speculative accusations. Recommendations are advisory and simulated; the editor determines the simulated outcome.
 
+When this step needs external literature, identifier checks or an authorized reference library, follow [literature connection recommendations](../galileo/references/literature-connections.md). Offer relevant MCP connections if equivalent tools are unavailable; reuse the coordinator's recorded choice. Do not propose setup for a task fully supported by supplied sources.
+
 ## Decision and correction loop
 
 The editor synthesizes reasons rather than majority voting. Record simulated accept/minor revision/major revision/reject, required versus optional changes, disagreements and unresolved validity limits. Maintain issues with IDs, severity, ownership, evidence and verification status.

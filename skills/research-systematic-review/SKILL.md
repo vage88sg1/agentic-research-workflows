@@ -18,6 +18,8 @@ An information specialist develops a search strategy and tests recall against re
 
 Assign stable record IDs to search hits, report IDs to documents and study IDs to underlying studies. Deduplicate with a retained audit trail; do not merge distinct reports merely because they describe the same study. Keep uncertain duplicates for adjudication. Multiple reports of one study must not be counted as independent participants or effects.
 
+When this step needs external literature, identifier checks or an authorized reference library, follow [literature connection recommendations](../galileo/references/literature-connections.md). Offer relevant MCP connections if equivalent tools are unavailable; reuse the coordinator's recorded choice. Do not propose setup for a task fully supported by supplied sources.
+
 ## Screening and extraction
 
 Two screeners work independently with explicit criteria and blinded first-pass decisions where the host supports it. Record reviewer identity/type (human or AI), context separation and stage for each decision. AI roles do not count as two human reviewers. Pilot the criteria, retain disagreements and route conflicts to an adjudicator/responsible user. Without a second independent context, declare the limitation and do not label screening independent.

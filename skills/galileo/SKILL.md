@@ -34,6 +34,10 @@ Ask DOCX versus LaTeX when manuscript production actually requires the decision;
 
 Apply scientific evidence, processing boundaries, honest execution status and simulated-publication rules from the selected workflow. Simpler interaction does not authorize guessing missing results, declaring human approval, suppressing unresolved issues or reducing essential checks. No real registration, journal submission, external communication or paid service activation follows from invoking Galileo.
 
+## Offer useful MCP connections
+
+When the next step needs new literature, bibliographic verification, reuse of a reference library or another concrete research-tool connection, read [MCP connection recommendations](references/literature-connections.md). Proactively offer the smallest useful set of MCP integrations if equivalent tools are not already available. Explain the benefit and give a simple choice to set them up or continue with available sources; keep independent work moving. Respect earlier choices and avoid repeating declined proposals. A scoped language edit, supplied-source slide outline or formatting task does not need an MCP setup pitch. The bundled catalog is not exclusive: if it does not meet the task or the user asks for alternatives, use available catalog/web discovery to assess other relevant MCPs from current primary sources. Present them as candidates with source links and limits, not as bundled/tested integrations. Follow the reference for selection, actual capability status and host-specific setup boundaries.
+
 ## Resume and handoff
 
 On “continue”, locate the selected run's saved state from supplied locations and current project records. If several relevant runs are plausible, ask which one rather than merging their state. Read only the referenced inputs, check versions and resume the next unresolved task. Preserve prior answers. For resumable project work, use [saved state](references/run-state.md); the active workflow field names the actual route, not a second duplicate Galileo run.

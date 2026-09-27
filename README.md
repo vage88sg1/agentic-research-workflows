@@ -106,7 +106,7 @@ where supported, and coordinate their reviews and corrections.
 
 Independent agents require harness support and permission to delegate. Otherwise, the assistant follows the roles sequentially and discloses that limitation. Installing skills does not install native agent definitions or guarantee parallel execution.
 
-Model examples are optional guidance, not a dependency on one provider. Use models available in your harness; actual model routing and costs depend on its capabilities. MCP connections and document/export tools also require host-specific setup. Codex UI metadata can be ignored by other clients.
+Model examples are optional guidance, not a dependency on one provider. Use models available in your harness; actual model routing and costs depend on its capabilities. When literature work would benefit from an unavailable connection, Galileo proposes the relevant MCP integration and offers to help set it up or continue with available sources. It can also look for other task-relevant MCPs beyond the bundled catalog, using current upstream documentation and distinguishing candidates from bundled integrations. It reuses your choice on resume. MCP connections and document/export tools still require host-specific setup; a recommendation does not activate a service. Codex UI metadata can be ignored by other clients.
 
 Package checks and synthetic workflow exercises are documented in the [release review](docs/RELEASE_REVIEW.md) and [usability report](docs/USABILITY_TESTS.md). Complete runs on Claude Code, OpenCode and GitHub Copilot have not yet been verified.
 

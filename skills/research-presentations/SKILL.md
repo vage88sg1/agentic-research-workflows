@@ -20,6 +20,8 @@ Ask up to three focused questions at a time: audience/talk type, duration includ
 
 Use only authorized evidence. Do not infer missing results, fabricate speakers/institutions or assume a thesis has been published. A real research talk about unpublished work is not automatically a simulated publication: apply the simulation label only to simulated results/decisions/dossiers, labeling illustrative data explicitly.
 
+When this step needs external literature, identifier checks or an authorized reference library, follow [literature connection recommendations](../galileo/references/literature-connections.md). Offer relevant MCP connections if equivalent tools are unavailable; reuse the coordinator's recorded choice. Do not propose setup for a task fully supported by supplied sources.
+
 ## Attribution without unverified bibliography
 
 Retain applicable software/skill license notices in the project distribution. Do not automatically insert a paper title, DOI or arXiv identifier found in a support skill into a user's slide content or references. Verify a primary bibliographic record before adding such a citation when it is actually appropriate to the talk. If verification is unavailable, omit the academic reference from the deliverable and retain any necessary software credit separately in project provenance. Labeling a citation “unverified” does not make it suitable to insert automatically. Scientific references should support the talk's claims, not advertise the tooling used to prepare it.

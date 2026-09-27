@@ -74,7 +74,7 @@ se il client lo permette, e coordina revisioni e correzioni.
 
 Gli agenti indipendenti richiedono supporto e autorizzazione del client. Altrimenti i ruoli vengono svolti in sequenza e il limite viene dichiarato. L'installazione non aggiunge definizioni native di agenti né garantisce il parallelismo.
 
-La scelta dei modelli dipende dal tuo ambiente: gli esempi sono indicativi e non obbligano a usare un provider. MCP, strumenti per documenti ed esportazioni richiedono configurazioni specifiche. I metadati dell'interfaccia Codex possono essere ignorati dagli altri client.
+La scelta dei modelli dipende dal tuo ambiente: gli esempi sono indicativi e non obbligano a usare un provider. Quando una ricerca bibliografica può beneficiare di una connessione non disponibile, Galileo propone gli MCP pertinenti e ti offre di configurarli oppure continuare con le fonti disponibili. Può anche cercare MCP pertinenti oltre al catalogo incluso, verificando la documentazione degli autori e distinguendo i candidati dalle integrazioni del pacchetto. Ricorda la scelta nelle riprese del lavoro. La proposta non attiva servizi: MCP, strumenti per documenti ed esportazioni richiedono configurazioni specifiche. I metadati dell'interfaccia Codex possono essere ignorati dagli altri client.
 
 I controlli del pacchetto e gli esercizi sintetici sono descritti nella [revisione della release](RELEASE_REVIEW.md) e nel [report di usabilità](USABILITY_TESTS.md). Non sono ancora stati verificati workflow completi su Claude Code, OpenCode e GitHub Copilot.
 

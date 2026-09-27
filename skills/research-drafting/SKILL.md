@@ -30,6 +30,8 @@ Read relevant installed bundled skills before applying them. Use literature-revi
 
 Maintain source and claim records with IDs, exact support/locator, material actually consulted and verification status. Distinguish metadata validity, AI inspection and completed human verification. Search snippets and fluent summaries are not verification. Check corrections/retractions when relevant; never invent bibliographic identifiers or attribute checks to humans who did not perform them.
 
+When this step needs external literature, identifier checks or an authorized reference library, follow [literature connection recommendations](../galileo/references/literature-connections.md). Offer relevant MCP connections if equivalent tools are unavailable; reuse the coordinator's recorded choice. Do not propose setup for a task fully supported by supplied sources.
+
 ## Measurement, analysis and figures
 
 Verify measurement rules from the actual instrument/manual: language/version, population, reverse coding, scale range, subscales, missing-item rules and thresholds. Screening scores do not establish diagnoses; reliability alone does not establish validity. Preserve originals and transformation/exclusion records.

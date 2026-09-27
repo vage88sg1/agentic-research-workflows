@@ -2,6 +2,18 @@
 
 Galileo can use MCP as a tool connection for literature discovery, reference verification and an authorized bibliography. It is optional: browser searches, official APIs and supplied sources remain valid alternatives. No integration is installed or enabled by the skill installer.
 
+## Guided recommendations
+
+Galileo proposes relevant connections at the first literature-dependent step when equivalent tools are unavailable. It explains the benefit, asks whether to help with setup or continue with available sources, and preserves the choice across resumptions and workflow handoffs. Biomedical searches favor PubMed / Europe PMC; cross-disciplinary discovery favors OpenAlex; DOI checks favor Crossref; Zotero is offered when an authorized library is relevant.
+
+Recommendations are scoped to the task. Supplied-text editing, formatting and slides fully supported by provided sources do not trigger a setup proposal. Declined connections are not repeatedly proposed unless requirements change. Direct drafting, review, systematic-review and presentation entry points share the same [recommendation guidance](../skills/galileo/references/literature-connections.md). Setup remains a separate authorized action using the actual harness's configuration; the assistant does not silently install or activate servers. This is instruction-driven behavior, not an automatic dependency installer.
+
+## MCP discovery beyond this catalog
+
+The bundled list is not exclusive. If it does not cover a concrete task, or the user asks for alternatives, Galileo can search available connector catalogs and the web for other relevant MCPs. It evaluates current primary documentation, upstream identity/maintenance, license, operations, compatibility, authentication/cost and data/permission boundaries. It favors an adequate existing authorized tool over duplicate setup.
+
+Recommendations include source links, task fit, limits and status. Newly discovered servers remain **unbundled candidates**, not pinned or tested integrations supported by this release. Configuration or execution follows the user's selected scope and the actual host's permissions. Galileo records choices and actual checks in existing project state. It does not automatically expand this repository's server catalog. If browsing/discovery is unavailable, it reports the limitation and uses available authorized alternatives.
+
 ## Choose sources by task
 
 | Integration | Role | Baseline |

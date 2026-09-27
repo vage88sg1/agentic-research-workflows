@@ -90,3 +90,11 @@ Three synthetic first-turn scenarios and three fresh-context repetitions were co
 Galileo, drafting and presentation guidance now explicitly scope administrative records and export setup to the requested work. The slide exercises also exposed automatic insertion of an unverified support-library academic citation. A primary-record verification/omission rule was added. Its extra independent retest failed to start due to a host usage limit, so only structural checking is claimed for that final rule.
 
 See [usability exercises and limits](USABILITY_TESTS.md) for the cases, counts and evaluation boundary. These are agent simulations, not real-user usability or performance benchmarks.
+
+## Proactive, extensible MCP recommendations (2026-09-27)
+
+Galileo now offers relevant literature connections when a task benefits from them and equivalent tools are unavailable. Drafting, review, systematic-review and presentation entry points share an installed recommendation reference. Choices carry across handoffs/resume; supplied-source editing and formatting do not trigger unrelated setup. The bundled catalog is a starting point: other task-relevant MCPs can be discovered from current primary documentation, with linked recommendations and explicit unbundled-candidate status.
+
+Recommendations do not install or activate services. Selected setup uses the actual harness, preserves existing configuration and records real discovery/test status. Public server pins/catalog and MCP configuration examples are unchanged.
+
+Nine installer tests, package/link/provenance validation, offline MCP configuration checks, the Galileo skill structural validator and whitespace checks passed. A temporary full installation confirmed that the shared reference and specialist links survive copying. These are packaging checks; proactive recommendation behavior, external-server discovery and live connections have not been independently exercised in this update.
