@@ -1,4 +1,4 @@
 interface:
-  display_name: "Research review"
+  display_name: "Galileo - Research review"
   short_description: "Anonymous simulated peer review and correction"
   default_prompt: "Use $research-review to review my manuscript through a simulated editorial process."

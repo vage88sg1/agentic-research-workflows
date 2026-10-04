@@ -16,7 +16,7 @@ I percorsi sono documentati dai client; non implicano un collaudo completo su ci
 
 ## Tutte le funzionalità
 
-Il profilo completo contiene **Galileo, nove workflow specialistici e nove skill di supporto: 19 cartelle di skill**.
+Il profilo completo contiene **Galileo, nove workflow specialistici e undici skill di supporto: 21 cartelle di skill**.
 
 | Funzionalità | Cosa offre |
 |---|---|
@@ -43,15 +43,17 @@ Non serve imparare i nomi: descrivi l'obiettivo a Galileo. Puoi anche richiamare
 
 | Workflow | Obiettivo |
 |---|---|
-| Research drafting | Scrivere o migliorare tesi e articoli |
-| Research review | Simulare peer review, decisione e correzioni |
-| Research typesetting | Produrre Word, LaTeX e PDF |
-| Research presentations | Preparare e revisionare slide scientifiche |
-| Research project | Controllare evidenze, cambiamenti e riproducibilità |
-| Thesis to article | Convertire una tesi in un articolo mirato |
-| Research defense | Allenarsi alla discussione e alle domande |
-| Submission dossier | Preparare i materiali richiesti dalla rivista |
-| Systematic review | Svolgere una revisione sistematica esplicitamente richiesta |
+| Galileo - Research drafting | Scrivere o migliorare tesi e articoli |
+| Galileo - Research review | Simulare peer review, decisione e correzioni |
+| Galileo - Research typesetting | Produrre Word, LaTeX e PDF |
+| Galileo - Research presentations | Preparare e revisionare slide scientifiche |
+| Galileo - Research project | Controllare evidenze, cambiamenti e riproducibilità |
+| Galileo - Thesis to article | Convertire una tesi in un articolo mirato |
+| Galileo - Research defense | Allenarsi alla discussione e alle domande |
+| Galileo - Submission dossier | Preparare i materiali richiesti dalla rivista |
+| Galileo - Systematic review | Svolgere una revisione sistematica esplicitamente richiesta |
+
+Il prefisso `Galileo -` compare nei nomi del menu quando il client legge i metadati `agents/openai.yaml`. Gli identificatori e i comandi restano invariati: per esempio, in Codex puoi usare `$research-review`. Il punto di ingresso principale resta **Galileo**.
 
 [Guida completa con esempi e un diagramma per ogni workflow](WORKFLOW_GUIDE.md).
 

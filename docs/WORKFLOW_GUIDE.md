@@ -6,15 +6,15 @@ AI-assisted workflows for research papers, theses, dissertations and scientific 
 
 | Your goal | Workflow | Typical deliverables |
 |---|---|---|
-| Develop a paper or thesis, with questions along the way | **Research drafting** | Study summary, evidence records, analysis outputs when executed, manuscript and unresolved issues |
-| Test a manuscript through a realistic editorial simulation | **Research review** | Three simulated anonymous reviewer reports, editorial decision, response and revised manuscript |
-| Produce a manuscript in Word or LaTeX | **Research typesetting** | Selected editable DOCX or TeX source, bibliography/assets and requested PDF when built |
-| Prepare a conference talk, seminar or thesis defense | **Research presentations** | Storyboard, editable PPTX and PDF when generated, notes and timing plan |
-| Check tools, trace evidence and changes, or package reproducibility files | **Research project** | Capability report, evidence map, impact report and selected-file bundle |
-| Turn a thesis into a focused paper | **Thesis to article** | Article, conversion map, word budget and omission audit |
-| Practice oral questions and answers | **Research defense** | Interactive rehearsal, feedback and backup-slide plan |
-| Assemble journal-specific materials | **Submission dossier** | Cover letter, file/declaration checklist and local dossier |
-| Plan and conduct systematic evidence synthesis | **Systematic review** | Protocol, screening/extraction/appraisal records and synthesis |
+| Develop a paper or thesis, with questions along the way | **Galileo - Research drafting** | Study summary, evidence records, analysis outputs when executed, manuscript and unresolved issues |
+| Test a manuscript through a realistic editorial simulation | **Galileo - Research review** | Three simulated anonymous reviewer reports, editorial decision, response and revised manuscript |
+| Produce a manuscript in Word or LaTeX | **Galileo - Research typesetting** | Selected editable DOCX or TeX source, bibliography/assets and requested PDF when built |
+| Prepare a conference talk, seminar or thesis defense | **Galileo - Research presentations** | Storyboard, editable PPTX and PDF when generated, notes and timing plan |
+| Check tools, trace evidence and changes, or package reproducibility files | **Galileo - Research project** | Capability report, evidence map, impact report and selected-file bundle |
+| Turn a thesis into a focused paper | **Galileo - Thesis to article** | Article, conversion map, word budget and omission audit |
+| Practice oral questions and answers | **Galileo - Research defense** | Interactive rehearsal, feedback and backup-slide plan |
+| Assemble journal-specific materials | **Galileo - Submission dossier** | Cover letter, file/declaration checklist and local dossier |
+| Plan and conduct systematic evidence synthesis | **Galileo - Systematic review** | Protocol, screening/extraction/appraisal records and synthesis |
 
 Galileo is an **instruction package, not an execution engine**. Independent agents, model routing, menus, analysis tools and document renderers depend on the host. A configured role is not proof that a separate agent or model ran. The review workflow is a simulation: it does not submit to a journal or produce real acceptance.
 
@@ -63,7 +63,7 @@ For a smaller installation, use the same profile in both commands:
 | `publishing` | Drafting, review, typesetting, thesis-to-article, submission | Core guidance and project support |
 | `defense` | Drafting, review, presentations, defense | Core guidance, scientific-slides and project support |
 | `systematic` | Drafting, review, systematic review | Core guidance and project support |
-| `full` | Galileo and all nine specialist workflows | All nine upstream support skills |
+| `full` | Galileo and all nine specialist workflows | All eleven upstream support skills |
 
 Galileo and Research project are included in every profile. The existing core/docx/latex/slides profiles keep their focused workflow selection and now include that support entry point.
 
@@ -75,15 +75,17 @@ Open the research project in your assistant and refresh discovery or start a new
 
 In a compatible Codex desktop client, type `/`, select the actual workflow entry in the skill menu, and add your task and file locations. In Codex CLI, use `/skills` to select a skill. The entries are:
 
-- **Research drafting**
-- **Research review**
-- **Research typesetting**
-- **Research presentations**
-- **Research project**
-- **Thesis to article**
-- **Research defense**
-- **Submission dossier**
-- **Systematic review**
+- **Galileo - Research drafting**
+- **Galileo - Research review**
+- **Galileo - Research typesetting**
+- **Galileo - Research presentations**
+- **Galileo - Research project**
+- **Galileo - Thesis to article**
+- **Galileo - Research defense**
+- **Galileo - Submission dossier**
+- **Galileo - Systematic review**
+
+The `Galileo -` prefix belongs to UI display names; hosts may ignore this metadata. Skill identifiers, folder names and invocation syntax remain unchanged. The main entry point is still **Galileo**.
 
 The prompt examples below use the explicit `$skill-name` syntax. Selecting the skill in the menu and then entering the task is an alternative. The installer does not register arbitrary aliases such as `/research-review`.
 

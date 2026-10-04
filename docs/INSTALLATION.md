@@ -8,7 +8,7 @@ The installer verifies vendor hashes, stages the full set and rolls back directo
 
 For normal use select **Galileo** in the supported skill menu and describe your goal. `$galileo` is the explicit alternative. It routes to the installed specialist skills and reuses saved state. Direct specialist entry points remain available for advanced use.
 
-For project scope choose `/path/to/project/.agents/skills`. For a different scope consult current host documentation rather than assuming paths are interchangeable. Refresh discovery/start a new session. Desktop enabled skills can appear in the slash menu; CLI `/skills` selects a skill. `$research-drafting` and `$research-review` are explicit invocation examples. UI display names are Research drafting and Research review. Arbitrary slash aliases are not registered by this installer.
+For project scope choose `/path/to/project/.agents/skills`. For a different scope consult current host documentation rather than assuming paths are interchangeable. Refresh discovery/start a new session. Desktop enabled skills can appear in the slash menu; CLI `/skills` selects a skill. `$research-drafting` and `$research-review` are explicit invocation examples. Specialist UI display names use the `Galileo -` prefix, for example **Galileo - Research drafting** and **Galileo - Research review**. The main entry point remains **Galileo**; skill identifiers and explicit invocation syntax are unchanged. Arbitrary slash aliases are not registered by this installer.
 
 ## Claude Code, OpenCode and GitHub Copilot
 

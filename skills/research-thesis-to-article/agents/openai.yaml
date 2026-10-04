@@ -1,4 +1,4 @@
 interface:
-  display_name: "Thesis to article"
+  display_name: "Galileo - Thesis to article"
   short_description: "Convert a thesis into a traceable journal manuscript"
   default_prompt: "Use $research-thesis-to-article for my research project and ask for missing inputs."

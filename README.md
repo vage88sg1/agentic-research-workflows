@@ -60,15 +60,17 @@ Start through Galileo without memorizing these names, or invoke a specialist dir
 
 | Workflow | Use it for | Main outputs |
 |---|---|---|
-| [Research drafting](docs/WORKFLOW_GUIDE.md#workflow-a--draft-a-paper-or-thesis) | A paper, thesis, dissertation or scoped text edit | Outline/draft, evidence and actual analysis records, unresolved questions |
-| [Research review](docs/WORKFLOW_GUIDE.md#workflow-b--simulate-editorial-review-and-revision) | Simulated peer review and editorial revision | Reviewer reports, decision, responses, revised manuscript and issue ledger |
-| [Research typesetting](docs/WORKFLOW_GUIDE.md#workflow-c--format-in-docx-or-latex) | Production of checked scientific text | Selected DOCX/TeX source and requested PDF when built |
-| [Research presentations](docs/WORKFLOW_GUIDE.md#workflow-d--create-scientific-presentation-slides) | Conference, seminar, journal club or defense slides | Storyboard, style and representative slides, requested deck files, notes and timing |
-| [Research project](docs/WORKFLOW_GUIDE.md#workflow-e--check-project-capabilities-evidence-and-changes) | Capability/evidence checks and reproducibility | Preflight, evidence/impact reports and selected-file bundle |
-| [Thesis to article](docs/WORKFLOW_GUIDE.md#workflow-f--convert-a-thesis-into-an-article) | Focused conversion of an existing thesis | Article draft, conversion/omission map and word budget |
-| [Research defense](docs/WORKFLOW_GUIDE.md#workflow-g--rehearse-a-defense-or-scientific-qa) | Interactive oral rehearsal | Questions, feedback, answer notes and backup-slide brief |
-| [Submission dossier](docs/WORKFLOW_GUIDE.md#workflow-h--prepare-a-submission-dossier) | Journal-specific file preparation | Cover letter, file/declaration checklist and local dossier |
-| [Systematic review](docs/WORKFLOW_GUIDE.md#workflow-i--conduct-a-systematic-review) | Explicit systematic evidence synthesis | Protocol, search/screening/extraction/appraisal records and synthesis |
+| [Galileo - Research drafting](docs/WORKFLOW_GUIDE.md#workflow-a--draft-a-paper-or-thesis) | A paper, thesis, dissertation or scoped text edit | Outline/draft, evidence and actual analysis records, unresolved questions |
+| [Galileo - Research review](docs/WORKFLOW_GUIDE.md#workflow-b--simulate-editorial-review-and-revision) | Simulated peer review and editorial revision | Reviewer reports, decision, responses, revised manuscript and issue ledger |
+| [Galileo - Research typesetting](docs/WORKFLOW_GUIDE.md#workflow-c--format-in-docx-or-latex) | Production of checked scientific text | Selected DOCX/TeX source and requested PDF when built |
+| [Galileo - Research presentations](docs/WORKFLOW_GUIDE.md#workflow-d--create-scientific-presentation-slides) | Conference, seminar, journal club or defense slides | Storyboard, style and representative slides, requested deck files, notes and timing |
+| [Galileo - Research project](docs/WORKFLOW_GUIDE.md#workflow-e--check-project-capabilities-evidence-and-changes) | Capability/evidence checks and reproducibility | Preflight, evidence/impact reports and selected-file bundle |
+| [Galileo - Thesis to article](docs/WORKFLOW_GUIDE.md#workflow-f--convert-a-thesis-into-an-article) | Focused conversion of an existing thesis | Article draft, conversion/omission map and word budget |
+| [Galileo - Research defense](docs/WORKFLOW_GUIDE.md#workflow-g--rehearse-a-defense-or-scientific-qa) | Interactive oral rehearsal | Questions, feedback, answer notes and backup-slide brief |
+| [Galileo - Submission dossier](docs/WORKFLOW_GUIDE.md#workflow-h--prepare-a-submission-dossier) | Journal-specific file preparation | Cover letter, file/declaration checklist and local dossier |
+| [Galileo - Systematic review](docs/WORKFLOW_GUIDE.md#workflow-i--conduct-a-systematic-review) | Explicit systematic evidence synthesis | Protocol, search/screening/extraction/appraisal records and synthesis |
+
+Specialist UI labels use the `Galileo -` prefix where the host reads `agents/openai.yaml`. Skill identifiers and invocation syntax are unchanged; the main entry point remains **Galileo**.
 
 Each workflow has its own diagram and examples in the [advanced guide](docs/WORKFLOW_GUIDE.md). You do not have to complete all nine.
 

@@ -1,4 +1,4 @@
 interface:
-  display_name: "Research presentations"
+  display_name: "Galileo - Research presentations"
   short_description: "Scientific slides with editable PPTX and PDF QA"
   default_prompt: "Use $research-presentations to create scientific slides in PPTX and PDF."

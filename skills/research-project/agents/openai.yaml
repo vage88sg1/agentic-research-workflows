@@ -1,4 +1,4 @@
 interface:
-  display_name: "Research project"
+  display_name: "Galileo - Research project"
   short_description: "Check capabilities, evidence, changes and reproducibility"
   default_prompt: "Use $research-project for my research project and ask for missing inputs."

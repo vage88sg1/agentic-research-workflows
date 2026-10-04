@@ -1,4 +1,4 @@
 interface:
-  display_name: "Systematic review"
+  display_name: "Galileo - Systematic review"
   short_description: "Plan, screen and synthesize a documented evidence review"
   default_prompt: "Use $research-systematic-review for my research project and ask for missing inputs."
