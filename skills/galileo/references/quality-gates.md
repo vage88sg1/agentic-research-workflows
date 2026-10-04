@@ -49,6 +49,8 @@ For a full project with recurring or ambiguous technical terms, keep a compact t
 
 For Office artifacts, apply [native feature and functional QA](office-capabilities.md) for the selected format: inspect the actual editable structures, refresh required fields/formulas with a capable tool and record untested behavior. A static structure that imitates a supported native feature does not satisfy an updateability requirement.
 
+For LaTeX/Beamer outputs, apply [native structure and build QA](latex-capabilities.md). Check resolved references/citations, generated bibliography/contents and final logs/PDF from the delivered source; a successful TeX invocation or an old PDF is insufficient.
+
 For documents, inspect actual pages for short continuations isolated before chapter breaks, excessive whitespace caused by misplaced figures/tables, readable captions and figures, index/cross-reference accuracy and the chosen page size/template. A deliberate figure page or institutional blank page can be justified; do not impose a universal whitespace threshold or shrink text merely to fill a page.
 
 For slides, inspect at the intended presentation size. Ask whether the audience can read the details needed for the message, not merely whether text fits the canvas. Use faithful crops, annotations or a simpler conceptual view for the main talk; keep full technical detail in backup slides when appropriate. Do not invent examples, remove inconvenient evidence, alter source figures deceptively or add slides beyond the requested count without resolving the scope. Distinguish estimated duration from a timed rehearsal.

@@ -50,7 +50,7 @@ python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills 
 python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills --profile full
 ```
 
-The dry run previews installation; the second command copies the skills. `full` installs Galileo, nine specialist workflows and ten upstream support skills (20 skill directories). It preserves licenses and provenance, refuses existing skill names and does not install libraries, compilers or MCP servers. It does not alter client settings or make network calls.
+The dry run previews installation; the second command copies the skills. `full` installs Galileo, nine specialist workflows and eleven upstream support skills (21 skill directories). It preserves licenses and provenance, refuses existing skill names and does not install libraries, compilers or MCP servers. It does not alter client settings or make network calls.
 
 For a smaller installation, use the same profile in both commands:
 
@@ -284,7 +284,7 @@ Only the selected authoring route runs. Each final artifact is checked against i
 
 ### What happens and what you receive
 
-The assistant resolves template, language, paper size, bibliography style and output requirements, then activates the selected route. DOCX prefers native document structures and available licensed document skills, falling back to the bundled MIT `documents` guidance. Word contents, captions, cross-references and supported citation-manager fields are checked for real updateability; see [Office support](OFFICE_SUPPORT.md). LaTeX uses academic-writing-latex guidance conditionally and a compatible compiler; a supported built-in editor/compiler is preferred when available.
+The assistant resolves template, language, paper size, bibliography style and output requirements, then activates the selected route. DOCX prefers native document structures and available licensed document skills, falling back to the bundled MIT `documents` guidance. Word contents, captions, cross-references and supported citation-manager fields are checked for real updateability; see [Office support](OFFICE_SUPPORT.md). LaTeX uses available format skills and academic-writing-latex guidance conditionally, automatic bibliography/contents/cross-references and a compatible compiler; optional latex-safe-build supports appropriate local builds. See [LaTeX support](LATEX_SUPPORT.md). a supported built-in editor/compiler is preferred when available.
 
 Checks cover citations, cross-references, equations, tables/figures, pagination and actual rendered pages, including isolated short continuations, avoidable gaps and readable detail. Formatting preserves verified content and terminology; substantive changes return to scientific review. Checks identify the delivered artifact revision/hash, reviewer context and actual inspection scope. A changed layout/export reopens affected checks; a coordinator fallback is disclosed when required independent review remains pending.
 

@@ -3,7 +3,9 @@
 | Choice | Skills and tools | Deliverable | Verification |
 |---|---|---|---|
 | DOCX | scientific-writing, citation-management, available host document skill; local python-docx/template tools as fallback | Editable .docx, PDF only if requested and exported | Actual rendered pages, styles, field/citation values, tables/equations and pagination |
-| LaTeX | scientific-writing, citation-management, academic-writing-latex; native compiler or existing compatible TeX toolchain | .tex/source package and compiled PDF when requested | Build diagnostics, cross-references/bibliography, glyphs and visual pages |
+| LaTeX | scientific-writing, citation-management, academic-writing-latex; available LaTeX skill/native compiler or compatible local build with optional latex-safe-build | .tex/source package and compiled PDF when requested | Build diagnostics, cross-references/bibliography, glyphs and visual pages |
+
+For LaTeX, follow [native structures and build QA](../../galileo/references/latex-capabilities.md); use automatic contents, counters, labels/references and a compatible bibliography backend instead of hand-maintained numbers or bibliography prose when supported.
 
 The additional academic-writing-latex skill is guidance, not a compiler or official venue template. Font encoding, language packages and citation commands must match the chosen engine/template. Its recommendation to bold best metric values is not automatic in scientific results. Evidence support and uncertainty matter more than a comparative highlight.
 

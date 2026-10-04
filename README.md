@@ -4,7 +4,7 @@
 
 Galileo brings together scientific writing, specialist roles, evidence records and correction loops. Describe your goal in your preferred language; the assistant selects the relevant workflow and asks for information when it matters. Use a focused workflow or request several connected deliverables in one message.
 
-**9 specialist workflows · 20 skill folders in the full profile · 5 offline project commands**
+**9 specialist workflows · 21 skill folders in the full profile · 5 offline project commands**
 
 Works through skill-compatible AI assistants such as Claude Code, Codex, OpenCode and GitHub Copilot. The package contains portable `SKILL.md` instructions and local tools; your harness supplies models, agents and execution capabilities. Cross-client discovery support and complete runtime validation are distinct.
 
@@ -20,7 +20,7 @@ Works through skill-compatible AI assistants such as Claude Code, Codex, OpenCod
 | **Scientific drafting and analysis** | Section-by-section drafting with interactive checkpoints or autonomous progression, active literature-gap searches and evidence-linked outlines/prose; design, questionnaire/scoring and missing-data checks; analysis plans, code/output records and data-faithful figures when actually executed. |
 | **Realistic editorial simulation** | Technical assessment, three complementary anonymous simulated reviewers by default, reasoned editorial decisions, point-by-point author responses, corrections and rereview. |
 | **Literature discovery and references** | Optional PubMed / Europe PMC, OpenAlex, Crossref and experimental Zotero integrations; query/access logs, topic and claim coverage, source-type assessment, source/claim records and citation-to-bibliography checks in both directions. Galileo proposes useful connections and can assess other MCP candidates beyond the catalog. |
-| **Word and LaTeX production** | Conditional authoring routes; Word heading/list styles, automatic contents, captions and cross-references, supported citation managers, plus requested PDF from the same final source. Actual feature behavior and limitations are checked. |
+| **Word and LaTeX production** | Conditional authoring routes with native document structures. Word styles/fields and supported citation managers; LaTeX automatic contents, labels/references, BibTeX or biblatex/Biber, template-compatible compilation and final PDF checks. [Office](docs/OFFICE_SUPPORT.md) · [LaTeX](docs/LATEX_SUPPORT.md). |
 | **Office artifact support** | Bundled MIT Word/Excel/PowerPoint/PDF skill plus available licensed host skills; editable slide objects, template preservation, spreadsheet formulas/tables/charts and format-specific functional QA. [Details](docs/OFFICE_SUPPORT.md). |
 | **Scientific slides and visual design** | Storyboards, editable PPTX/PDF or PDF-first Beamer, speaker notes and timing plans; visual directions, shared styling, representative slides and final rendered-slide review. |
 | **Research-group and university branding** | Supplied or verified official logos, palettes, fonts and templates; logo placement, multiple affiliations, accessible chart colors and recorded font substitutions. |
@@ -171,7 +171,7 @@ Setup uses your actual harness and authorization; a recommendation does not acti
 
 Five offline standard-library commands ship in the research-project skill: `preflight` for environment discovery, `evidence` for structural source/claim checks, `impact` for registered dependency changes, `delivery` for final output hashes and recorded check/readiness consistency, and `bundle` for selected reproducibility files. They complement source assessment and actual analysis execution; packaging does not execute research code. [Commands and runnable synthetic example](docs/PROJECT_TOOLS.md)
 
-The default full profile installs **Galileo, nine specialist workflows and nine upstream support skills**. Smaller `core`, `docx`, `latex`, `slides`, `publishing`, `defense` and `systematic` profiles are available. Every profile includes Galileo and project support. Installation preserves licenses/provenance, checks vendor hashes and refuses existing names. [Profiles and format choices](docs/FORMATS_AND_SLIDES.md)
+The default full profile installs **Galileo, nine specialist workflows and eleven upstream support skills**. Smaller `core`, `docx`, `latex`, `slides`, `publishing`, `defense` and `systematic` profiles are available. Every profile includes Galileo and project support. Installation preserves licenses/provenance, checks vendor hashes and refuses existing names. [Profiles and format choices](docs/FORMATS_AND_SLIDES.md)
 
 ## Validation and execution boundaries
 

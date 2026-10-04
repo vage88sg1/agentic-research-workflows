@@ -18,7 +18,7 @@ soffice --headless --convert-to pdf --outdir rendered presentation.pptx
 
 ## PDF-first Beamer
 
-Use scientific-slides/references/beamer_guide.md only for this route. Choose theme, aspect ratio, engine and fonts appropriate to the language and event. Built-in LaTeX source editor/compiler is preferred for supported standalone documents when available; multi-file projects may need an existing toolchain. Beamer overlays can generate multiple PDF pages per frame: agree on audience-facing versus handout export and count both honestly.
+Read [LaTeX native features and build QA](../../galileo/references/latex-capabilities.md); available LaTeX skills and optional `latex-safe-build` support the selected compile route, with a supported built-in compiler preferred. Use scientific-slides/references/beamer_guide.md only for this route. Choose theme, aspect ratio, engine and fonts appropriate to the language and event. Built-in LaTeX source editor/compiler is preferred for supported standalone documents when available; multi-file projects may need an existing toolchain. Beamer overlays can generate multiple PDF pages per frame: agree on audience-facing versus handout export and count both honestly.
 
 Deliver .tex/assets and the PDF actually compiled. There is no automatic editable PPTX guarantee from Beamer/PDF conversion. If both PPTX and PDF are required, use PPTX as the canonical deck or explicitly agree on separately authored versions with content reconciliation.
 

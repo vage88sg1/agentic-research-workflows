@@ -20,4 +20,6 @@ For “turn this thesis into an article and slides”, route conversion first, t
 
 When a requested stage produces or edits DOCX, XLSX or PPTX, read [Office capabilities](office-capabilities.md) and select an available licensed format skill. This supplements the active scientific workflow; it does not launch another research project or activate all Office formats.
 
+For TeX source/Beamer production, read [LaTeX capabilities](latex-capabilities.md) and use available compatible skills and compilation tools only for that route. Bibliography, indexes and cross-references must be built, not merely present as commands.
+
 If a skill is absent, explain which requested step is unavailable. Do not recommend reinstalling over existing directories or overwrite locally modified skills; refer to a fresh supported destination or a deliberate reconciled update. For clients without native skill loading, follow the provided route instructions as plain text and report actual execution limits.

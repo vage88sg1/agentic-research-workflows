@@ -12,7 +12,8 @@
     "peer-review",
     "academic-writing-latex",
     "scientific-slides",
-    "documents"
+    "documents",
+    "latex-safe-build"
   ],
   "modifications": "None. Exact copies of selected upstream directories. Integration overrides are in original workflow references.",
   "files": {
@@ -182,7 +183,28 @@
     "documents/templates/pdf-template.md": "9a851ebb13a04f27d9bd984e93d95b30ee19422f4a00832861418e734eee2adf",
     "documents/templates/powerpoint-template.md": "1a3503f5f111c5620c272bba93ab269874d4777054b2c0c2ce850dbb655d36d0",
     "documents/templates/word-template.md": "286e48bcae93d6346733cfe4acb8c01c649c5ac93da98e6ab26e8a8f41faa19d",
-    "documents/tests/test_validate_documents.py": "56d3cdfc2a99af1dbddd7d74652318594c9484073f203a556c1072c1b5a4d873"
+    "documents/tests/test_validate_documents.py": "56d3cdfc2a99af1dbddd7d74652318594c9484073f203a556c1072c1b5a4d873",
+    "latex-safe-build/LICENSE": "6583912b109193b418c096545ca6dadeba535e05fda13092bbf69c5549afd93d",
+    "latex-safe-build/README.md": "5b78fb8fbdc430bdb5f3ec8bba44fe5ed107a14b475bf4ef8bd2398885042e9d",
+    "latex-safe-build/SKILL.md": "4454396fb47d24109a01be5cd64e61ae868458c48bfca00656a43b15ab918f01",
+    "latex-safe-build/WHY.md": "25a5fced647f18f695a1d5aa73a057345da1482858f7c6111245ac2ac268cd23",
+    "latex-safe-build/references/concurrency.md": "cef22047bb7e805de17ac1578cd4560b3fd9e5094a56c043df2ae0ed0078a0e7",
+    "latex-safe-build/references/float-governance.md": "44f95f3dd1c02c7a49308026a4b37ea2335713d8f7af7d7951422e7f6f8dfef0",
+    "latex-safe-build/references/troubleshooting.md": "32e2772f6094b7142a36d892f2e71fb5c56952c5f0d43b157db5ad5bef182147",
+    "latex-safe-build/scripts/safe-build.sh": "ba83fa0b6fbec8df531169e78d5f92fb93fe79feb01054390e65f8772637dcf5",
+    "latex-safe-build/scripts/text_pages.py": "8e2b6df03b64e324c40225b66de729e789e3d801db6a58c348c95e5b328a0e49",
+    "latex-safe-build/tests/fixtures/a-article/paper.tex": "6af4d3b47a8dcf19cfe1e320218895f580ba6e655bf414c4c8505c492ba44537",
+    "latex-safe-build/tests/fixtures/b-report-biber/main.tex": "161a3da13a9741064cffbd709b4e29cf77a80962214796f5e79b7728913b5429",
+    "latex-safe-build/tests/fixtures/b-report-biber/refs.bib": "aebe51cab95ccdb65c8fce3b4c36d30ada49d8e258e7b2b2cc316ac23c12d6ad",
+    "latex-safe-build/tests/fixtures/c-xelatex-fontspec/main.tex": "f962af0185106ff01f3bd922d367a140d123d1e6eb4d9875b7b8c75bf0a8ca2c",
+    "latex-safe-build/tests/fixtures/d-minted-shellescape/main.tex": "dbaa5a43185f3df470ebcd883991e090419f4d2fb1ac562fd281c27caa5ed1c6",
+    "latex-safe-build/tests/fixtures/e-multifile/chapters/ch1.tex": "ac90264cf980a401bc5d41bd4ed1eb46de96432b325d7d3c0a6e8d76e3039c76",
+    "latex-safe-build/tests/fixtures/e-multifile/figures/plot.pdf": "61d93e6d28969c97a5877cf347cf66ba82db0ae4cabcc672b221f5127d0227e2",
+    "latex-safe-build/tests/fixtures/e-multifile/frontmatter/abstract.tex": "826d031d9b6c1979a09cec8e0337d026c615bdb30a17969195d5ff84ce64ab0b",
+    "latex-safe-build/tests/fixtures/e-multifile/main.tex": "7d079cc309015f9a93d48656df8924e7cd6f0fd275e4d44703cea195d26896b8",
+    "latex-safe-build/tests/fixtures/f-broken/main.tex": "d5553286bfac2716b1222af1c0b9aaec6ab2f757b7daf6d64d3bacf97acb4887",
+    "latex-safe-build/tests/fixtures/g-concurrency/main.tex": "69b311b7f55755d44c4452a889a3a6b54a8925f448ba1f4f9f3ce117927d8eba",
+    "latex-safe-build/tests/run_tests.sh": "ecfa116b2315d57def9b0e0396931b161a865d73a389e2056225dd3a1e667c17"
   },
   "skill_sources": {
     "scientific-writing": {
@@ -243,6 +265,12 @@
       "repository": "https://github.com/magnus919/agent-skills",
       "commit": "9b34a87ee729f109019ac604681e5796349ea1b2",
       "license_file": "documents/LICENSE.md",
+      "retrieved_date": "2026-10-04"
+    },
+    "latex-safe-build": {
+      "repository": "https://github.com/molanocortes/latex-safe-build",
+      "commit": "d6cd2314676c44a56e58c8f892082ef00a6a8371",
+      "license_file": "latex-safe-build/LICENSE",
       "retrieved_date": "2026-10-04"
     }
   }

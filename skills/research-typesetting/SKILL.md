@@ -20,7 +20,7 @@ Do not load academic-writing-latex for a DOCX task. Produce the editable .docx; 
 
 ## LaTeX route
 
-Read academic-writing-latex if installed; use its TeX syntax/math/cross-reference guidance conditionally. Its English/engineering/IEEE defaults and stylistic absolutes do not override user/venue requirements. Unicode/font handling depends on the engine; do not copy its preamble blindly across pdfLaTeX, XeLaTeX and LuaLaTeX. Never treat embedded worked examples as verified evidence.
+Read [LaTeX capabilities and build QA](../galileo/references/latex-capabilities.md) for native structures and the actual compilation route. Prefer a suitable available LaTeX skill; `academic-writing-latex` supplies writing guidance and `latex-safe-build` supplies optional external build/diagnostic guidance. Load the latter only for a compatible local build after the reference checks, not as a replacement for a supported built-in compiler. Read academic-writing-latex if installed; use its TeX syntax/math/cross-reference guidance conditionally. Its English/engineering/IEEE defaults and stylistic absolutes do not override user/venue requirements. Unicode/font handling depends on the engine; do not copy its preamble blindly across pdfLaTeX, XeLaTeX and LuaLaTeX. Never treat embedded worked examples as verified evidence.
 
 Choose the official template where required, preserve its class/style files and license, and identify engine and BibTeX/Biber backend from actual compatibility. Keep .tex, bibliography and required figures/styles in a reproducible source package with relative paths. Preserve a canonical evidence record so switching format does not silently change results.
 

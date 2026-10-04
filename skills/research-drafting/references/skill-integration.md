@@ -32,7 +32,7 @@ When the requested work includes an Office artifact, read [Office capabilities a
 
 ## Optional authoring and presentation routes
 
-Ask or read `manuscript_format` (docx or latex). Use research-typesetting if installed for selected-format production; if unavailable, apply compatible host tools and declare missing capabilities. Load academic-writing-latex only for LaTeX, with user language, style and engine overriding its engineering/IEEE defaults. Review scientific content before formatting and inspect the final rendered artifact afterwards. Do not generate both formats unasked.
+Ask or read `manuscript_format` (docx or latex). Use research-typesetting if installed for selected-format production; if unavailable, apply compatible host tools and declare missing capabilities. Follow [LaTeX capabilities](../../galileo/references/latex-capabilities.md) for native source structures and reproducible production. Load academic-writing-latex only for LaTeX, with user language, style and engine overriding its engineering/IEEE defaults. Review scientific content before formatting and inspect the final rendered artifact afterwards. Do not generate both formats unasked.
 
 Scientific talks are a separate research-presentations workflow, optionally reusing verified manuscript/results. Its PPTX/PDF export is conditional on actual tools. Scientific-slides guidance does not authorize image-generation services, author defaults or image-only replacements of editable slides.
 

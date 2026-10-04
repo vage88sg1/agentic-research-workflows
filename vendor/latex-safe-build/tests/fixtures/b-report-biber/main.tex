@@ -1,0 +1,21 @@
+\documentclass[11pt]{report}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{refs.bib}
+\begin{document}
+\begin{titlepage}\centering\vspace*{5cm}{\Huge A Report}\end{titlepage}
+\pagenumbering{roman}
+\tableofcontents
+\clearpage\pagenumbering{arabic}
+\chapter{Introduction}
+We cite a classic~\cite{knuth1984}.
+\newpage
+Second page of the introduction.
+\chapter{Method}
+The method chapter.
+\chapter{Conclusion}
+The conclusion chapter.
+\printbibliography[heading=bibintoc]
+\appendix
+\chapter{Extra Data}
+Appendix material, outside the text pages.
+\end{document}

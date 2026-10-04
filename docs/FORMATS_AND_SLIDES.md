@@ -6,12 +6,12 @@
 |---|---|---|---|
 | core | Project support, drafting, review | Seven core scientific skills | 11 |
 | docx | Core entry points plus typesetting | Core scientific skills plus documents | 13 |
-| latex | Core entry points plus typesetting | Core plus academic-writing-latex | 13 |
-| slides | Core entry points plus presentations | Core plus scientific-slides and documents | 14 |
+| latex | Core entry points plus typesetting | Core plus academic-writing-latex and latex-safe-build | 14 |
+| slides | Core entry points plus presentations | Core plus scientific-slides, documents and latex-safe-build | 15 |
 | publishing | DOCX entry points plus thesis-to-article and submission | Core scientific skills plus documents | 15 |
-| defense | Slides entry points plus defense rehearsal | Core plus scientific-slides and documents | 15 |
+| defense | Slides entry points plus defense rehearsal | Core plus scientific-slides, documents and latex-safe-build | 16 |
 | systematic | Core entry points plus systematic review | Seven core scientific skills | 12 |
-| full | Galileo and nine specialist workflows | All ten upstream skills | 20 |
+| full | Galileo and nine specialist workflows | All eleven upstream skills | 21 |
 
 Every profile includes the Galileo guided entry point. Full installation does not activate every skill on every task. Set `manuscript_format` to docx or latex; leave it null until intake resolves the choice. Presentation outputs default to PPTX plus PDF and are independent of manuscript format. A Word thesis can produce Beamer slides; a LaTeX paper can produce editable PowerPoint.
 
@@ -22,7 +22,13 @@ Every profile includes the Galileo guided entry point. Full installation does no
 
 - [Magnus Hedemark documents](https://github.com/magnus919/agent-skills/tree/9b34a87ee729f109019ac604681e5796349ea1b2/documents): MIT; portable Word/Excel/PowerPoint/PDF guidance and basic package validation. Galileo adds native-feature requirements and stricter delivery checks; the upstream tool is not a Word field evaluator or scientific reviewer.
 
+- [latex-safe-build](https://github.com/molanocortes/latex-safe-build/tree/d6cd2314676c44a56e58c8f892082ef00a6a8371): MIT; optional isolated POSIX local builds and diagnostic/page-count support. Galileo preserves native compiler preference and checks the wrapper’s actual limits before use; it is not a universal compiler or scientific validator.
+
 Sources, revisions, licenses and hashes are pinned in vendor/provenance.json. No popularity or empirical superiority claim is made. Original research-typesetting and research-presentations route these skills to actual tools. Restricted redistribution licenses excluded other document skills from this public bundle.
+
+## Native LaTeX functionality
+
+LaTeX manuscript/Beamer production uses automatic contents, counters, labels/cross-references and template-compatible BibTeX or biblatex/Biber. Indexes/glossaries are activated only when needed and actually built. See [LaTeX support](LATEX_SUPPORT.md) for routing, source portability, wrapper limitations and final-version verification. The latex/slides/defense/full profiles include latex-safe-build; it is loaded only for a compatible local compile route.
 
 ## Office functionality
 

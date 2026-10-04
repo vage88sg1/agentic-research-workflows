@@ -33,6 +33,12 @@ The `vendor/documents` directory contains the tracked `documents/` payload from 
 
 Galileo adds original integration guidance in [Office capabilities](skills/galileo/references/office-capabilities.md): prefer an adequate licensed host skill, preserve scientific meaning and use actual native structures when supported. The upstream validator establishes limited container sanity and optional conversion/raster success, not native feature behavior, complete XML/schema validity, calculated formulas, scientific validity or complete visual QA. Linked sibling skills mentioned upstream are optional and are not installed or executed automatically. Upstream portability claims are not an end-to-end Galileo host test.
 
+## Additional LaTeX build support
+
+`vendor/latex-safe-build` contains the unmodified runtime, references, README/WHY, tests/fixtures and [MIT license](vendor/latex-safe-build/LICENSE) from [molanocortes/latex-safe-build](https://github.com/molanocortes/latex-safe-build), commit `d6cd2314676c44a56e58c8f892082ef00a6a8371`, retrieved 2026-10-04; copyright 2026 Juan Sebastian Molano. Its repository CI and dotfiles are excluded. Per-file hashes and the retained license are recorded in provenance; no release version is declared upstream. Original integration guidance in [LaTeX capabilities](skills/galileo/references/latex-capabilities.md) bounds when the wrapper may be used and preserves the native compiler preference. Upstream assertions of never corrupting a source tree, deterministic float placement or general institution page-count rules are not guarantees made by Galileo.
+
+Installation does not execute tests/builds, activate shell escape, install TeX or download packages. The full upstream build test suite requires external tools and includes shell-escape fixtures. Functional/native output verification, source stability, final artifact inspection and scientific review remain separate from packaging or wrapper exit codes.
+
 ## Referenced optional MCP adapters
 
 Configuration examples reference cyanheads/pubmed-mcp-server, cyanheads/openalex-mcp-server and cyanheads/crossref-mcp-server (Apache-2.0), plus peterdresslar/zotero-mcp (MIT). Revisions, executable references and license identifiers are recorded in `integrations/literature/servers.json`. Their server code and dependency trees are not vendored or covered by Galileo's original MIT license. Installing/running these optional adapters obtains third-party packages under their own licenses; consult the linked pinned repositories and dependency notices.

@@ -53,7 +53,8 @@
       "literature-review",
       "scientific-visualization",
       "peer-review",
-      "academic-writing-latex"
+      "academic-writing-latex",
+      "latex-safe-build"
     ],
     "slides": [
       "galileo",
@@ -69,7 +70,8 @@
       "scientific-visualization",
       "peer-review",
       "scientific-slides",
-      "documents"
+      "documents",
+      "latex-safe-build"
     ],
     "full": [
       "galileo",
@@ -91,7 +93,8 @@
       "research-defense",
       "research-submission",
       "research-systematic-review",
-      "documents"
+      "documents",
+      "latex-safe-build"
     ],
     "publishing": [
       "galileo",
@@ -125,7 +128,8 @@
       "peer-review",
       "scientific-slides",
       "research-defense",
-      "documents"
+      "documents",
+      "latex-safe-build"
     ],
     "systematic": [
       "galileo",
