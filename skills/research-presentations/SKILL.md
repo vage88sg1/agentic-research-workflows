@@ -6,6 +6,8 @@ license: MIT
 
 # Scientific presentation workflow
 
+For role/model selection, follow [installed model preferences](../galileo/references/model-settings.md). Reuse explicit project choices and the shared installation mapping; distinguish requested models from actual host execution. Bounded edits need no model-setup interview.
+
 For deck production, read [roles and revision](references/presentation-agents.md) and [export and QA](references/export-and-qa.md). For a content-only request, start with the scoped path below; read export guidance only when export is requested. Load scientific-slides or other support guidance only when needed for the requested structure, design, citation or figure task; an adequately specified content-only outline need not load a full production toolkit. Read only relevant references. This package does not supply a PPTX renderer or generative service; check actual host production capabilities when a rendered deck is requested.
 
 ## Content-only path

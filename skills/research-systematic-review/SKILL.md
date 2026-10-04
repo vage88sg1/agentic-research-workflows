@@ -6,6 +6,8 @@ license: MIT
 
 # Systematic review workflow
 
+For role/model selection, follow [installed model preferences](../galileo/references/model-settings.md). Reuse explicit project choices and the shared installation mapping; distinguish requested models from actual host execution. Bounded edits need no model-setup interview.
+
 ## Scope and protocol
 
 Resolve question/framework appropriate to the discipline, review type, eligibility criteria, outcomes, search sources, date/language restrictions with reasons, screening roles and authorized tools. Use installed literature-review, citation-management, scientific-critical-thinking and statistical-analysis guidance conditionally. Do not adopt a biomedical intervention framework for every question.

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "harness": "other",
+  "configuration_status": "configured",
+  "available_models": ["example/small", "example/general", "example/strong"],
+  "inventory_source": "user_supplied",
+  "provider_model_mapping": {
+    "economical": "example/small",
+    "balanced": "example/general",
+    "frontier": "example/strong"
+  },
+  "role_overrides": {"reviewer_methods": "example/strong"},
+  "cost_profile": "balanced",
+  "unavailable_model_policy": "ask",
+  "routing_status": "preferences_only"
+}

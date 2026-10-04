@@ -516,6 +516,8 @@ A common route is **drafting → review → typesetting → presentation**, but 
 
 Start with `balanced` for general drafting and substantive review. Use the `economy` profile when cost constraints are central, or `quality` for more intensive methodological and editorial assessment. Frontier models are an escalation tier for difficult, consequential unresolved problems. Ask the coordinator to apply the [role contracts and cost policy](../skills/research-drafting/references/agent-contracts.md), record actual model choices and keep reviewer contexts scoped.
 
+Interactive terminal installation offers a guided alias/model mapping with optional role overrides and a saved cost profile. All original entry points read the same local preferences; explicit user/project choices take precedence. You can defer setup or use unattended JSON import. [Model setup, availability limits and reconfiguration](MODEL_SETUP.md).
+
 Provider/model mappings are configurable. Model names in the guidance are examples, not required subscriptions or benchmark claims. A requested mapping is not an applied override unless the host supports and records it. Set budget and maximum active agents to match the host; the example limits concurrency to four including the coordinator. No paid service is activated by installation.
 
 ## Optional literature MCP: add only what you need

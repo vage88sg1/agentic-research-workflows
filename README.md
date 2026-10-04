@@ -28,7 +28,7 @@ Works through skill-compatible AI assistants such as Claude Code, Codex, OpenCod
 | **Systematic evidence synthesis** | Protocol, reproducible search, record/report/study tracking, deduplication, screening, extraction, appraisal and appropriate synthesis. Meta-analysis is conditional, not automatic. |
 | **Journal dossier preparation** | Current venue requirements, cover-letter draft, title/blinded files where needed, supplements and declaration/checklist tracking. Local preparation only. |
 | **Traceability and reproducibility** | Environment discovery, structural evidence audits, registered dependency/change-impact tracking, final delivery-record checks and allowlisted reproducibility bundles with hashes and recorded commands. |
-| **Provider flexibility and cost guidance** | Configurable economy/balanced/quality guidance, targeted delegation, reuse of verified evidence and escalation of specific difficult issues. Actual routing and costs depend on the host. |
+| **Provider flexibility and cost guidance** | Guided installation-time alias mapping, optional role overrides, economy/balanced/quality guidance, targeted delegation and reuse of verified evidence. Actual routing and costs depend on the host. |
 
 These are workflow instructions plus scoped local tools. File creation, computation, independent contexts, browsing and rendering are claimed only when actually performed. [Detailed workflow designs](docs/WORKFLOW_GUIDE.md) · [Validation and limits](docs/RELEASE_REVIEW.md)
 
@@ -140,6 +140,8 @@ python3 scripts/install.py --dest "/path/to/research-project/.github/skills"
 ```
 
 Then open that research project in your assistant and refresh its skills or start a new session. The default complete installation includes Galileo and its specialist/support skills. Add `--dry-run` to preview the installation. Existing skill names are never overwritten; see the [installation guide](docs/INSTALLATION.md) for updates, other clients and smaller profiles.
+
+In an interactive terminal, installation offers guided model setup: choose your harness, map `economical`, `balanced` and `frontier` to available model IDs, select a cost profile and optionally override individual roles. You can defer, reuse one model for all aliases, or use `--non-interactive` / `--model-settings FILE` for automation. Choices are saved locally and checked against actual host capabilities during execution. [Model setup and reconfiguration](docs/MODEL_SETUP.md).
 
 The installer copies instructions and local tools. It does not install document renderers, activate MCP services or purchase API access. The assistant reports missing capabilities when they affect your task.
 

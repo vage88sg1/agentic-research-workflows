@@ -57,6 +57,14 @@ Il prefisso `Galileo -` compare nei nomi del menu quando il client legge i metad
 
 [Guida completa con esempi e un diagramma per ogni workflow](WORKFLOW_GUIDE.md).
 
+## Scegli i modelli durante l’installazione
+
+Se esegui l’installer in un terminale, Galileo propone una configurazione guidata: harness, modelli disponibili, associazione ai tre alias `economical`, `balanced` e `frontier`, profilo di costo e override facoltativi per singolo ruolo. Puoi usare lo stesso modello per tutti gli alias o rimandare. Il riepilogo viene salvato solo dopo la tua conferma.
+
+Le preferenze sono locali, nel file `galileo-models.json` accanto alle cartelle delle skill. Il workflow verifica le capacità reali del client; se un modello richiesto non è disponibile, chiede come procedere. La configurazione non attiva API a pagamento né cambia le impostazioni del client.
+
+Per script e automazioni usa `--non-interactive`, eventualmente con `--model-settings FILE`. Per riconfigurare una versione già installata usa `--configure-models --replace-model-settings`: conserva un backup e non reinstalla le skill. [Guida completa alla configurazione dei modelli](MODEL_SETUP.md).
+
 ## Parti da una richiesta semplice
 
 ```text

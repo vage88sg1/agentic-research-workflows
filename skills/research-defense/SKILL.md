@@ -6,6 +6,8 @@ license: MIT
 
 # Research defense and scientific Q&A
 
+For role/model selection, follow [installed model preferences](../galileo/references/model-settings.md). Reuse explicit project choices and the shared installation mapping; distinguish requested models from actual host execution. Bounded edits need no model-setup interview.
+
 ## Intake
 
 Ask about audience/committee specialties, language, talk and Q&A duration, manuscript/slide version and questions the presenter finds difficult. Resolve whether this is coaching (feedback after each answer) or mock examination (feedback after a question block). Use only supplied/consulted research evidence. Do not invent identities or credentials of actual committee members; roles are explicitly simulated.

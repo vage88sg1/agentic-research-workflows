@@ -32,7 +32,7 @@ For a requested multi-stage outcome, give a short plan in terms of deliverables,
 
 ## Sensible defaults and progressive detail
 
-Reuse project choices. Otherwise use the user's current language, balanced cost guidance and a scoped plan. Model routing remains limited by the host and the user's settings. Determine available capabilities only for the next relevant task. Propose `research_workspace/` if no output location is selected, avoiding collisions and preserving input files.
+For role/model selection read [installed model preferences](references/model-settings.md), reuse the configured aliases/profile and verify actual host capabilities. Reuse project choices. Otherwise use the user's current language, balanced cost guidance and a scoped plan. Model routing remains limited by the host and the user's settings. Determine available capabilities only for the next relevant task. Propose `research_workspace/` if no output location is selected, avoiding collisions and preserving input files.
 
 Ask DOCX versus LaTeX when manuscript production actually requires the decision; explain the choice in ordinary terms. Reuse an existing source format where appropriate. For a requested slide deck, clarify audience/duration first and outputs when needed. Do not make the user complete technical forms before outlining or other independent work.
 

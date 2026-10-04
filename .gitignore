@@ -9,3 +9,8 @@ data/
 *.zip
 .env
 .env.*
+
+# Local model preferences and backups
+galileo-models.json
+.galileo-models-backup-*.json
+.galileo-models-*.tmp

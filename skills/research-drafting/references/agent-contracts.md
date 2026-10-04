@@ -18,6 +18,8 @@ Use roles appropriate to the question; do not start every role on every turn. De
 | Simulated handling editor | Reasoned synthesis, required changes and simulated decision | Balanced, high; frontier for substantive conflict |
 | Copyeditor and terminology editor | Grammar/style and a separate discipline-specific terminology pass; preserve customary English terms, exact identifiers and the shared term list. Substantive or uncertain meaning changes return to domain/content review | Economical, medium for bounded checks; balanced for unresolved domain ambiguity |
 
+Resolve these tiers through the [installed alias mapping and role overrides](../../galileo/references/model-settings.md). Project/user choices take precedence; examples below do not override a configured mapping.
+
 ## Cost profiles
 
 - **Economy:** balanced models for substantive roles including methods review; economical models for bounded clerical work. Escalate central validity questions. Preserve reviewer separation, evidence checks and honest limits; reduce repeated passes/context instead of dropping validation.

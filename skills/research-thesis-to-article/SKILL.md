@@ -6,6 +6,8 @@ license: MIT
 
 # Thesis to article
 
+For role/model selection, follow [installed model preferences](../galileo/references/model-settings.md). Reuse explicit project choices and the shared installation mapping; distinguish requested models from actual host execution. Bounded edits need no model-setup interview.
+
 ## Intake and source freeze
 
 Ask progressively for the thesis/source version, proposed central question, article type, target venue/language, word limits and available results/code. Read the thesis and referenced outputs actually provided. Preserve a frozen source and create a separate article run. Verify current official venue requirements when a venue is selected; use an explicitly generic profile otherwise.

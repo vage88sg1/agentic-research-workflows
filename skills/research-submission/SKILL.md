@@ -6,6 +6,8 @@ license: MIT
 
 # Submission dossier preparation
 
+For role/model selection, follow [installed model preferences](../galileo/references/model-settings.md). Reuse explicit project choices and the shared installation mapping; distinguish requested models from actual host execution. Bounded edits need no model-setup interview.
+
 ## Intake and boundary
 
 Resolve target venue/article type, current manuscript version, simulation versus real preparation, author-supplied identities/affiliations and available supplements. This workflow prepares local materials only. It never uploads, submits, signs, pays, contacts an editor or creates publication identifiers. Simulated-review decisions must not be presented as genuine peer review or acceptance.

@@ -6,6 +6,8 @@ license: MIT
 
 # Research drafting
 
+For role/model selection, follow [installed model preferences](../galileo/references/model-settings.md). Reuse explicit project choices and the shared installation mapping; distinguish requested models from actual host execution. Bounded edits need no model-setup interview.
+
 For a full drafting project, read [agent contracts](references/agent-contracts.md) and [skill integration](references/skill-integration.md). For a bounded edit, start with the scoped path below and load further guidance only if a substantive issue requires it. Use the user's language, discipline, institution and venue requirements; do not assume a particular country, field, study design or dataset. This workflow can be invoked through a host's skill/slash picker, explicitly by name, or as plain instructions.
 
 ## Scoped editing path

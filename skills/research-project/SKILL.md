@@ -6,6 +6,8 @@ license: MIT
 
 # Research project support
 
+For role/model selection, follow [installed model preferences](../galileo/references/model-settings.md). Reuse explicit project choices and the shared installation mapping; distinguish requested models from actual host execution. Bounded edits need no model-setup interview.
+
 Use this support workflow for preflight, evidence mapping, change impact, final delivery-record checks or reproducibility packaging. Ask which operation is needed only if it cannot be inferred. Read [tool usage and schemas](references/project-tools.md) before running the bundled Python CLI. It uses the standard library, requires Python 3.10+, and remains available after skill installation.
 
 ## Check the actual environment

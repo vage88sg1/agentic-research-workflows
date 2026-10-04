@@ -53,3 +53,11 @@ MCP examples are kept outside skill installation. Configure selected servers sep
 The installer rejects vendor files absent from its provenance inventory, including generated caches; use a clean source checkout. Each installed skill records SHA-256 hashes of its payload and retained license in `bundle-provenance.json` (the manifest excludes itself). This detects later file changes; it is not a signature or authenticity guarantee.
 
 All profiles include galileo and research-project and its portable standard-library scripts. The publishing profile adds thesis-to-article and submission preparation; defense adds oral rehearsal; systematic adds the dedicated evidence-synthesis workflow. New profiles still require a fresh destination or deliberate reconciliation with existing installations.
+
+## Guided model preferences
+
+Interactive terminal installation asks whether to configure model aliases now or later. Choose the harness, exact available model IDs, three alias mappings, a cost profile and optional role overrides; review before saving. Preferences live in `galileo-models.json` next to the installed skill folders. They do not change client settings or certify actual model routing. Non-terminal installation defers configuration unless `--model-settings FILE` imports a reviewed JSON. Use `--non-interactive` to skip questions deliberately; `--dry-run` never prompts or writes.
+
+Reconfigure existing installations with `--configure-models`; existing preferences require explicit `--replace-model-settings`, which keeps a backup. This operation does not copy or overwrite skills. See the [model setup guide](MODEL_SETUP.md) for inventories, automation, role IDs and the installed standalone helper.
+
+For installation assisted by an AI without an interactive terminal, offer now/later and collect the user's model choices in the conversation, then import the validated JSON with `--model-settings FILE`. Do not fabricate wizard answers or treat an unattended deferred install as a completed model selection. A user-requested unattended install may deliberately defer setup.

@@ -6,6 +6,8 @@ license: MIT
 
 # Research typesetting
 
+For role/model selection, follow [installed model preferences](../galileo/references/model-settings.md). Reuse explicit project choices and the shared installation mapping; distinguish requested models from actual host execution. Bounded edits need no model-setup interview.
+
 Ask or read the configured manuscript format: DOCX or LaTeX. Activate only the selected route. If not chosen, explain editable Word versus TeX source briefly and ask; continue evidence work that does not depend on format. Read [format routing](references/format-routing.md) for the chosen route.
 
 Resolve authorized source material, template, language/script, paper size, bibliography style and intended output. Check current official venue/institution rules; never assume English, IEEE, A4 or a specific thesis structure. Formatting must preserve verified claims, numbers, uncertainty, citations and declarations.

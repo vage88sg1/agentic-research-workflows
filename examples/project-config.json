@@ -11,6 +11,7 @@
     "balanced": null,
     "frontier": null
   },
+  "role_overrides": {},
   "max_active_agents": 4,
   "reviewer_count": 3,
   "max_review_rounds": 3,

@@ -6,6 +6,8 @@ license: MIT
 
 # Research review
 
+For role/model selection, follow [installed model preferences](../galileo/references/model-settings.md). Reuse explicit project choices and the shared installation mapping; distinguish requested models from actual host execution. Bounded edits need no model-setup interview.
+
 Read [agent contracts](references/agent-contracts.md) and [skill integration](references/skill-integration.md). Match language, discipline, design, document and venue. An author's internal simulation is not an assigned journal review; do not invent reviewer identities, qualifications, publisher permissions or real editorial outcomes.
 
 ## Intake and freeze
