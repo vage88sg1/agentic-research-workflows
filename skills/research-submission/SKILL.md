@@ -18,6 +18,8 @@ Read current official author instructions for the selected venue, recording URL/
 
 Prepare a tailored cover-letter draft, title page, manuscript, reference/supplement inventory and required reporting-checklist mapping. Create a separate blinded copy only where required; inspect body, acknowledgments, file metadata, comments, tracked changes and self-citation wording while preserving scientific meaning. If metadata inspection/removal tools are unavailable, record that check as pending. Preserve the original identified version.
 
+For a requested provenance/watermark audit, anonymized-copy metadata cleanup or detailed AI-use declaration check, use [research-provenance](../research-provenance/SKILL.md) when installed. Its audit cannot establish human authorship or replace author answers.
+
 Collect genuine author answers for contributions, authorship approval, conflicts, funding, ethics/consent when applicable, data/code availability, prior dissemination and AI/tool assistance disclosure required by the venue. Never populate a missing declaration with 'none', 'approved' or a fictitious identifier. Use unresolved fields in a separate register; do not create a misleading completed declaration. Suggested reviewers, signatures and author approval must come from the responsible human; do not invent identities or contacts.
 
 A balanced dossier coordinator reconciles venue requirements and scientific files, an economical editorial secretary checks file inventory and mechanical limits, and a distinct compliance/consistency verifier checks the actual package. This is document QA, not legal advice or a certification of venue acceptance. Escalate substantive changes to the author/editorial workflow; use citation-management and scientific-writing where installed.

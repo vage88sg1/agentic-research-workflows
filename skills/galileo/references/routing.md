@@ -13,6 +13,7 @@ Select from the user's actual goal and materials; do not ask them to classify th
 | Rehearse oral questions or a thesis defense | research-defense | Wait for real answers; distinguish coaching from demonstration |
 | Prepare files and declarations for a journal | research-submission | Local dossier only; NOT SUBMITTED |
 | Plan/conduct a systematic review | research-systematic-review | Explicit systematic intent; protocol and screening records |
+| Inspect AI provenance/watermarks, clean authorized document marks or review AI-use declarations | research-provenance | Scheme-specific findings; preserve originals, scientific content and truthful disclosure |
 
 “I want to improve this paragraph” uses the drafting skill’s scoped editing path: preserve the original, return the edit and avoid starting a project or review dossier. A request for a slide outline or Markdown notes uses the presentation skill’s content-only path; it does not require visual-export setup. “Find background sources” normally belongs to drafting's literature work, not systematic screening. “Prepare my defense” may mean slides, oral rehearsal or both; clarify if the materials/request do not resolve the ambiguity. “Make this ready for publication” needs a concrete target and clarification of preparation scope; never interpret it as authorization to submit.
 
@@ -23,3 +24,5 @@ When a requested stage produces or edits DOCX, XLSX or PPTX, read [Office capabi
 For TeX source/Beamer production, read [LaTeX capabilities](latex-capabilities.md) and use available compatible skills and compilation tools only for that route. Bibliography, indexes and cross-references must be built, not merely present as commands.
 
 If a skill is absent, explain which requested step is unavailable. Do not recommend reinstalling over existing directories or overwrite locally modified skills; refer to a fresh supported destination or a deliberate reconciled update. For clients without native skill loading, follow the provided route instructions as plain text and report actual execution limits.
+
+A request to check or remove an AI watermark uses research-provenance first: distinguish the actual mark/scheme and available test from generic AI-classifier scores. Inspection alone does not authorize cleanup. A paragraph-style edit stays with drafting; do not launch detector tests or provenance cleanup just because the prose was AI assisted.

@@ -32,7 +32,7 @@ Sources: [Claude Code skills and commands](https://code.claude.com/docs/en/skill
 
 ## Other clients
 
-If your client supports the SKILL.md format, point `--dest` to its supported skill location. Extra Codex UI metadata may be ignored. Use `--profile core|docx|latex|slides|publishing|defense|systematic|full` to choose installed capabilities; full includes twenty-one directories. All profiles preserve non-overwrite behavior. The workflows themselves are portable Markdown instructions, but model settings, independent contexts, tool identifiers and menus are not universal. No claim is made of end-to-end testing in other clients. Installing skills does not add native harness agent definitions. Separate agents require explicit delegation support and host permission; otherwise the roles are performed sequentially with that limitation disclosed. Model recommendations must be mapped to the models available in the host, and MCP settings must be configured for that host separately.
+If your client supports the SKILL.md format, point `--dest` to its supported skill location. Extra Codex UI metadata may be ignored. Use `--profile core|docx|latex|slides|publishing|defense|systematic|full` to choose installed capabilities; full includes twenty-two directories. All profiles preserve non-overwrite behavior. The workflows themselves are portable Markdown instructions, but model settings, independent contexts, tool identifiers and menus are not universal. No claim is made of end-to-end testing in other clients. Installing skills does not add native harness agent definitions. Separate agents require explicit delegation support and host permission; otherwise the roles are performed sequentially with that limitation disclosed. Model recommendations must be mapped to the models available in the host, and MCP settings must be configured for that host separately.
 
 If skills are unsupported, provide the entry point, its references and relevant vendor guidance as instructions. The workflow must report unavailable parallelism, computation, browsing and model routing instead of simulating successful tool execution.
 
@@ -52,7 +52,7 @@ MCP examples are kept outside skill installation. Configure selected servers sep
 
 The installer rejects vendor files absent from its provenance inventory, including generated caches; use a clean source checkout. Each installed skill records SHA-256 hashes of its payload and retained license in `bundle-provenance.json` (the manifest excludes itself). This detects later file changes; it is not a signature or authenticity guarantee.
 
-All profiles include galileo and research-project and its portable standard-library scripts. The publishing profile adds thesis-to-article and submission preparation; defense adds oral rehearsal; systematic adds the dedicated evidence-synthesis workflow. New profiles still require a fresh destination or deliberate reconciliation with existing installations.
+All profiles include galileo, research-project and research-provenance. Research-project also supplies portable standard-library scripts. The publishing profile adds thesis-to-article and submission preparation; defense adds oral rehearsal; systematic adds the dedicated evidence-synthesis workflow. New profiles still require a fresh destination or deliberate reconciliation with existing installations.
 
 ## Guided model preferences
 

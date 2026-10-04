@@ -10,6 +10,54 @@ spec.loader.exec_module(installer)
 
 
 class InstallationTests(unittest.TestCase):
+    def test_provenance_workflow_is_portable_in_every_profile(self):
+        import json
+        with tempfile.TemporaryDirectory() as folder:
+            for profile in json.loads((ROOT / 'bundle.json').read_text())['profiles']:
+                result = installer.install(Path(folder) / profile, profile=profile)
+                self.assertIn('research-provenance', result['installed'])
+                skill = Path(result['destination']) / 'research-provenance'
+                self.assertEqual((skill / 'references/inspection.md').read_bytes(),
+                                 (ROOT / 'skills/research-provenance/references/inspection.md').read_bytes())
+                self.assertTrue((skill / '../galileo/references/model-settings.md').is_file())
+                self.assertTrue((skill / '../galileo/references/office-capabilities.md').is_file())
+                self.assertTrue((skill / '../galileo/references/run-state.md').is_file())
+                self.assertEqual((skill / 'BUNDLE_LICENSE.txt').read_bytes(), (ROOT / 'LICENSE').read_bytes())
+
+    def test_provenance_skill_collision_preserves_host_owned_content(self):
+        with tempfile.TemporaryDirectory() as folder:
+            destination = Path(folder) / 'skills'
+            skill = destination / 'research-provenance'
+            skill.mkdir(parents=True)
+            (skill / 'SKILL.md').write_text('host-owned provenance instructions')
+            with self.assertRaises(FileExistsError):
+                installer.install(destination, profile='core')
+            self.assertEqual((skill / 'SKILL.md').read_text(), 'host-owned provenance instructions')
+            self.assertEqual([p.name for p in destination.iterdir()], ['research-provenance'])
+
+    def test_installed_provenance_helper_runs_without_checkout_imports(self):
+        import hashlib
+        import json
+        import subprocess
+        import sys
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            destination = root / 'skills'
+            installer.install(destination, profile='core')
+            skill = destination / 'research-provenance'
+            source = root / 'figure.png'
+            source.write_bytes(b'synthetic example')
+            command = [sys.executable, str(skill / 'scripts/verify_provenance.py'),
+                       'openai-media', str(source), '--dry-run']
+            process = subprocess.run(command, cwd=root, capture_output=True, text=True)
+            self.assertEqual(process.returncode, 2)
+            report = json.loads(process.stdout)
+            self.assertEqual(report['check']['status'], 'NOT TESTED')
+            self.assertEqual(report['sha256'], hashlib.sha256(source.read_bytes()).hexdigest())
+            manifest = json.loads((skill / 'bundle-provenance.json').read_text())
+            self.assertEqual(manifest['installed_files_sha256']['scripts/verify_provenance.py'],
+                             hashlib.sha256((skill / 'scripts/verify_provenance.py').read_bytes()).hexdigest())
+
     def test_installed_office_payload_is_runnable_and_license_is_retained(self):
         import json
         import subprocess
@@ -49,13 +97,13 @@ class InstallationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             dest = Path(folder) / 'not-created'
             result = installer.install(dest, dry_run=True)
-            self.assertEqual(len(result['skills']), 21)
+            self.assertEqual(len(result['skills']), 22)
             self.assertFalse(dest.exists())
 
     def test_install_is_self_contained_and_retains_notices(self):
         with tempfile.TemporaryDirectory() as folder:
             result = installer.install(Path(folder) / 'skills')
-            self.assertEqual(len(result['installed']), 21)
+            self.assertEqual(len(result['installed']), 22)
             dest = Path(result['destination'])
             for name in result['installed']:
                 self.assertTrue((dest / name / 'SKILL.md').is_file())

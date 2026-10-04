@@ -16,7 +16,7 @@ I percorsi sono documentati dai client; non implicano un collaudo completo su ci
 
 ## Tutte le funzionalità
 
-Il profilo completo contiene **Galileo, nove workflow specialistici e undici skill di supporto: 21 cartelle di skill**.
+Il profilo completo contiene **Galileo, dieci workflow specialistici e undici skill di supporto: 22 cartelle di skill**.
 
 | Funzionalità | Cosa offre |
 |---|---|
@@ -52,10 +52,17 @@ Non serve imparare i nomi: descrivi l'obiettivo a Galileo. Puoi anche richiamare
 | Galileo - Research defense | Allenarsi alla discussione e alle domande |
 | Galileo - Submission dossier | Preparare i materiali richiesti dalla rivista |
 | Galileo - Systematic review | Svolgere una revisione sistematica esplicitamente richiesta |
+| Galileo - AI provenance | Verificare provenienza/watermark, pulire elementi autorizzati e controllare le dichiarazioni sull’uso dell’AI |
 
 Il prefisso `Galileo -` compare nei nomi del menu quando il client legge i metadati `agents/openai.yaml`. Gli identificatori e i comandi restano invariati: per esempio, in Codex puoi usare `$research-review`. Il punto di ingresso principale resta **Galileo**.
 
 [Guida completa con esempi e un diagramma per ogni workflow](WORKFLOW_GUIDE.md).
+
+## Watermark, provenienza AI e pulizia dei documenti
+
+Chiedi a Galileo di verificare i file, oppure usa `$research-provenance` in Codex. Il workflow distingue watermark visibili, metadati, Content Credentials e watermark statistici. Può rimuovere elementi autorizzati, come un watermark DRAFT aggiunto da te o i dati dell’autore in una copia anonimizzata, conservando gli originali e verificando contenuto e impaginazione. I controlli non disponibili restano dichiarati; non certifica che un testo sia umano o privo di ogni watermark, e conserva le dichiarazioni richieste sull’uso dell’AI. [Guida e diagramma](AI_PROVENANCE.md).
+
+Include un verificatore eseguibile per C2PA in locale e un adattatore opzionale all’API ufficiale OpenAI per immagini/audio. L’upload richiede autorizzazione esplicita e un account abilitato. I campioni ufficiali C2PA servono a verificare le credenziali; non certificano chi ha scritto il testo. La verifica dei watermark testuali Anthropic dipende dall’accesso riservato al servizio. [Comandi e limiti](../skills/research-provenance/references/verification.md).
 
 ## Scegli i modelli durante l’installazione
 

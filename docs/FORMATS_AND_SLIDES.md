@@ -4,16 +4,16 @@
 
 | Profile | Original entry points | Upstream support | Total skill folders |
 |---|---|---|---|
-| core | Project support, drafting, review | Seven core scientific skills | 11 |
-| docx | Core entry points plus typesetting | Core scientific skills plus documents | 13 |
-| latex | Core entry points plus typesetting | Core plus academic-writing-latex and latex-safe-build | 14 |
-| slides | Core entry points plus presentations | Core plus scientific-slides, documents and latex-safe-build | 15 |
-| publishing | DOCX entry points plus thesis-to-article and submission | Core scientific skills plus documents | 15 |
-| defense | Slides entry points plus defense rehearsal | Core plus scientific-slides, documents and latex-safe-build | 16 |
-| systematic | Core entry points plus systematic review | Seven core scientific skills | 12 |
-| full | Galileo and nine specialist workflows | All eleven upstream skills | 21 |
+| core | Project support, drafting, review, AI provenance | Seven core scientific skills | 12 |
+| docx | Core entry points plus typesetting | Core scientific skills plus documents | 14 |
+| latex | Core entry points plus typesetting | Core plus academic-writing-latex and latex-safe-build | 15 |
+| slides | Core entry points plus presentations | Core plus scientific-slides, documents and latex-safe-build | 16 |
+| publishing | DOCX entry points plus thesis-to-article and submission | Core scientific skills plus documents | 16 |
+| defense | Slides entry points plus defense rehearsal | Core plus scientific-slides, documents and latex-safe-build | 17 |
+| systematic | Core entry points plus systematic review | Seven core scientific skills | 13 |
+| full | Galileo and ten specialist workflows | All eleven upstream skills | 22 |
 
-Every profile includes the Galileo guided entry point. Full installation does not activate every skill on every task. Set `manuscript_format` to docx or latex; leave it null until intake resolves the choice. Presentation outputs default to PPTX plus PDF and are independent of manuscript format. A Word thesis can produce Beamer slides; a LaTeX paper can produce editable PowerPoint.
+Every profile includes the Galileo guided entry point, project support and AI provenance. Full installation does not activate every skill on every task. Set `manuscript_format` to docx or latex; leave it null until intake resolves the choice. Presentation outputs default to PPTX plus PDF and are independent of manuscript format. A Word thesis can produce Beamer slides; a LaTeX paper can produce editable PowerPoint.
 
 ## Online skill selection
 

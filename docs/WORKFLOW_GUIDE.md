@@ -2,7 +2,7 @@
 
 AI-assisted workflows for research papers, theses, dissertations and scientific talks. Galileo guides an assistant through progressive questions, specialist roles, traceable evidence and bounded revision loops. Instructions are in English; choose the language of your own documents.
 
-**Start with the workflow that matches your current material.** You can draft from study information, review an existing manuscript, format an already checked text, or build slides from verified findings. You do not have to complete every workflow. For everyday use, start with the Galileo entry point described in the [quick start](../README.md). The nine specialist workflows below are available for direct use when desired.
+**Start with the workflow that matches your current material.** You can draft from study information, review an existing manuscript, format an already checked text, or build slides from verified findings. You do not have to complete every workflow. For everyday use, start with the Galileo entry point described in the [quick start](../README.md). The ten specialist workflows below are available for direct use when desired.
 
 | Your goal | Workflow | Typical deliverables |
 |---|---|---|
@@ -15,6 +15,7 @@ AI-assisted workflows for research papers, theses, dissertations and scientific 
 | Practice oral questions and answers | **Galileo - Research defense** | Interactive rehearsal, feedback and backup-slide plan |
 | Assemble journal-specific materials | **Galileo - Submission dossier** | Cover letter, file/declaration checklist and local dossier |
 | Plan and conduct systematic evidence synthesis | **Galileo - Systematic review** | Protocol, screening/extraction/appraisal records and synthesis |
+| Check AI provenance/watermarks and perform authorized cleanup | **Galileo - AI provenance** | Scheme-specific audit, limits, derivative/change log and preservation checks |
 
 Galileo is an **instruction package, not an execution engine**. Independent agents, model routing, menus, analysis tools and document renderers depend on the host. A configured role is not proof that a separate agent or model ran. The review workflow is a simulation: it does not submit to a journal or produce real acceptance.
 
@@ -34,6 +35,7 @@ Galileo is an **instruction package, not an execution engine**. Independent agen
 - [G — Defense rehearsal](#workflow-g--rehearse-a-defense-or-scientific-qa)
 - [H — Submission dossier](#workflow-h--prepare-a-submission-dossier)
 - [I — Systematic review](#workflow-i--conduct-a-systematic-review)
+- [J — AI provenance](#workflow-j--inspect-ai-provenance-and-clean-document-artifacts)
 - [Resume and hand off](#continue-change-scope-or-switch-workflow)
 - [Quality and cost](#select-quality-and-cost-settings)
 - [Literature MCP](#optional-literature-mcp-add-only-what-you-need)
@@ -50,7 +52,7 @@ python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills 
 python3 scripts/install.py --dest /path/to/your/research-project/.agents/skills --profile full
 ```
 
-The dry run previews installation; the second command copies the skills. `full` installs Galileo, nine specialist workflows and eleven upstream support skills (21 skill directories). It preserves licenses and provenance, refuses existing skill names and does not install libraries, compilers or MCP servers. It does not alter client settings or make network calls.
+The dry run previews installation; the second command copies the skills. `full` installs Galileo, ten specialist workflows and eleven upstream support skills (22 skill directories). It preserves licenses and provenance, refuses existing skill names and does not install libraries, compilers or MCP servers. It does not alter client settings or make network calls.
 
 For a smaller installation, use the same profile in both commands:
 
@@ -63,9 +65,9 @@ For a smaller installation, use the same profile in both commands:
 | `publishing` | Drafting, review, typesetting, thesis-to-article, submission | Core guidance and project support |
 | `defense` | Drafting, review, presentations, defense | Core guidance, scientific-slides and project support |
 | `systematic` | Drafting, review, systematic review | Core guidance and project support |
-| `full` | Galileo and all nine specialist workflows | All eleven upstream support skills |
+| `full` | Galileo and all ten specialist workflows | All eleven upstream support skills |
 
-Galileo and Research project are included in every profile. The existing core/docx/latex/slides profiles keep their focused workflow selection and now include that support entry point.
+Galileo, Research project and AI provenance are included in every profile. The existing core/docx/latex/slides profiles keep their focused workflow selection and now include that support entry point.
 
 Use a profile for a fresh destination. Installing another profile over the same skill names is not an update mechanism; back up and reconcile existing versions deliberately. For other scopes or clients, use their documented skill location. See [installation and host compatibility](INSTALLATION.md).
 
@@ -84,6 +86,7 @@ In a compatible Codex desktop client, type `/`, select the actual workflow entry
 - **Galileo - Research defense**
 - **Galileo - Submission dossier**
 - **Galileo - Systematic review**
+- **Galileo - AI provenance**
 
 The `Galileo -` prefix belongs to UI display names; hosts may ignore this metadata. Skill identifiers, folder names and invocation syntax remain unchanged. The main entry point is still **Galileo**.
 
@@ -497,6 +500,41 @@ You receive protocol/amendments, search logs/exports, deduplication and screenin
 
 [Systematic-review instructions](../skills/research-systematic-review/SKILL.md) · [Record conventions and official guidance](../skills/research-systematic-review/references/systematic-records.md)
 
+## Workflow J — Inspect AI provenance and clean document artifacts
+
+Use **Galileo - AI provenance** for a watermark/provenance audit, authorized mark/property cleanup or AI-assistance declaration check. It is available in every profile and can be used independently of writing/review.
+
+```text
+$research-provenance Inspect manuscript.docx, slides.pptx and their figures locally.
+Report each supported provenance/watermark test and any unavailable checks.
+Preserve the originals; do not modify files or upload them to detectors.
+```
+
+For cleanup, specify the exact mark/property and authorized operation. For example, request removal of your self-added DRAFT watermark and author metadata from a review copy while retaining citations, native fields and required disclosures. Statistical text watermarks and AI-classifier scores are separate from document metadata; the workflow does not certify human authorship or promise undetectable text.
+
+### Workflow design
+
+```mermaid
+flowchart TD
+  A[Scope and original versions] --> B[Inspect visible marks and ordinary metadata]
+  A --> C[Supported provenance/watermark verification]
+  B --> D[Scheme-specific results and unknowns]
+  C --> D
+  D --> E{Authorized cleanup?}
+  E -->|No| F[Audit and limits]
+  E -->|Yes| G[Versioned copy and precise edits]
+  G --> H[Content, native features, render and provenance recheck]
+  H --> I{Preservation issues?}
+  I -->|Correct within limits| G
+  I -->|Pass or unresolved limit| J[Derivative, change log, actual checks and open issues]
+```
+
+The coordinator selects a provenance inspector, declaration checker, format editor and preservation verifier as needed. A tool/provider's actual access and supported schemes govern what can be tested, not the chosen model tier. See [AI provenance scope, examples and current tools](AI_PROVENANCE.md).
+
+Compatible checks can run through the included Python helper: existing local C2PA Tool, or the official OpenAI media API with explicit upload authorization and eligible access. Manuscript text remains outside the media API's coverage. [Executable verification and official fixtures](../skills/research-provenance/references/verification.md) explain prerequisites, commands and result interpretation.
+
+---
+
 ## Continue, change scope or switch workflow
 
 Resume with the same entry point and point to the saved run:
@@ -559,9 +597,9 @@ python3 scripts/check_literature_mcp.py --connect pubmed --timeout 60
 
 ## Included support skills and project validation
 
-Nine upstream skills support the nine entry points: `scientific-writing`, `citation-management`, `scientific-critical-thinking`, `statistical-analysis`, `literature-review`, `scientific-visualization`, `peer-review`, `scientific-slides` and `academic-writing-latex`.
+Eleven upstream skills support Galileo and ten specialist workflows: `scientific-writing`, `citation-management`, `scientific-critical-thinking`, `statistical-analysis`, `literature-review`, `scientific-visualization`, `peer-review`, `scientific-slides`, `academic-writing-latex`, `documents` and `latex-safe-build`.
 
-Eight come from K-Dense; academic-writing-latex comes from HS0n4. They are third-party skills, not OpenAI-maintained instructions. Sources, licenses, revisions and file hashes are recorded in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) and `vendor/provenance.json`. Read applicable instructions before use; installation does not activate their external services or optional dependencies.
+Eight come from K-Dense; academic-writing-latex comes from HS0n4, documents from Magnus Hedemark and latex-safe-build from molanocortes. They are third-party skills, not OpenAI-maintained instructions. Sources, licenses, revisions and file hashes are recorded in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) and `vendor/provenance.json`. Read applicable instructions before use; installation does not activate their external services or optional dependencies.
 
 For contributors, run the package checks with Python 3.11+:
 

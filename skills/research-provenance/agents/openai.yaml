@@ -1,0 +1,4 @@
+interface:
+  display_name: "Galileo - AI provenance"
+  short_description: "Check AI provenance and clean authorized document artifacts"
+  default_prompt: "Use $research-provenance to inspect AI provenance and watermark signals, report limits and perform only the authorized document cleanup."

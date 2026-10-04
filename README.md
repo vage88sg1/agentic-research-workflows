@@ -4,7 +4,7 @@
 
 Galileo brings together scientific writing, specialist roles, evidence records and correction loops. Describe your goal in your preferred language; the assistant selects the relevant workflow and asks for information when it matters. Use a focused workflow or request several connected deliverables in one message.
 
-**9 specialist workflows · 21 skill folders in the full profile · 5 offline project commands**
+**10 specialist workflows · 22 skill folders in the full profile · 5 offline project commands**
 
 Works through skill-compatible AI assistants such as Claude Code, Codex, OpenCode and GitHub Copilot. The package contains portable `SKILL.md` instructions and local tools; your harness supplies models, agents and execution capabilities. Cross-client discovery support and complete runtime validation are distinct.
 
@@ -28,6 +28,7 @@ Works through skill-compatible AI assistants such as Claude Code, Codex, OpenCod
 | **Systematic evidence synthesis** | Protocol, reproducible search, record/report/study tracking, deduplication, screening, extraction, appraisal and appropriate synthesis. Meta-analysis is conditional, not automatic. |
 | **Journal dossier preparation** | Current venue requirements, cover-letter draft, title/blinded files where needed, supplements and declaration/checklist tracking. Local preparation only. |
 | **Traceability and reproducibility** | Environment discovery, structural evidence audits, registered dependency/change-impact tracking, final delivery-record checks and allowlisted reproducibility bundles with hashes and recorded commands. |
+| **AI provenance and document hygiene** | Executable local C2PA checks, optional official OpenAI image/audio verification, authorized mark/metadata cleanup and truthful AI-assistance declarations. Unsupported text checks stay explicit. [Scope and tools](docs/AI_PROVENANCE.md). |
 | **Provider flexibility and cost guidance** | Guided installation-time alias mapping, optional role overrides, economy/balanced/quality guidance, targeted delegation and reuse of verified evidence. Actual routing and costs depend on the host. |
 
 These are workflow instructions plus scoped local tools. File creation, computation, independent contexts, browsing and rendering are claimed only when actually performed. [Detailed workflow designs](docs/WORKFLOW_GUIDE.md) · [Validation and limits](docs/RELEASE_REVIEW.md)
@@ -69,10 +70,11 @@ Start through Galileo without memorizing these names, or invoke a specialist dir
 | [Galileo - Research defense](docs/WORKFLOW_GUIDE.md#workflow-g--rehearse-a-defense-or-scientific-qa) | Interactive oral rehearsal | Questions, feedback, answer notes and backup-slide brief |
 | [Galileo - Submission dossier](docs/WORKFLOW_GUIDE.md#workflow-h--prepare-a-submission-dossier) | Journal-specific file preparation | Cover letter, file/declaration checklist and local dossier |
 | [Galileo - Systematic review](docs/WORKFLOW_GUIDE.md#workflow-i--conduct-a-systematic-review) | Explicit systematic evidence synthesis | Protocol, search/screening/extraction/appraisal records and synthesis |
+| [Galileo - AI provenance](docs/WORKFLOW_GUIDE.md#workflow-j--inspect-ai-provenance-and-clean-document-artifacts) | Watermark/provenance checks, authorized cleanup and AI-use declarations | Scoped audit, actual test limits, requested derivative, change log and preservation QA |
 
 Specialist UI labels use the `Galileo -` prefix where the host reads `agents/openai.yaml`. Skill identifiers and invocation syntax are unchanged; the main entry point remains **Galileo**.
 
-Each workflow has its own diagram and examples in the [advanced guide](docs/WORKFLOW_GUIDE.md). You do not have to complete all nine.
+Each workflow has its own diagram and examples in the [advanced guide](docs/WORKFLOW_GUIDE.md). You do not have to complete all ten.
 
 Try a request such as:
 
@@ -175,7 +177,7 @@ Setup uses your actual harness and authorization; a recommendation does not acti
 
 Five offline standard-library commands ship in the research-project skill: `preflight` for environment discovery, `evidence` for structural source/claim checks, `impact` for registered dependency changes, `delivery` for final output hashes and recorded check/readiness consistency, and `bundle` for selected reproducibility files. They complement source assessment and actual analysis execution; packaging does not execute research code. [Commands and runnable synthetic example](docs/PROJECT_TOOLS.md)
 
-The default full profile installs **Galileo, nine specialist workflows and eleven upstream support skills**. Smaller `core`, `docx`, `latex`, `slides`, `publishing`, `defense` and `systematic` profiles are available. Every profile includes Galileo and project support. Installation preserves licenses/provenance, checks vendor hashes and refuses existing names. [Profiles and format choices](docs/FORMATS_AND_SLIDES.md)
+The default full profile installs **Galileo, ten specialist workflows and eleven upstream support skills**. Smaller `core`, `docx`, `latex`, `slides`, `publishing`, `defense` and `systematic` profiles are available. Every profile includes Galileo, project support and AI provenance. Installation preserves licenses/provenance, checks vendor hashes and refuses existing names. [Profiles and format choices](docs/FORMATS_AND_SLIDES.md)
 
 ## Validation and execution boundaries
 
@@ -183,7 +185,7 @@ Package checks and synthetic workflow exercises are documented in the [release r
 
 ## Explore when needed
 
-- [All nine specialist workflows, examples and diagrams](docs/WORKFLOW_GUIDE.md)
+- [All ten specialist workflows, examples and diagrams](docs/WORKFLOW_GUIDE.md)
 - [Word, LaTeX, PowerPoint and PDF](docs/FORMATS_AND_SLIDES.md)
 - [Optional scientific literature connections](docs/LITERATURE_INTEGRATIONS.md)
 - [Evidence tracking, change impact and reproducibility tools](docs/PROJECT_TOOLS.md)

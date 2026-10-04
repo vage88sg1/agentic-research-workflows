@@ -9,7 +9,8 @@
     "research-thesis-to-article",
     "research-defense",
     "research-submission",
-    "research-systematic-review"
+    "research-systematic-review",
+    "research-provenance"
   ],
   "profiles": {
     "core": [
@@ -23,7 +24,8 @@
       "statistical-analysis",
       "literature-review",
       "scientific-visualization",
-      "peer-review"
+      "peer-review",
+      "research-provenance"
     ],
     "docx": [
       "galileo",
@@ -38,7 +40,8 @@
       "literature-review",
       "scientific-visualization",
       "peer-review",
-      "documents"
+      "documents",
+      "research-provenance"
     ],
     "latex": [
       "galileo",
@@ -54,7 +57,8 @@
       "scientific-visualization",
       "peer-review",
       "academic-writing-latex",
-      "latex-safe-build"
+      "latex-safe-build",
+      "research-provenance"
     ],
     "slides": [
       "galileo",
@@ -71,7 +75,8 @@
       "peer-review",
       "scientific-slides",
       "documents",
-      "latex-safe-build"
+      "latex-safe-build",
+      "research-provenance"
     ],
     "full": [
       "galileo",
@@ -94,7 +99,8 @@
       "research-submission",
       "research-systematic-review",
       "documents",
-      "latex-safe-build"
+      "latex-safe-build",
+      "research-provenance"
     ],
     "publishing": [
       "galileo",
@@ -111,7 +117,8 @@
       "peer-review",
       "research-thesis-to-article",
       "research-submission",
-      "documents"
+      "documents",
+      "research-provenance"
     ],
     "defense": [
       "galileo",
@@ -129,7 +136,8 @@
       "scientific-slides",
       "research-defense",
       "documents",
-      "latex-safe-build"
+      "latex-safe-build",
+      "research-provenance"
     ],
     "systematic": [
       "galileo",
@@ -143,7 +151,8 @@
       "literature-review",
       "scientific-visualization",
       "peer-review",
-      "research-systematic-review"
+      "research-systematic-review",
+      "research-provenance"
     ]
   }
 }
