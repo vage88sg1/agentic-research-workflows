@@ -18,4 +18,6 @@ Select from the user's actual goal and materials; do not ask them to classify th
 
 For “turn this thesis into an article and slides”, route conversion first, then presentation from the resulting checked version. For “review and fix this manuscript”, carry the correction loop within research-review. For a resume request, use the stored active route rather than routing again from keywords in the latest message.
 
+When a requested stage produces or edits DOCX, XLSX or PPTX, read [Office capabilities](office-capabilities.md) and select an available licensed format skill. This supplements the active scientific workflow; it does not launch another research project or activate all Office formats.
+
 If a skill is absent, explain which requested step is unavailable. Do not recommend reinstalling over existing directories or overwrite locally modified skills; refer to a fresh supported destination or a deliberate reconciled update. For clients without native skill loading, follow the provided route instructions as plain text and report actual execution limits.

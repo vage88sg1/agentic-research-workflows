@@ -7,7 +7,7 @@
 
 The additional academic-writing-latex skill is guidance, not a compiler or official venue template. Font encoding, language packages and citation commands must match the chosen engine/template. Its recommendation to bold best metric values is not automatic in scientific results. Evidence support and uncertainty matter more than a comparative highlight.
 
-Preserve one authoritative content/evidence record across formats. Round-trip conversion can lose fields, equations, comments, cross-references or layout; compare the converted artifact instead of assuming equivalence. DOCX tracked changes, citation-manager fields and dynamic tables of contents are tool-specific; declare unsupported features rather than synthesizing them from plain text.
+Preserve one authoritative content/evidence record across formats. Round-trip conversion can lose fields, equations, comments, cross-references or layout; compare the converted artifact instead of assuming equivalence. For DOCX, follow [Office capabilities](../../galileo/references/office-capabilities.md). Tracked changes, citation-manager fields and dynamic tables of contents are tool-specific; test needed functionality and declare unsupported features rather than synthesizing them from plain text. A library being available does not establish that it can create, preserve or refresh these features.
 
 PDF is a rendered output, not an authoring format. A file can compile/export and still have missing references or visual defects. Do not claim PDF/UA, archival compliance or anonymization from a basic export. If both manuscript formats are requested, record which is canonical and verify each output independently.
 

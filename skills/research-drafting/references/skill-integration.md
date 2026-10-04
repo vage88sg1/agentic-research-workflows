@@ -26,6 +26,10 @@ Outputs typically include project-config.json, workflow_state.json, study.md, so
 
 Attribution: retain third-party notices. If the bundled collection materially contributes to an academic output, follow its attribution guidance after verifying the current primary bibliographic record and applicable venue style. Do not insert an unverified citation automatically.
 
+## Office research artifacts
+
+When the requested work includes an Office artifact, read [Office capabilities and functional QA](../../galileo/references/office-capabilities.md). Use available licensed document, spreadsheet or presentation skills for the chosen format, or bundled `documents` when installed and appropriate. For XLSX scoring/extraction/result workbooks, preserve formulas, missingness, types and source-to-result traceability; spreadsheet formatting is not statistical validation. No workbook is required for prose-only research.
+
 ## Optional authoring and presentation routes
 
 Ask or read `manuscript_format` (docx or latex). Use research-typesetting if installed for selected-format production; if unavailable, apply compatible host tools and declare missing capabilities. Load academic-writing-latex only for LaTeX, with user language, style and engine overriding its engineering/IEEE defaults. Review scientific content before formatting and inspect the final rendered artifact afterwards. Do not generate both formats unasked.

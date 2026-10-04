@@ -5,13 +5,13 @@
 | Profile | Original entry points | Upstream support | Total skill folders |
 |---|---|---|---|
 | core | Project support, drafting, review | Seven core scientific skills | 11 |
-| docx | Core entry points plus typesetting | Seven core scientific skills | 12 |
+| docx | Core entry points plus typesetting | Core scientific skills plus documents | 13 |
 | latex | Core entry points plus typesetting | Core plus academic-writing-latex | 13 |
-| slides | Core entry points plus presentations | Core plus scientific-slides | 13 |
-| publishing | DOCX entry points plus thesis-to-article and submission | Seven core scientific skills | 14 |
-| defense | Slides entry points plus defense rehearsal | Core plus scientific-slides | 14 |
+| slides | Core entry points plus presentations | Core plus scientific-slides and documents | 14 |
+| publishing | DOCX entry points plus thesis-to-article and submission | Core scientific skills plus documents | 15 |
+| defense | Slides entry points plus defense rehearsal | Core plus scientific-slides and documents | 15 |
 | systematic | Core entry points plus systematic review | Seven core scientific skills | 12 |
-| full | Galileo and nine specialist workflows | All nine upstream skills | 19 |
+| full | Galileo and nine specialist workflows | All ten upstream skills | 20 |
 
 Every profile includes the Galileo guided entry point. Full installation does not activate every skill on every task. Set `manuscript_format` to docx or latex; leave it null until intake resolves the choice. Presentation outputs default to PPTX plus PDF and are independent of manuscript format. A Word thesis can produce Beamer slides; a LaTeX paper can produce editable PowerPoint.
 
@@ -20,7 +20,13 @@ Every profile includes the Galileo guided entry point. Full installation does no
 - [HS0n4 academic-writing-latex](https://github.com/HS0n4/academic-writing-latex-skills): MIT; equations, floats, bibliography and cross-reference guidance. Its English/engineering/IEEE assumptions are overridden by user/venue requirements, and syntax must match the engine.
 - [K-Dense scientific-slides](https://github.com/K-Dense-AI/scientific-agent-skills/tree/49c6e97775eaa18ba791bebe23162a70ae601c18/skills/scientific-slides): MIT; talk structure, timing, design, Beamer templates and visual review. External generative services are optional and inactive by default. Real user identity and verified charts are preserved.
 
+- [Magnus Hedemark documents](https://github.com/magnus919/agent-skills/tree/9b34a87ee729f109019ac604681e5796349ea1b2/documents): MIT; portable Word/Excel/PowerPoint/PDF guidance and basic package validation. Galileo adds native-feature requirements and stricter delivery checks; the upstream tool is not a Word field evaluator or scientific reviewer.
+
 Sources, revisions, licenses and hashes are pinned in vendor/provenance.json. No popularity or empirical superiority claim is made. Original research-typesetting and research-presentations route these skills to actual tools. Restricted redistribution licenses excluded other document skills from this public bundle.
+
+## Office functionality
+
+The `documents` skill adds MIT guidance, templates and structural tooling for DOCX, XLSX, PPTX and PDF. It is included in full/docx/slides/publishing/defense; other profiles reuse available host skills or report the missing route. Read [Office support](OFFICE_SUPPORT.md) for native features, capability limits and functional verification. Generation libraries and Office applications are not installed with the skill.
 
 ## Slide styling and representative previews
 

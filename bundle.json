@@ -37,7 +37,8 @@
       "statistical-analysis",
       "literature-review",
       "scientific-visualization",
-      "peer-review"
+      "peer-review",
+      "documents"
     ],
     "latex": [
       "galileo",
@@ -67,7 +68,8 @@
       "literature-review",
       "scientific-visualization",
       "peer-review",
-      "scientific-slides"
+      "scientific-slides",
+      "documents"
     ],
     "full": [
       "galileo",
@@ -88,7 +90,8 @@
       "research-thesis-to-article",
       "research-defense",
       "research-submission",
-      "research-systematic-review"
+      "research-systematic-review",
+      "documents"
     ],
     "publishing": [
       "galileo",
@@ -104,7 +107,8 @@
       "scientific-visualization",
       "peer-review",
       "research-thesis-to-article",
-      "research-submission"
+      "research-submission",
+      "documents"
     ],
     "defense": [
       "galileo",
@@ -120,7 +124,8 @@
       "scientific-visualization",
       "peer-review",
       "scientific-slides",
-      "research-defense"
+      "research-defense",
+      "documents"
     ],
     "systematic": [
       "galileo",

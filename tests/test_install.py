@@ -10,17 +10,52 @@ spec.loader.exec_module(installer)
 
 
 class InstallationTests(unittest.TestCase):
+    def test_installed_office_payload_is_runnable_and_license_is_retained(self):
+        import json
+        import subprocess
+        import sys
+        with tempfile.TemporaryDirectory() as folder:
+            dest = Path(folder) / 'skills'
+            installer.install(dest, profile='docx')
+            skill = dest / 'documents'
+            self.assertEqual((skill / 'BUNDLE_LICENSE.txt').read_bytes(),
+                             (ROOT / 'vendor/documents/LICENSE.md').read_bytes())
+            record = json.loads((skill / 'bundle-provenance.json').read_text())
+            self.assertEqual(record['upstream_commit'],
+                             '9b34a87ee729f109019ac604681e5796349ea1b2')
+            proc = subprocess.run([sys.executable, 'scripts/validate-documents.py', '--json',
+                                   'fixtures/sample.docx', 'fixtures/sample.xlsx',
+                                   'fixtures/sample.pptx', 'fixtures/sample.pdf'],
+                                  cwd=skill, capture_output=True, text=True, check=True)
+            report = json.loads(proc.stdout)
+            self.assertEqual([item['format'] for item in report['files']],
+                             ['docx', 'xlsx', 'pptx', 'pdf'])
+            self.assertTrue(all(item['status'] == 'pass' for item in report['files']))
+            self.assertTrue(all(item['render']['status'] == 'not_requested'
+                                for item in report['files']))
+
+    def test_office_skill_collision_is_not_overwritten(self):
+        with tempfile.TemporaryDirectory() as folder:
+            dest = Path(folder) / 'skills'
+            existing = dest / 'documents'
+            existing.mkdir(parents=True)
+            (existing / 'SKILL.md').write_text('host-owned document skill')
+            with self.assertRaises(FileExistsError):
+                installer.install(dest, profile='full')
+            self.assertEqual((existing / 'SKILL.md').read_text(), 'host-owned document skill')
+            self.assertEqual([p.name for p in dest.iterdir()], ['documents'])
+
     def test_dry_run_has_no_writes(self):
         with tempfile.TemporaryDirectory() as folder:
             dest = Path(folder) / 'not-created'
             result = installer.install(dest, dry_run=True)
-            self.assertEqual(len(result['skills']), 19)
+            self.assertEqual(len(result['skills']), 20)
             self.assertFalse(dest.exists())
 
     def test_install_is_self_contained_and_retains_notices(self):
         with tempfile.TemporaryDirectory() as folder:
             result = installer.install(Path(folder) / 'skills')
-            self.assertEqual(len(result['installed']), 19)
+            self.assertEqual(len(result['installed']), 20)
             dest = Path(result['destination'])
             for name in result['installed']:
                 self.assertTrue((dest / name / 'SKILL.md').is_file())

@@ -4,7 +4,7 @@
 
 Galileo brings together scientific writing, specialist roles, evidence records and correction loops. Describe your goal in your preferred language; the assistant selects the relevant workflow and asks for information when it matters. Use a focused workflow or request several connected deliverables in one message.
 
-**9 specialist workflows · 19 skill folders in the full profile · 5 offline project commands**
+**9 specialist workflows · 20 skill folders in the full profile · 5 offline project commands**
 
 Works through skill-compatible AI assistants such as Claude Code, Codex, OpenCode and GitHub Copilot. The package contains portable `SKILL.md` instructions and local tools; your harness supplies models, agents and execution capabilities. Cross-client discovery support and complete runtime validation are distinct.
 
@@ -20,7 +20,8 @@ Works through skill-compatible AI assistants such as Claude Code, Codex, OpenCod
 | **Scientific drafting and analysis** | Section-by-section drafting with interactive checkpoints or autonomous progression, active literature-gap searches and evidence-linked outlines/prose; design, questionnaire/scoring and missing-data checks; analysis plans, code/output records and data-faithful figures when actually executed. |
 | **Realistic editorial simulation** | Technical assessment, three complementary anonymous simulated reviewers by default, reasoned editorial decisions, point-by-point author responses, corrections and rereview. |
 | **Literature discovery and references** | Optional PubMed / Europe PMC, OpenAlex, Crossref and experimental Zotero integrations; query/access logs, topic and claim coverage, source-type assessment, source/claim records and citation-to-bibliography checks in both directions. Galileo proposes useful connections and can assess other MCP candidates beyond the catalog. |
-| **Word and LaTeX production** | Conditional DOCX or LaTeX workflows, bibliography/cross-reference checks and requested PDF production using available host tools. Only the selected authoring route is activated. |
+| **Word and LaTeX production** | Conditional authoring routes; Word heading/list styles, automatic contents, captions and cross-references, supported citation managers, plus requested PDF from the same final source. Actual feature behavior and limitations are checked. |
+| **Office artifact support** | Bundled MIT Word/Excel/PowerPoint/PDF skill plus available licensed host skills; editable slide objects, template preservation, spreadsheet formulas/tables/charts and format-specific functional QA. [Details](docs/OFFICE_SUPPORT.md). |
 | **Scientific slides and visual design** | Storyboards, editable PPTX/PDF or PDF-first Beamer, speaker notes and timing plans; visual directions, shared styling, representative slides and final rendered-slide review. |
 | **Research-group and university branding** | Supplied or verified official logos, palettes, fonts and templates; logo placement, multiple affiliations, accessible chart colors and recorded font substitutions. |
 | **Thesis conversion and oral preparation** | Focused thesis-to-article conversion with source/omission maps and word budgets; interactive defense coaching, simulated examiners and backup-slide planning. |

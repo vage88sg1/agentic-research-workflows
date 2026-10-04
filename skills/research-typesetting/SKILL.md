@@ -14,7 +14,7 @@ Apply the relevant [editorial/visual checks and revision-specific closure](../ga
 
 ## DOCX route
 
-Use the host's document skill/tools when available and compatible with the request. Otherwise use a documented local DOCX tool such as python-docx or a template-based converter, recording its limitations. Create editable headings/styles, captions, tables and equations where supported. Do not rename another file to .docx or substitute screenshots for required editable evidence.
+Use the host's document skill/tools when available and compatible with the request. Otherwise use a documented local DOCX tool such as python-docx or a template-based converter, recording its limitations. Read [Office capabilities and functional QA](../galileo/references/office-capabilities.md) before DOCX production. Prefer actual native structures: heading/list styles, automatic contents/lists, caption and cross-reference fields, native tables/equations and supported reference-manager citations. Use an available licensed host document skill first; the bundled `documents` skill is portable fallback guidance and structural tooling. Do not silently recreate supported dynamic structures as manually maintained text. Do not rename another file to .docx or substitute screenshots for required editable evidence.
 
 Do not load academic-writing-latex for a DOCX task. Produce the editable .docx; when PDF is requested, export the same final version through a real office/document renderer. Inspect rendered pages for clipping, pagination, figures/tables, field values and bibliography. If a renderer is unavailable, deliver source with visual QA NOT PERFORMED, not a claimed verified PDF.
 

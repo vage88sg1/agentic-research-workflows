@@ -27,6 +27,12 @@ The original workflow routes override field/language/citation defaults and autom
 
 Restricted-license PPTX/DOCX skills are not redistributed. Original typesetting/presentation instructions use host-available licensed tools or publicly documented libraries, without copying those restricted instructions or code into this repository.
 
+## Office document support
+
+The `vendor/documents` directory contains the tracked `documents/` payload from [Magnus Hedemark's agent-skills](https://github.com/magnus919/agent-skills/tree/9b34a87ee729f109019ac604681e5796349ea1b2/documents), commit `9b34a87ee729f109019ac604681e5796349ea1b2`, retrieved 2026-10-04. Its MIT license, copyright 2026 Magnus Hedemark, is retained as [vendor/documents/LICENSE.md](vendor/documents/LICENSE.md). Upstream instructions, references, templates, fixtures, tests and validation script are copied unchanged; caches and unrelated repository skills are excluded. The installer retains the license and records payload hashes. The validation script declares version 1.0.0; the skill does not declare a release version.
+
+Galileo adds original integration guidance in [Office capabilities](skills/galileo/references/office-capabilities.md): prefer an adequate licensed host skill, preserve scientific meaning and use actual native structures when supported. The upstream validator establishes limited container sanity and optional conversion/raster success, not native feature behavior, complete XML/schema validity, calculated formulas, scientific validity or complete visual QA. Linked sibling skills mentioned upstream are optional and are not installed or executed automatically. Upstream portability claims are not an end-to-end Galileo host test.
+
 ## Referenced optional MCP adapters
 
 Configuration examples reference cyanheads/pubmed-mcp-server, cyanheads/openalex-mcp-server and cyanheads/crossref-mcp-server (Apache-2.0), plus peterdresslar/zotero-mcp (MIT). Revisions, executable references and license identifiers are recorded in `integrations/literature/servers.json`. Their server code and dependency trees are not vendored or covered by Galileo's original MIT license. Installing/running these optional adapters obtains third-party packages under their own licenses; consult the linked pinned repositories and dependency notices.

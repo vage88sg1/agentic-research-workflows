@@ -11,7 +11,8 @@
     "scientific-visualization",
     "peer-review",
     "academic-writing-latex",
-    "scientific-slides"
+    "scientific-slides",
+    "documents"
   ],
   "modifications": "None. Exact copies of selected upstream directories. Integration overrides are in original workflow references.",
   "files": {
@@ -162,7 +163,26 @@
     "statistical-analysis/references/effect_sizes_and_power.md": "6de003ff25fe3613322f5cfbd4d042327b17a381c034bc2dbbe068212ecce732",
     "statistical-analysis/references/reporting_standards.md": "6854623fb5e8080e7d02b6c713ee44cb4a4cf03757d97840764118af54137a88",
     "statistical-analysis/references/test_selection_guide.md": "64f5d93f87d83431b767a24d6b32c0ed82f2cbd32b1bd07476b49b5ac6a858a5",
-    "statistical-analysis/scripts/assumption_checks.py": "3fabf359ab0128bbfc498dadb53a4782431cde473c0a6681ea7298a605757018"
+    "statistical-analysis/scripts/assumption_checks.py": "3fabf359ab0128bbfc498dadb53a4782431cde473c0a6681ea7298a605757018",
+    "documents/LICENSE.md": "22fa3b1ec405fe440e86d0d293ce21de0c637ebc37f263dbe3032ee47215cfe2",
+    "documents/README.md": "4334c159752b204fe5ebeeed362abe3ea1bf501b76f9b47d544b263feb221621",
+    "documents/SKILL.md": "210e8572af3b6ed9afe2ebc64ebde645c591fba6526ac3ab570c57d8e568e7ae",
+    "documents/evals/evals.json": "6d7816b83e9541dfdd01cadb2e6e52d89530ebba78fbb753286093bb14375bdc",
+    "documents/fixtures/sample.docx": "3a86ff518eb68c7492d2ad60a285a84ae84770cea0d8667a1a2fdfa754f41cd2",
+    "documents/fixtures/sample.pdf": "eed065e3d6aa43ffab0e72b866af48755f31b3b9f436717557d3ea0fed9f70bb",
+    "documents/fixtures/sample.pptx": "78ece92ea0fd0984f4b3b5829a3a2db81302aac55e3e7751733937a1e4c34c49",
+    "documents/fixtures/sample.xlsx": "bd9eb8d0fb4875b3fa4564475f1624ef6fb52b99bc51d90c51ad0ff9fac4c352",
+    "documents/references/excel.md": "37232b9e736eb83b0ced5bdba94606d3f976ff17c66eac6b49ee9273402f2d5f",
+    "documents/references/output-quality.md": "1d5d4daa8bdc16e348620cd590539a3a000d7e1eb21674904d77e92306b13ca6",
+    "documents/references/pdf.md": "32d5db843d3b6680e32d5dac1dfe8692248a65928f4f1e381ce4126c38a79f43",
+    "documents/references/powerpoint.md": "956a0a9a26cdaa38684efdcf8eb071368f468ab12b72c803805893c84643882c",
+    "documents/references/word.md": "e8c5753fc22df79a3d3073695dded0b361992cf91e23b8449c7981da1ace33a8",
+    "documents/scripts/validate-documents.py": "7a4084b3217dd9b3024d4b0010a896c8d710a73f2eb73dc5747d0e34c37ba63e",
+    "documents/templates/excel-template.md": "ccd5d64739c3fe29de47541383f0ca43c4c7547dc9b32e5c5b3d339c81568385",
+    "documents/templates/pdf-template.md": "9a851ebb13a04f27d9bd984e93d95b30ee19422f4a00832861418e734eee2adf",
+    "documents/templates/powerpoint-template.md": "1a3503f5f111c5620c272bba93ab269874d4777054b2c0c2ce850dbb655d36d0",
+    "documents/templates/word-template.md": "286e48bcae93d6346733cfe4acb8c01c649c5ac93da98e6ab26e8a8f41faa19d",
+    "documents/tests/test_validate_documents.py": "56d3cdfc2a99af1dbddd7d74652318594c9484073f203a556c1072c1b5a4d873"
   },
   "skill_sources": {
     "scientific-writing": {
@@ -218,6 +238,12 @@
       "commit": "49c6e97775eaa18ba791bebe23162a70ae601c18",
       "license_file": "LICENSE.md",
       "retrieved_date": "2026-09-27"
+    },
+    "documents": {
+      "repository": "https://github.com/magnus919/agent-skills",
+      "commit": "9b34a87ee729f109019ac604681e5796349ea1b2",
+      "license_file": "documents/LICENSE.md",
+      "retrieved_date": "2026-10-04"
     }
   }
 }
