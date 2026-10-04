@@ -1,0 +1,5 @@
+# Preserve document bytes, including PDF xref record spacing and OOXML archives.
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.pptx binary
